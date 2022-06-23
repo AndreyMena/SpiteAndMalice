@@ -8,13 +8,13 @@ PantallaJuego::PantallaJuego(QWidget *parent) :
     ui(new Ui::PantallaJuego)
 {
     ui->setupUi(this);
-    mazo mazoBryan;
+    /*mazo mazoBryan;
     std::string cartaSacadaDeMazo;
     cartaSacadaDeMazo = mazoBryan.obtenerCartaJugadorUno();
     std::cout << "Llega aca: " << cartaSacadaDeMazo << std::endl;
 
-    QString carta = QString::fromStdString(cartaSacadaDeMazo);
-    this->ui->label_5->setText(carta);
+    QString carta = QString::fromStdString(cartaSacadaDeMazo);*/
+    this->ui->label_5->setText("carta");
 }
 
 PantallaJuego::~PantallaJuego()
