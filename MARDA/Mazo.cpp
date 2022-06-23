@@ -17,7 +17,7 @@ void mazo::crearMazo() {
         }
     }
     llenarMazos();
-    //mazoCreado();
+    mazoCreado();
 }
 
 int mazo::numeroAleatorio() {

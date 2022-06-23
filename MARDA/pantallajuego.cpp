@@ -14,7 +14,11 @@ PantallaJuego::PantallaJuego(QWidget *parent) :
     std::cout << "Llega aca: " << cartaSacadaDeMazo << std::endl;
 
     QString carta = QString::fromStdString(cartaSacadaDeMazo);*/
-    this->ui->label_5->setText("carta");
+    //this->ui->pushButton_9->setText("carta");
+    QPixmap pixmap("C:/Users/pc/Documents/PROYECTO_MARDA/SpiteAndMalice/imagenes/as");
+    this->ui->label->setPixmap(pixmap);
+    this->ui->label->setMask(pixmap.mask());
+    this->ui->label->show();
 }
 
 PantallaJuego::~PantallaJuego()
