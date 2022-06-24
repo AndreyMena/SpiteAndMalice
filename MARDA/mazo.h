@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <vector>
 #include <stack>
+#include <fstream>
 
 class mazo {
 
@@ -13,6 +14,7 @@ public:
     void inicializaArregloAuxiliar();
     void mazoCreado();
     void llenarMazos();
+    void IniciarCartas();
     std::string obtenerCartaJugadorUno();
 
     int const CANTIDAD_DE_SIMBOLOS = 4;

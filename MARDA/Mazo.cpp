@@ -40,12 +40,6 @@ void mazo::inicializaArregloAuxiliar() {
     }
 }
 
-void mazo::mazoCreado() {
-    for (int i = 0; i < CANTIDAD_CARTAS_POR_MAZO; i++) {
-        std::cout << i << " " << mazoJugadorUno[i] << " *-* " << mazoJugadorDos[i] << std::endl;
-    }
-}
-
 void mazo::llenarMazos() {
     for (int i = 0; i < CANTIDAD_CARTAS_POR_MAZO; i++) {
         std::string valor = mazoJugadorUno[i];
@@ -57,8 +51,22 @@ void mazo::llenarMazos() {
     }
 }
 
-std::string mazo::obtenerCartaJugadorUno() {
+/*std::string mazo::obtenerCartaJugadorUno() {
     std::cout << "Holaaaaaaaaaaaaaaaaaaaaaa" << std::endl;
     std::string valorDeCarta = mazoJugadorUnoVector.at(5);
     return valorDeCarta;
+}*/
+
+void mazo::IniciarCartas()
+{
+    std::string nombreArchivo = "videojuegos.txt";
+    std::ifstream archivo("../Cartas.txt");
+
+    std::string linea;
+    // Obtener línea de archivo, y almacenar contenido en "linea"
+    while (getline(archivo, linea)) {
+        // Lo vamos imprimiendo
+        std::cout << linea << std::endl;
+    }
+
 }
