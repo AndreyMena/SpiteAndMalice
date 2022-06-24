@@ -1,4 +1,9 @@
 #include "mazo.h"
+#include <fstream>
+#include <string>
+#include <QPixmap>
+#include <QBitmap>
+#include <QWidget>
 
 void mazo::crearMazo() {
     inicializaArregloAuxiliar();
@@ -17,7 +22,9 @@ void mazo::crearMazo() {
         }
     }
     llenarMazos();
-    mazoCreado();
+
+    IniciarCartas();  //
+    //mazoCreado();
 }
 
 int mazo::numeroAleatorio() {
@@ -57,9 +64,10 @@ void mazo::llenarMazos() {
     return valorDeCarta;
 }*/
 
+
 void mazo::IniciarCartas()
 {
-    std::string nombreArchivo = "videojuegos.txt";
+
     std::ifstream archivo("../Cartas.txt");
 
     std::string linea;
@@ -70,3 +78,4 @@ void mazo::IniciarCartas()
     }
 
 }
+

@@ -15,7 +15,8 @@ public:
     void mazoCreado();
     void llenarMazos();
     void IniciarCartas();
-    std::string obtenerCartaJugadorUno();
+
+    //std::string obtenerCartaJugadorUno(); // No esta en cpp
 
     int const CANTIDAD_DE_SIMBOLOS = 4;
     int const CANTIDAD_CARTAS_POR_MAZO =52;
