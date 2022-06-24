@@ -10,6 +10,12 @@
     <height>358</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Spice and Malice</string>
   </property>
@@ -62,6 +68,27 @@
       </widget>
      </item>
      <item alignment="Qt::AlignHCenter">
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ravie</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Reglas</string>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignHCenter">
       <widget class="QPushButton" name="pushButton_3">
        <property name="font">
         <font>
@@ -94,7 +121,7 @@
      <x>0</x>
      <y>0</y>
      <width>304</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

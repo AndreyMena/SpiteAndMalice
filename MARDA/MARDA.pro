@@ -10,18 +10,24 @@ CONFIG += c++17
 
 SOURCES += \
     Mazo.cpp \
+    eleccionjugador.cpp \
     main.cpp \
     menujuego.cpp \
-    pantallajuego.cpp
+    pantallajuego.cpp \
+    reglas.cpp
 
 HEADERS += \
+    eleccionjugador.h \
     mazo.h \
     menujuego.h \
-    pantallajuego.h
+    pantallajuego.h \
+    reglas.h
 
 FORMS += \
+    eleccionjugador.ui \
     menujuego.ui \
-    pantallajuego.ui
+    pantallajuego.ui \
+    reglas.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

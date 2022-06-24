@@ -5,6 +5,7 @@
 
 #include "pantallajuego.h"
 #include "mazo.h"
+#include "eleccionjugador.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MenuJuego; }
@@ -20,6 +21,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_4_clicked();
 
 private:
     Ui::MenuJuego *ui;
