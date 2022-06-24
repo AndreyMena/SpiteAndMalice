@@ -16,6 +16,7 @@ class PantallaJuego : public QWidget
 public:
     explicit PantallaJuego(QWidget *parent = nullptr);
     ~PantallaJuego();
+    void IniciarCartas();
 
 private slots:
 

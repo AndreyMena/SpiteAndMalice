@@ -451,6 +451,9 @@
    <property name="text">
     <string/>
    </property>
+   <property name="pixmap">
+    <pixmap>king_of_clubs2.png</pixmap>
+   </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
@@ -468,7 +471,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Hola yo si me veo</string>
+    <string/>
    </property>
    <property name="pixmap">
     <pixmap>../../../../Downloads/as.PNG</pixmap>
