@@ -70,6 +70,27 @@ PantallaJuego::PantallaJuego(QWidget *parent) :
     this->ui->label_10->show();
     //IniciarCartas();
 
+    QPixmap pixmap10("../PNG-cards-1.3/backsideCard");
+    this->ui->label_12->setPixmap(pixmap10);
+    this->ui->label_12->setMask(pixmap10.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
+    this->ui->label_12->show();
+
+    QPixmap pixmap11("../PNG-cards-1.3/10_of_diamonds");
+    this->ui->label_13->setPixmap(pixmap11);
+    this->ui->label_13->setMask(pixmap11.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
+    this->ui->label_13->show();
+
+    QPixmap pixmap12("../PNG-cards-1.3/8_of_clubs");
+    this->ui->label_11->setPixmap(pixmap12);
+    this->ui->label_11->setMask(pixmap12.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
+    this->ui->label_11->show();
+
+    QPixmap pixmap13("../PNG-cards-1.3/6_of_diamonds");
+    this->ui->label_14->setPixmap(pixmap13);
+    this->ui->label_14->setMask(pixmap13.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
+    this->ui->label_14->show();
+    //IniciarCartas();
+
 }
 /*
 void PantallaJuego::IniciarCartas()
