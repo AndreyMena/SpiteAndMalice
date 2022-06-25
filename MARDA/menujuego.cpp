@@ -22,7 +22,8 @@ void MenuJuego::on_pushButton_clicked()
     EleccionJugador *pantallaEleccion = new EleccionJugador();
     pantallaEleccion->show();
     this->hide();
-/*
+
+    /*
     PantallaJuego *pantallaJuego = new PantallaJuego();
     pantallaJuego->show();
     this->hide();
