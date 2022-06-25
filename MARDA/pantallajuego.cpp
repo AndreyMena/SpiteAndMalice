@@ -18,77 +18,90 @@ PantallaJuego::PantallaJuego(QWidget *parent) :
     //this->ui->pushButton_9->setText("carta");
     mazoBryan.IniciarCartas();
 
-    QPixmap pixmap("../PNG-cards-1.3/ace_of_clubs");
+    /*QPixmap pixmap(":/img/img/ace_of_clubs.png");
     this->ui->label_1->setPixmap(pixmap);
     this->ui->label_1->setMask(pixmap.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
-    this->ui->label_1->show();
+    this->ui->label_1->show();*/
 
-    QPixmap pixmap1("../PNG-cards-1.3/2_of_diamonds");
+    /*QPixmap pixmap1("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/2_of_diamonds");
+    //QPixmap pixmap1("../PNG-cards-1.3/2_of_diamonds");
     this->ui->label_2->setPixmap(pixmap1);
     this->ui->label_2->setMask(pixmap1.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_2->show();
 
-    QPixmap pixmap2("../PNG-cards-1.3/queen_of_spades2");
+    QPixmap pixmap2("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/queen_of_spades2");
+    //QPixmap pixmap2("../PNG-cards-1.3/queen_of_spades2");
     this->ui->label_3->setPixmap(pixmap2);
     this->ui->label_3->setMask(pixmap2.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_3->show();
 
-    QPixmap pixmap3("../PNG-cards-1.3/6_of_hearts");
+    QPixmap pixmap3("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/6_of_hearts");
+    //QPixmap pixmap3("../PNG-cards-1.3/6_of_hearts");
     this->ui->label_4->setPixmap(pixmap3);
     this->ui->label_4->setMask(pixmap3.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_4->show();
 
-    QPixmap pixmap4("../PNG-cards-1.3/3_of_diamonds");
+    QPixmap pixmap4("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/3_of_diamonds");
+    //QPixmap pixmap4("../PNG-cards-1.3/3_of_diamonds");
     this->ui->label_5->setPixmap(pixmap4);
     this->ui->label_5->setMask(pixmap4.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_5->show();
 
     //Segundo jugador
-    QPixmap pixmap5("../PNG-cards-1.3/ace_of_clubs");
+    QPixmap pixmap5("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/ace_of_clubs");
+    //QPixmap pixmap5("../PNG-cards-1.3/ace_of_clubs");
     this->ui->label_6->setPixmap(pixmap5);
     this->ui->label_6->setMask(pixmap5.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
-    this->ui->label_6->show();
+    this->ui->label_6->show();*/
 
-    QPixmap pixmap6("../PNG-cards-1.3/2_of_diamonds");
+    QPixmap pixmap6("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/2_of_diamonds");
+    //QPixmap pixmap6("../PNG-cards-1.3/2_of_diamonds");
     this->ui->label_7->setPixmap(pixmap6);
     this->ui->label_7->setMask(pixmap6.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_7->show();
 
-    QPixmap pixmap7("../PNG-cards-1.3/queen_of_spades2");
+    QPixmap pixmap7("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/queen_of_spades2");
+    //QPixmap pixmap7("../PNG-cards-1.3/queen_of_spades2");
     this->ui->label_8->setPixmap(pixmap7);
     this->ui->label_8->setMask(pixmap7.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_8->show();
 
-    QPixmap pixmap8("../PNG-cards-1.3/6_of_hearts");
+    QPixmap pixmap8("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/6_of_hearts");
+    //QPixmap pixmap8("../PNG-cards-1.3/6_of_hearts");
     this->ui->label_9->setPixmap(pixmap8);
     this->ui->label_9->setMask(pixmap8.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_9->show();
 
-    QPixmap pixmap9("../PNG-cards-1.3/3_of_diamonds");
+    QPixmap pixmap9("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/3_of_diamonds");
+    //QPixmap pixmap9("../PNG-cards-1.3/3_of_diamonds");
     this->ui->label_10->setPixmap(pixmap9);
     this->ui->label_10->setMask(pixmap9.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_10->show();
     //IniciarCartas();
 
-    QPixmap pixmap10("../PNG-cards-1.3/backsideCard");
+    QPixmap pixmap10("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/backsideCard");
+    //QPixmap pixmap10("../PNG-cards-1.3/backsideCard");
     this->ui->label_12->setPixmap(pixmap10);
     this->ui->label_12->setMask(pixmap10.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_12->show();
 
-    QPixmap pixmap11("../PNG-cards-1.3/10_of_diamonds");
+    QPixmap pixmap11("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/8_of_clubs");
+    //QPixmap pixmap11("../PNG-cards-1.3/10_of_diamonds");
     this->ui->label_13->setPixmap(pixmap11);
     this->ui->label_13->setMask(pixmap11.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_13->show();
 
-    QPixmap pixmap12("../PNG-cards-1.3/8_of_clubs");
+    QPixmap pixmap12("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/8_of_clubs");
+    //QPixmap pixmap12("../PNG-cards-1.3/8_of_clubs");
     this->ui->label_11->setPixmap(pixmap12);
     this->ui->label_11->setMask(pixmap12.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
     this->ui->label_11->show();
 
-    QPixmap pixmap13("../PNG-cards-1.3/6_of_diamonds");
+    /*QPixmap pixmap13("C:/Users/pc/Documents/SpiteAndMalice/PNG-cards-1.3/6_of_diamonds");
+    //QPixmap pixmap13("../PNG-cards-1.3/6_of_diamonds");
     this->ui->label_14->setPixmap(pixmap13);
     this->ui->label_14->setMask(pixmap13.mask());  //  C:\Users\andre\OneDrive\Escritorio\UCR\GitHub\SpiteAndMalice\PNG-cards-1.3
-    this->ui->label_14->show();
+    this->ui->label_14->show();*/
     //IniciarCartas();
 
 }
@@ -117,6 +130,7 @@ PantallaJuego::~PantallaJuego()
 
 void PantallaJuego::on_pushButton_2_clicked()
 {
+    this->ui->pushButton_2->setStyleSheet("image: url(:/img/img/7_of_clubs.png)");
     //this->ui->label_5->setText("As de corazones");
     //mazo *m = new mazo();
     //m->CrearMazo()
