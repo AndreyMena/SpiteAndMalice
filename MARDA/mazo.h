@@ -1,8 +1,10 @@
 #pragma once
 
 #include <algorithm>
-#include <vector>
 #include <exception>
+#include <vector>
+#include <random>
+#include <chrono>
 using namespace std;
 
 #include "carta.h"
