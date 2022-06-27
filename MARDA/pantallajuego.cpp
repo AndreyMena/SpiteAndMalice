@@ -11,19 +11,6 @@ PantallaJuego::PantallaJuego(QWidget *parent) :
     ui->setupUi(this);
 }
 
-/*
-void PantallaJuego::IniciarCartas()
-{
-    std::ifstream archivo("../Cartas.txt");
-    std::string linea;
-    // Obtener línea de archivo, y almacenar contenido en "linea"
-    while (std::getline(archivo, linea)) {
-        // Lo vamos imprimiendo
-        std::cout << linea << std::endl;
-    }
-}
-*/
-
 PantallaJuego::~PantallaJuego()
 {
     delete ui;
