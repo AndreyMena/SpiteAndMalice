@@ -1,6 +1,6 @@
 #include "eleccionjugador.h"
 #include "ui_eleccionjugador.h"
-#include "pantallajuego.h".h"
+#include "pantallajuego.h"
 
 EleccionJugador::EleccionJugador(QWidget *parent) :
     QWidget(parent),

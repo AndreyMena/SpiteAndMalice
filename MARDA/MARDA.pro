@@ -9,19 +9,25 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Mazo.cpp \
+    carta.cpp \
     eleccionjugador.cpp \
+    jugador.cpp \
     main.cpp \
+    mazo.cpp \
     menujuego.cpp \
     pantallajuego.cpp \
-    reglas.cpp
+    reglas.cpp \
+    tablero.cpp
 
 HEADERS += \
+    carta.h \
     eleccionjugador.h \
+    jugador.h \
     mazo.h \
     menujuego.h \
     pantallajuego.h \
-    reglas.h
+    reglas.h \
+    tablero.h
 
 FORMS += \
     eleccionjugador.ui \
