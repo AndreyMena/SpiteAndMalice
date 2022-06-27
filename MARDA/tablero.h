@@ -6,7 +6,13 @@
 class Tablero
 {
 public:
+    /**
+     * @brief Tablero Constructor de la clase Tablero
+     */
     Tablero();
+    /**
+     * @brief Destructor de la clase Tablero
+     */
     ~Tablero();
 private:
     Jugador jugador1;

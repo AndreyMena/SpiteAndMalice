@@ -22,7 +22,7 @@ public:
     explicit PantallaJuego(QWidget *parent = nullptr);
 
     /**
-     * Destructor de la clase PantallaJuego
+     * @brief Destructor de la clase PantallaJuego
      */
     ~PantallaJuego();
 
