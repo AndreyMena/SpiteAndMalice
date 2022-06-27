@@ -1,7 +1,5 @@
 #include "mazo.h"
 
-
-
 Mazo::Mazo() {
 }
 
@@ -25,9 +23,7 @@ void Mazo::llenarMazo() {
 
 void Mazo::barajarMazo() {
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-        std::shuffle(this->cartas.begin(), this->cartas.end(), std::default_random_engine(seed));
-
-//    random_shuffle(this->cartas.begin(), this->cartas.end());
+    std::shuffle(this->cartas.begin(), this->cartas.end(), std::default_random_engine(seed));
 }
 
 Mazo Mazo::dividirMazo(unsigned int cantidadCartas) {
