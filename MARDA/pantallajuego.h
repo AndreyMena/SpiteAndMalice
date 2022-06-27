@@ -26,12 +26,6 @@ public:
      */
     ~PantallaJuego();
 
-    /**
-     * @brief Método para acceder a las imágenes de las cartas. De momento se
-     * encuentra inhabilitado
-     */
-    void IniciarCartas();
-
 private slots:
     /**
      * @brief Realiza las acciones que se dicten dentro del código del método
