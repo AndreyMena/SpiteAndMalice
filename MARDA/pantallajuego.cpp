@@ -10,13 +10,12 @@
 
 //#include <fstream>
 
-PantallaJuego::PantallaJuego(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::PantallaJuego)
+PantallaJuego::PantallaJuego(Tablero tablero) :
+    QWidget(nullptr),
+    ui(new Ui::PantallaJuego),
+    tablero(tablero)
 {
     ui->setupUi(this);
-
-
     //QHBoxLayout *frameLayout = new QHBoxLayout(this->ui->frame);
     QListWidgetItem *l1 = new QListWidgetItem(this->ui->listWidget);
     QListWidgetItem* l2 = new QListWidgetItem(this->ui->listWidget);
@@ -33,6 +32,24 @@ PantallaJuego::PantallaJuego(QWidget *parent) :
     l3->setIcon(QIcon(":/img/img/7_of_clubs.png"));
     l3->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
     l3->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+
+    QListWidgetItem *l4 = new QListWidgetItem(this->ui->listWidget_3);
+    QListWidgetItem* l5 = new QListWidgetItem(this->ui->listWidget_3);
+    QListWidgetItem* l6 = new QListWidgetItem(this->ui->listWidget_3);
+
+    l4->setIcon(QIcon(":/img/img/7_of_clubs.png"));
+    l4->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
+    l4->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+
+    l5->setIcon(QIcon(":/img/img/7_of_clubs.png"));
+    l5->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
+    l5->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+
+    l6->setIcon(QIcon(":/img/img/7_of_clubs.png"));
+    l6->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
+    l6->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+
+
 }
 
 PantallaJuego::~PantallaJuego()

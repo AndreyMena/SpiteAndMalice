@@ -16,6 +16,9 @@ SOURCES += \
     mazo.cpp \
     menujuego.cpp \
     pantallajuego.cpp \
+    pilaabstracta.cpp \
+    pilacentral.cpp \
+    piladescarte.cpp \
     reglas.cpp \
     tablero.cpp
 
@@ -26,6 +29,9 @@ HEADERS += \
     mazo.h \
     menujuego.h \
     pantallajuego.h \
+    pilaabstracta.h \
+    pilacentral.h \
+    piladescarte.h \
     reglas.h \
     tablero.h
 

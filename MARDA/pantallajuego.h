@@ -6,6 +6,7 @@
 #include <QString>
 #include <QListWidgetItem>
 
+#include "tablero.h"
 namespace Ui {
 class PantallaJuego;
 }
@@ -18,9 +19,9 @@ public:
     /**
      * @brief Constructor de la clase PantallaJuego donde se muestra y juega el
      * juego.
-     * @param parent Parámetro de la clase padre QWidget
+     * @param tablero Modelo que contiene toda la informacion de la partida
      */
-    explicit PantallaJuego(QWidget *parent = nullptr);
+     PantallaJuego(Tablero tablero);
 
     /**
      * @brief Destructor de la clase PantallaJuego
@@ -48,6 +49,7 @@ private slots:
 
 private:
     Ui::PantallaJuego *ui;
+    Tablero tablero;
 };
 
 #endif // PANTALLAJUEGO_H

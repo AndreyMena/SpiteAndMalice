@@ -26,6 +26,12 @@ void Mazo::barajarMazo() {
     std::shuffle(this->cartas.begin(), this->cartas.end(), std::default_random_engine(seed));
 }
 
+void Mazo::agregarCartasMazo(vector<Carta> cartas) {
+    for (auto &&n : cartas) {
+        this->cartas.insert(this->cartas.begin(), n);
+    }
+}
+
 Mazo Mazo::dividirMazo(unsigned int cantidadCartas) {
     Mazo nuevoMazo;
     vector<Carta> cartasAuxiliar;

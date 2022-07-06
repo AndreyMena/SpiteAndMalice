@@ -29,6 +29,12 @@ public:
      */
     void barajarMazo();
     /**
+     * @brief agregarCartasMazo Agrega el vector de cartas al mazo actual
+     * @param cartas Cartas a insertar en el mazo
+     * @return No devuelve nada
+     */
+    void agregarCartasMazo(vector<Carta> cartas);
+    /**
      * @brief dividirMazo Separa la cantidad de cartas indicadas del mazo
      * @param cantidadCartas Cantidad de cartas que se quieren separar
      * @return Devuelve un mazo con las cartas extraidas
@@ -44,7 +50,7 @@ private:
      * @brief cartas Un vector con las cartas que contiene el mazo
      */
     vector<Carta> cartas;
-    vector<string> numerosCarta{"As", "Dos", "Tres", "Cuatro", "Cinco", "Seis",
-                                "Siete", "Ocho", "Nueve", "Diez", "J", "Q", "K"};
-    vector<string> simbolosCarta{" de corazones", " de diamantes", " de treboles", " de picas"};
+    vector<string> numerosCarta{"ace", "2", "3", "4", "5", "6",
+                                "7", "8", "9", "10", "jack", "queen", "king"};
+    vector<string> simbolosCarta{"_of_hearts", "_of_diamonds", "_of_clubs", "_of_spades"};
 };

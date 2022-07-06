@@ -15,17 +15,21 @@ EleccionJugador::~EleccionJugador()
 }
 
 //Turno 1
-void EleccionJugador::on_pushButton_3_clicked()
+void EleccionJugador::on_eleccionJugador1_clicked()
 {
-    PantallaJuego *pantallaJuego = new PantallaJuego();
+    Tablero tablero(CANTIDAD_JUGADORES);
+    tablero.asignarTurno(TURNO_JUGADOR1);
+    PantallaJuego *pantallaJuego = new PantallaJuego(tablero);
     pantallaJuego->show();
     this->hide();
 }
 
 //Turno 2
-void EleccionJugador::on_pushButton_4_clicked()
+void EleccionJugador::on_eleccionJugador2_clicked()
 {
-    PantallaJuego *pantallaJuego = new PantallaJuego();
+    Tablero tablero(CANTIDAD_JUGADORES);
+    tablero.asignarTurno(TURNO_JUGADOR2);
+    PantallaJuego *pantallaJuego = new PantallaJuego(tablero);
     pantallaJuego->show();
     this->hide();
 }

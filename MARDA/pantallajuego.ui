@@ -578,7 +578,7 @@ color: rgb(0, 0, 0);</string>
        </item>
       </layout>
      </item>
-     <item alignment="Qt::AlignHCenter">
+     <item>
       <widget class="QListWidget" name="listWidget_3">
        <property name="minimumSize">
         <size>
@@ -592,11 +592,35 @@ color: rgb(0, 0, 0);</string>
          <height>120</height>
         </size>
        </property>
+       <property name="acceptDrops">
+        <bool>true</bool>
+       </property>
        <property name="verticalScrollBarPolicy">
         <enum>Qt::ScrollBarAlwaysOff</enum>
        </property>
        <property name="horizontalScrollBarPolicy">
         <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="defaultDropAction">
+        <enum>Qt::MoveAction</enum>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>75</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="viewMode">
+        <enum>QListView::IconMode</enum>
+       </property>
+       <property name="selectionRectVisible">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
