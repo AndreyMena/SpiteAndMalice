@@ -271,6 +271,12 @@ color: rgb(0, 0, 0);</string>
          <property name="acceptDrops">
           <bool>true</bool>
          </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
          <property name="defaultDropAction">
           <enum>Qt::MoveAction</enum>
          </property>
@@ -305,6 +311,12 @@ color: rgb(0, 0, 0);</string>
          </property>
          <property name="acceptDrops">
           <bool>true</bool>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
          </property>
          <property name="defaultDropAction">
           <enum>Qt::MoveAction</enum>
@@ -341,6 +353,12 @@ color: rgb(0, 0, 0);</string>
          <property name="acceptDrops">
           <bool>true</bool>
          </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
          <property name="defaultDropAction">
           <enum>Qt::MoveAction</enum>
          </property>
@@ -375,6 +393,12 @@ color: rgb(0, 0, 0);</string>
          </property>
          <property name="acceptDrops">
           <bool>true</bool>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
          </property>
          <property name="editTriggers">
           <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
@@ -567,6 +591,12 @@ color: rgb(0, 0, 0);</string>
          <width>415</width>
          <height>120</height>
         </size>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
        </property>
       </widget>
      </item>
