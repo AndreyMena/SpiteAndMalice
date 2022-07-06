@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <iostream>
 #include <QString>
+#include <QListWidgetItem>
 
 namespace Ui {
 class PantallaJuego;
@@ -31,7 +32,11 @@ private slots:
      * @brief Realiza las acciones que se dicten dentro del código del método
      * cuando el usuario le da clic a este botón en específico.
      */
-    void on_pushButton_2_clicked();
+    //void on_pushButton_2_clicked();
+
+    void on_listWidget_2_itemEntered(QListWidgetItem *item);
+
+    void on_listWidget_2_itemChanged(QListWidgetItem *item);
 
 private:
     Ui::PantallaJuego *ui;
