@@ -376,8 +376,14 @@ color: rgb(0, 0, 0);</string>
          <property name="acceptDrops">
           <bool>true</bool>
          </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DropOnly</enum>
+         </property>
          <property name="defaultDropAction">
-          <enum>Qt::MoveAction</enum>
+          <enum>Qt::CopyAction</enum>
          </property>
          <property name="iconSize">
           <size>

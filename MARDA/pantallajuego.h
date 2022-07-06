@@ -38,6 +38,14 @@ private slots:
 
     void on_listWidget_2_itemChanged(QListWidgetItem *item);
 
+    void on_listWidget_5_itemChanged(QListWidgetItem *item);
+
+    void on_listWidget_2_itemActivated(QListWidgetItem *item);
+
+    void on_listWidget_2_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+
+    void on_listWidget_2_currentRowChanged(int currentRow);
+
 private:
     Ui::PantallaJuego *ui;
 };

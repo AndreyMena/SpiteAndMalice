@@ -51,9 +51,32 @@ void PantallaJuego::on_listWidget_2_itemEntered(QListWidgetItem *item)
     std::cout << "Hola mundo" << std::endl;
 }
 
-
 void PantallaJuego::on_listWidget_2_itemChanged(QListWidgetItem *item)
 {
     std::cout << "Hola mundo segundo intento" << std::endl;
+}
+
+
+void PantallaJuego::on_listWidget_5_itemChanged(QListWidgetItem *item)
+{
+
+}
+
+
+void PantallaJuego::on_listWidget_2_itemActivated(QListWidgetItem *item)
+{
+    std::cout << "Hola mundo tercer intento" << std::endl;
+}
+
+
+void PantallaJuego::on_listWidget_2_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
+{
+    std::cout << "Hola mundo cuarto intento" << std::endl;
+}
+
+
+void PantallaJuego::on_listWidget_2_currentRowChanged(int currentRow)
+{
+    std::cout << "Hola mundo quinto intento" << std::endl;
 }
 
