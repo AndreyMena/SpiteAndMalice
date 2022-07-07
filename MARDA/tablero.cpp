@@ -11,7 +11,7 @@ Tablero::Tablero(int cantidadJugadores)
     this->turnoJugador = -1;
     // Se crean los jugadores y se añaden al vector de jugadores del tablero
     for (int i = 0; i < cantidadJugadores; i++) {
-        this->jugadores.emplace_back(Jugador(&mazoCentral, &pilasCentrales));
+        this->jugadores.emplace_back(Jugador(i+1, &mazoCentral, &pilasCentrales));
     }
 
     for (int i = 0; i < CANTIDAD_PILAS_CENTRALES; i++) {
@@ -34,4 +34,8 @@ bool Tablero::esTurnoJugador(int numeroJugador) {
         resultado = true;
     }
     return resultado;
+}
+
+vector<Jugador> Tablero::obtenerJugadores() {
+    return this->jugadores;
 }

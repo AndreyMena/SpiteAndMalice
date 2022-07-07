@@ -2,9 +2,11 @@
 #define PANTALLAJUEGO_H
 
 #include <QWidget>
-#include <iostream>
 #include <QString>
 #include <QListWidgetItem>
+
+#include <iostream>
+#include <map>
 
 #include "tablero.h"
 namespace Ui {
@@ -16,6 +18,9 @@ class PantallaJuego : public QWidget
     Q_OBJECT
 
 public:
+    const string URL_POR_DEFECTO = ":/img/img/";
+    const string EXTENSION_POR_DEFECTO = ".png";
+    const string URL_REVERSO_CARTA_POR_DEFECTO =  ":/img/img/backsideCard.png";
     /**
      * @brief Constructor de la clase PantallaJuego donde se muestra y juega el
      * juego.
@@ -27,6 +32,10 @@ public:
      * @brief Destructor de la clase PantallaJuego
      */
     ~PantallaJuego();
+
+     void generarCarta(Carta carta, QListWidget* espacio);
+
+     void generarCartaOculta (QListWidget* espacio);
 
 private slots:
     /**
@@ -50,6 +59,7 @@ private slots:
 private:
     Ui::PantallaJuego *ui;
     Tablero tablero;
+    map<int, QListWidget*> espacios;
 };
 
 #endif // PANTALLAJUEGO_H

@@ -13,12 +13,17 @@ public:
     /**
      * @brief Constructor de la clase Jugador
      */
-    Jugador(Mazo *mazoCentral, vector<PilaCentral> *pilasCentrales);
+    Jugador(int numeroJugador, Mazo *mazoCentral, vector<PilaCentral> *pilasCentrales);
     /**
      * @brief Destructor de la clase Jugador
      */
     ~Jugador();
+
+    int obtenerNumeroJugador();
+
+    vector<Carta> obtenerMano();
 private:
+    int numeroJugador;
     /**
      * @brief mazo Mazo que corresponde al jugador
      */

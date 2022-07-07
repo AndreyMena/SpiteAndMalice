@@ -16,45 +16,45 @@ PantallaJuego::PantallaJuego(Tablero tablero) :
     tablero(tablero)
 {
     ui->setupUi(this);
-    //QHBoxLayout *frameLayout = new QHBoxLayout(this->ui->frame);
-    QListWidgetItem *l1 = new QListWidgetItem(this->ui->listWidget);
-    QListWidgetItem* l2 = new QListWidgetItem(this->ui->listWidget);
-    QListWidgetItem* l3 = new QListWidgetItem(this->ui->listWidget);
 
-    l1->setIcon(QIcon(":/img/img/7_of_clubs.png"));
-    l1->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
-    l1->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+    // Se generan los espacios para cada jugador
+    this->espacios[1] = this->ui->listWidget;
+    this->espacios[2] = this->ui->listWidget_3;
 
-    l2->setIcon(QIcon(":/img/img/7_of_clubs.png"));
-    l2->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
-    l2->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
-
-    l3->setIcon(QIcon(":/img/img/7_of_clubs.png"));
-    l3->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
-    l3->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
-
-    QListWidgetItem *l4 = new QListWidgetItem(this->ui->listWidget_3);
-    QListWidgetItem* l5 = new QListWidgetItem(this->ui->listWidget_3);
-    QListWidgetItem* l6 = new QListWidgetItem(this->ui->listWidget_3);
-
-    l4->setIcon(QIcon(":/img/img/7_of_clubs.png"));
-    l4->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
-    l4->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
-
-    l5->setIcon(QIcon(":/img/img/7_of_clubs.png"));
-    l5->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
-    l5->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
-
-    l6->setIcon(QIcon(":/img/img/7_of_clubs.png"));
-    l6->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
-    l6->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
-
-
+    for (auto &&n : tablero.obtenerJugadores()) {
+        if (this->tablero.esTurnoJugador(n.obtenerNumeroJugador())) {
+            vector<Carta> cartas = n.obtenerMano();
+            for (auto &&carta : cartas) {
+                generarCarta(carta, espacios[n.obtenerNumeroJugador()]);
+            }
+        } else {
+            for (int i = 0; i < 5; i++) {
+                generarCartaOculta(espacios[n.obtenerNumeroJugador()]);
+            }
+        }
+    }
 }
 
 PantallaJuego::~PantallaJuego()
 {
     delete ui;
+}
+
+void PantallaJuego::generarCarta(Carta carta, QListWidget* espacio) {
+    string url = URL_POR_DEFECTO+carta.obtenerNombre() + EXTENSION_POR_DEFECTO;
+    QString stringCarta(url.data());
+    QListWidgetItem* nuevaCarta = new QListWidgetItem(espacio);
+    nuevaCarta->setIcon(QIcon(stringCarta));
+    //nuevaCarta->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
+    nuevaCarta->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+}
+
+void PantallaJuego::generarCartaOculta(QListWidget* espacio) {
+    QString stringCarta(URL_REVERSO_CARTA_POR_DEFECTO.data());
+    QListWidgetItem* nuevaCarta = new QListWidgetItem(espacio);
+    nuevaCarta->setIcon(QIcon(stringCarta));
+    //nuevaCarta->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
+    nuevaCarta->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 }
 
 /*void PantallaJuego::on_pushButton_2_clicked()
