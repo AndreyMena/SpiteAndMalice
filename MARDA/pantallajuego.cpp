@@ -7,6 +7,7 @@
 #include <QDragEnterEvent>
 #include <QMimeData>
 #include <QPainter>
+#include <QListWidget>
 
 //#include <fstream>
 
@@ -18,18 +19,38 @@ PantallaJuego::PantallaJuego(Tablero tablero) :
     ui->setupUi(this);
 
     // Se generan los espacios para cada jugador
-    this->espacios[1] = this->ui->listWidget;
-    this->espacios[2] = this->ui->listWidget_3;
+    vector<vector<QListWidget*>> espacios;
+
+    //Espacio de cartas Jugador 1
+    vector<QListWidget*> espaciosJ1;
+    espaciosJ1.push_back(this->ui->manoJugador1_1);
+    espaciosJ1.push_back(this->ui->manoJugador1_2);
+    espaciosJ1.push_back(this->ui->manoJugador1_3);
+    espaciosJ1.push_back(this->ui->manoJugador1_4);
+    espaciosJ1.push_back(this->ui->manoJugador1_5);
+
+    //Espacio de cartas Jugador 2
+    vector<QListWidget*> espaciosJ2;
+    espaciosJ2.push_back(this->ui->manoJugador2_1);
+    espaciosJ2.push_back(this->ui->manoJugador2_2);
+    espaciosJ2.push_back(this->ui->manoJugador2_3);
+    espaciosJ2.push_back(this->ui->manoJugador2_4);
+    espaciosJ2.push_back(this->ui->manoJugador2_5);
+
+    espacios.push_back(espaciosJ1);
+    espacios.push_back(espaciosJ2);
 
     for (auto &&n : tablero.obtenerJugadores()) {
         if (this->tablero.esTurnoJugador(n.obtenerNumeroJugador())) {
             vector<Carta> cartas = n.obtenerMano();
+            int espacioContador = 0;
             for (auto &&carta : cartas) {
-                generarCarta(carta, espacios[n.obtenerNumeroJugador()]);
+                generarCarta(carta, espacios[n.obtenerNumeroJugador()-1][espacioContador]);
+                espacioContador++;
             }
         } else {
             for (int i = 0; i < 5; i++) {
-                generarCartaOculta(espacios[n.obtenerNumeroJugador()]);
+                generarCartaOculta(espacios[n.obtenerNumeroJugador()-1][i]);
             }
         }
     }

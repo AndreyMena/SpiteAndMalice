@@ -6,7 +6,6 @@
 #include <QListWidgetItem>
 
 #include <iostream>
-#include <map>
 
 #include "tablero.h"
 namespace Ui {
@@ -59,7 +58,6 @@ private slots:
 private:
     Ui::PantallaJuego *ui;
     Tablero tablero;
-    map<int, QListWidget*> espacios;
 };
 
 #endif // PANTALLAJUEGO_H
