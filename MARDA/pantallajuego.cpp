@@ -10,7 +10,7 @@
 #include <QListWidget>
 
 //#include <fstream>
-
+#include <QtDebug>
 PantallaJuego::PantallaJuego(Tablero tablero) :
     QWidget(nullptr),
     ui(new Ui::PantallaJuego),
@@ -84,37 +84,28 @@ void PantallaJuego::generarCartaOculta(QListWidget* espacio) {
                 "image: url(:/img/img/7_of_clubs.png)");
 }*/
 
-void PantallaJuego::on_listWidget_2_itemEntered(QListWidgetItem *item)
-{
-    std::cout << "Hola mundo" << std::endl;
-}
-
 void PantallaJuego::on_listWidget_2_itemChanged(QListWidgetItem *item)
 {
-    std::cout << "Hola mundo segundo intento" << std::endl;
+    std::cout << "Ingreso a pila 1" <<  std::endl;
+    /*
+    qDebug().nospace() << "abc" << qPrintable(item->icon().name()) << "def";
+    qDebug("abc" + item->icon().name().toLatin1() + "def");
+    qDebug(qUtf8Printable(item->icon().name()));
+    cout << item->icon().name().size() << endl;
+    cout << item->text().size() << endl;
+    cout << item->whatsThis().size()<< endl;
+    */
+    //cout << item->listWidget().<< endl;
 }
-
 
 void PantallaJuego::on_listWidget_5_itemChanged(QListWidgetItem *item)
 {
-
+    std::cout << "Ingreso a pila 2" << std::endl;
 }
 
 
-void PantallaJuego::on_listWidget_2_itemActivated(QListWidgetItem *item)
+void PantallaJuego::on_listWidget_6_itemChanged(QListWidgetItem *item)
 {
-    std::cout << "Hola mundo tercer intento" << std::endl;
-}
-
-
-void PantallaJuego::on_listWidget_2_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
-{
-    std::cout << "Hola mundo cuarto intento" << std::endl;
-}
-
-
-void PantallaJuego::on_listWidget_2_currentRowChanged(int currentRow)
-{
-    std::cout << "Hola mundo quinto intento" << std::endl;
+    std::cout << "Ingreso a pila 3" <<std::endl;
 }
 
