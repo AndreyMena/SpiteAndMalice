@@ -49,6 +49,8 @@ private slots:
 
     void on_listWidget_6_itemChanged(QListWidgetItem *item);
 
+    void on_listWidget_8_itemChanged(QListWidgetItem *item);
+
 private:
     Ui::PantallaJuego *ui;
     Tablero tablero;

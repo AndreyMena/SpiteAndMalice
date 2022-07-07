@@ -27,6 +27,9 @@ public:
     bool esTurnoJugador(int numeroJugador);
 
     vector<Jugador> obtenerJugadores();
+
+    Mazo& obtenerMazo();
+
 private:
     vector<Jugador> jugadores;
     int turnoJugador;

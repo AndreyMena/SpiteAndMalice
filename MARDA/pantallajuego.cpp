@@ -8,6 +8,7 @@
 #include <QMimeData>
 #include <QPainter>
 #include <QListWidget>
+#include <QMainWindow>
 
 //#include <fstream>
 #include <QtDebug>
@@ -107,5 +108,24 @@ void PantallaJuego::on_listWidget_5_itemChanged(QListWidgetItem *item)
 void PantallaJuego::on_listWidget_6_itemChanged(QListWidgetItem *item)
 {
     std::cout << "Ingreso a pila 3" <<std::endl;
+}
+
+
+void PantallaJuego::on_listWidget_8_itemChanged(QListWidgetItem *item)
+{
+    // Agregar los siguientes métodos
+    // Voltear cartas de jugador que termina su jugada
+    // Voltear las del jugador en turno
+    // Llenar las cartas del otro jugador
+    std::cout << "Esto pasa con el descarte" <<std::endl;
+    std::cout << "Items: " << this->ui->manoJugador1_5->count() << std::endl;
+
+    if (this->ui->manoJugador1_5->count() == 1) {
+        std::cout << "Se puede cambiar la carta" <<std::endl;
+        QListWidgetItem *l1 = new QListWidgetItem(this->ui->manoJugador1_5);
+        l1->setIcon(QIcon(":/img/img/7_of_clubs.png"));
+        l1->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
+        l1->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+    }
 }
 

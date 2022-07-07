@@ -39,3 +39,7 @@ bool Tablero::esTurnoJugador(int numeroJugador) {
 vector<Jugador> Tablero::obtenerJugadores() {
     return this->jugadores;
 }
+
+Mazo& Tablero::obtenerMazo() {
+    return this->mazoCentral;
+}

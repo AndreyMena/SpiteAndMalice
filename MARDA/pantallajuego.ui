@@ -43,125 +43,268 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
+        <spacer name="verticalSpacer_13">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_7">
-           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QPushButton" name="pushButton_17">
-             <property name="enabled">
-              <bool>false</bool>
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+            <widget class="QListWidget" name="listWidget_7">
              <property name="minimumSize">
               <size>
-               <width>75</width>
-               <height>100</height>
+               <width>80</width>
+               <height>120</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
+               <width>80</width>
+               <height>120</height>
+              </size>
+             </property>
+             <property name="acceptDrops">
+              <bool>true</bool>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="iconSize">
+              <size>
                <width>75</width>
                <height>100</height>
               </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(158, 158, 158);
-color: rgb(0, 0, 0);</string>
-             </property>
-             <property name="text">
-              <string>Descarte</string>
              </property>
             </widget>
            </item>
-           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QPushButton" name="pushButton_16">
-             <property name="enabled">
-              <bool>false</bool>
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+            <widget class="QListWidget" name="listWidget_3">
              <property name="minimumSize">
               <size>
-               <width>75</width>
-               <height>100</height>
+               <width>80</width>
+               <height>120</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
+               <width>80</width>
+               <height>120</height>
+              </size>
+             </property>
+             <property name="acceptDrops">
+              <bool>true</bool>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="iconSize">
+              <size>
                <width>75</width>
                <height>100</height>
               </size>
              </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(158, 158, 158);
-color: rgb(0, 0, 0);</string>
-             </property>
-             <property name="text">
-              <string>Descarte</string>
-             </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_6">
-           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QPushButton" name="pushButton_15">
-             <property name="enabled">
-              <bool>false</bool>
+           <item>
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+            <widget class="QListWidget" name="listWidget_9">
              <property name="minimumSize">
               <size>
-               <width>75</width>
-               <height>100</height>
+               <width>80</width>
+               <height>120</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
+               <width>80</width>
+               <height>120</height>
+              </size>
+             </property>
+             <property name="acceptDrops">
+              <bool>true</bool>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="iconSize">
+              <size>
                <width>75</width>
                <height>100</height>
               </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(158, 158, 158);
-color: rgb(0, 0, 0);</string>
-             </property>
-             <property name="text">
-              <string>Descarte</string>
              </property>
             </widget>
            </item>
-           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QPushButton" name="pushButton_14">
-             <property name="enabled">
-              <bool>false</bool>
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+            <widget class="QListWidget" name="listWidget_8">
              <property name="minimumSize">
               <size>
-               <width>75</width>
-               <height>100</height>
+               <width>80</width>
+               <height>120</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
+               <width>80</width>
+               <height>120</height>
+              </size>
+             </property>
+             <property name="acceptDrops">
+              <bool>true</bool>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="iconSize">
+              <size>
                <width>75</width>
                <height>100</height>
               </size>
              </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(158, 158, 158);
-color: rgb(0, 0, 0);</string>
-             </property>
-             <property name="text">
-              <string>Descarte</string>
-             </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </item>
         </layout>
        </item>
        <item>
+        <spacer name="verticalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item alignment="Qt::AlignRight">
+         <item>
+          <spacer name="horizontalSpacer_15">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
           <widget class="QListWidget" name="listWidget_15">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>80</width>
@@ -198,12 +341,44 @@ color: rgb(0, 0, 0);</string>
            </property>
           </widget>
          </item>
+         <item>
+          <spacer name="horizontalSpacer_14">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
         </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_9">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
           <widget class="QListWidget" name="manoJugador1_1">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>80</width>
@@ -238,6 +413,12 @@ color: rgb(0, 0, 0);</string>
          </item>
          <item>
           <widget class="QListWidget" name="manoJugador1_2">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>80</width>
@@ -272,6 +453,12 @@ color: rgb(0, 0, 0);</string>
          </item>
          <item>
           <widget class="QListWidget" name="manoJugador1_3">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>80</width>
@@ -306,6 +493,12 @@ color: rgb(0, 0, 0);</string>
          </item>
          <item>
           <widget class="QListWidget" name="manoJugador1_4">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>80</width>
@@ -340,6 +533,12 @@ color: rgb(0, 0, 0);</string>
          </item>
          <item>
           <widget class="QListWidget" name="manoJugador1_5">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>80</width>
@@ -389,6 +588,61 @@ color: rgb(0, 0, 0);</string>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_11">
        <item>
+        <spacer name="verticalSpacer_12">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>110</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">image: url(:/img/img/backsideCard.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <spacer name="verticalSpacer_4">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -403,6 +657,12 @@ color: rgb(0, 0, 0);</string>
        </item>
        <item alignment="Qt::AlignHCenter">
         <widget class="QListWidget" name="listWidget_4">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>110</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>80</width>
@@ -447,6 +707,12 @@ color: rgb(0, 0, 0);</string>
        </item>
        <item alignment="Qt::AlignHCenter">
         <widget class="QListWidget" name="listWidget_6">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>110</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>80</width>
@@ -491,6 +757,12 @@ color: rgb(0, 0, 0);</string>
        </item>
        <item alignment="Qt::AlignHCenter">
         <widget class="QListWidget" name="listWidget_5">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>110</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>80</width>
@@ -535,6 +807,12 @@ color: rgb(0, 0, 0);</string>
        </item>
        <item alignment="Qt::AlignHCenter">
         <widget class="QListWidget" name="listWidget_2">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>110</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>80</width>
@@ -549,6 +827,9 @@ color: rgb(0, 0, 0);</string>
          </property>
          <property name="horizontalScrollBarPolicy">
           <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="autoScroll">
+          <bool>false</bool>
          </property>
          <property name="editTriggers">
           <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
@@ -587,123 +868,260 @@ color: rgb(0, 0, 0);</string>
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
+      <spacer name="verticalSpacer_14">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QPushButton" name="pushButton_19">
-           <property name="enabled">
-            <bool>false</bool>
+         <item>
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+          <widget class="QListWidget" name="listWidget_11">
            <property name="minimumSize">
             <size>
-             <width>75</width>
-             <height>100</height>
+             <width>80</width>
+             <height>120</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="iconSize">
+            <size>
              <width>75</width>
              <height>100</height>
             </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(158, 158, 158);
-color: rgb(0, 0, 0);</string>
-           </property>
-           <property name="text">
-            <string>Descarte</string>
            </property>
           </widget>
          </item>
-         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QPushButton" name="pushButton_18">
-           <property name="enabled">
-            <bool>false</bool>
+         <item>
+          <spacer name="horizontalSpacer_8">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+          <widget class="QListWidget" name="listWidget_10">
            <property name="minimumSize">
             <size>
-             <width>75</width>
-             <height>100</height>
+             <width>80</width>
+             <height>120</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="iconSize">
+            <size>
              <width>75</width>
              <height>100</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(158, 158, 158);
-color: rgb(0, 0, 0);</string>
-           </property>
-           <property name="text">
-            <string>Descarte</string>
-           </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_9">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
-         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QPushButton" name="pushButton_21">
-           <property name="enabled">
-            <bool>false</bool>
+         <item>
+          <spacer name="horizontalSpacer_10">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+          <widget class="QListWidget" name="listWidget_13">
            <property name="minimumSize">
             <size>
-             <width>75</width>
-             <height>100</height>
+             <width>80</width>
+             <height>120</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="iconSize">
+            <size>
              <width>75</width>
              <height>100</height>
             </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(158, 158, 158);
-color: rgb(0, 0, 0);</string>
-           </property>
-           <property name="text">
-            <string>Descarte</string>
            </property>
           </widget>
          </item>
-         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QPushButton" name="pushButton_20">
-           <property name="enabled">
-            <bool>false</bool>
+         <item>
+          <spacer name="horizontalSpacer_11">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+          <widget class="QListWidget" name="listWidget_12">
            <property name="minimumSize">
             <size>
-             <width>75</width>
-             <height>100</height>
+             <width>80</width>
+             <height>120</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="iconSize">
+            <size>
              <width>75</width>
              <height>100</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(158, 158, 158);
-color: rgb(0, 0, 0);</string>
-           </property>
-           <property name="text">
-            <string>Descarte</string>
-           </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_12">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
       </layout>
      </item>
      <item>
+      <spacer name="verticalSpacer_10">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <spacer name="horizontalSpacer_13">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
         <widget class="QPushButton" name="pushButton_13">
          <property name="minimumSize">
@@ -726,8 +1144,14 @@ color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
-       <item alignment="Qt::AlignLeft">
+       <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
         <widget class="QListWidget" name="listWidget_16">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>120</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>80</width>
@@ -736,12 +1160,44 @@ color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
+       <item>
+        <spacer name="horizontalSpacer_16">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_11">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_10">
        <item>
         <widget class="QListWidget" name="manoJugador2_1">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>120</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>80</width>
@@ -776,6 +1232,12 @@ color: rgb(0, 0, 0);</string>
        </item>
        <item>
         <widget class="QListWidget" name="manoJugador2_2">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>120</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>80</width>
@@ -810,6 +1272,12 @@ color: rgb(0, 0, 0);</string>
        </item>
        <item>
         <widget class="QListWidget" name="manoJugador2_3">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>120</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>80</width>
@@ -844,6 +1312,12 @@ color: rgb(0, 0, 0);</string>
        </item>
        <item>
         <widget class="QListWidget" name="manoJugador2_4">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>120</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>80</width>
@@ -878,6 +1352,12 @@ color: rgb(0, 0, 0);</string>
        </item>
        <item>
         <widget class="QListWidget" name="manoJugador2_5">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>120</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>80</width>
