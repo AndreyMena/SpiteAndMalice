@@ -127,5 +127,7 @@ void PantallaJuego::on_listWidget_8_itemChanged(QListWidgetItem *item)
         l1->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
         l1->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
     }
+
+    vector<Carta> nuevasCartas = this->tablero.obtenerMazo().dividirMazo(3).obtenerCartasMazo();
 }
 
