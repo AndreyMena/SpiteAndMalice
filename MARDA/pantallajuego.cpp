@@ -68,6 +68,7 @@ void PantallaJuego::generarCarta(Carta carta, QListWidget* espacio) {
     QListWidgetItem* nuevaCarta = new QListWidgetItem(espacio);
     nuevaCarta->setIcon(QIcon(stringCarta));
     //nuevaCarta->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
+    nuevaCarta->setText(stringCarta);
     nuevaCarta->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
 }
 
@@ -119,7 +120,7 @@ void PantallaJuego::on_listWidget_8_itemChanged(QListWidgetItem *item)
     // Llenar las cartas del otro jugador
     std::cout << "Esto pasa con el descarte" <<std::endl;
     std::cout << "Items: " << this->ui->manoJugador1_5->count() << std::endl;
-
+    std::cout << item->text().toStdString() << std::endl;
     if (this->ui->manoJugador1_5->count() == 1) {
         std::cout << "Se puede cambiar la carta" <<std::endl;
         QListWidgetItem *l1 = new QListWidgetItem(this->ui->manoJugador1_5);
