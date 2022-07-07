@@ -11,7 +11,14 @@
 #include <QMainWindow>
 
 //#include <fstream>
+#include <QDrag>
+#include <QDropEvent>
 #include <QtDebug>
+
+
+
+#include "listwidget.h"
+
 PantallaJuego::PantallaJuego(Tablero tablero) :
     QWidget(nullptr),
     ui(new Ui::PantallaJuego),
@@ -55,6 +62,13 @@ PantallaJuego::PantallaJuego(Tablero tablero) :
             }
         }
     }
+
+    //ListWidget listwidget(this);
+    //this.
+    //listwidget.show();
+    ui->Listwidget->setAcceptDrops(1);
+    //ui->Listwidget.
+    //ui->Listwidget->setDragDropMode(Qt::ItemIsDropEnabled);
 }
 
 PantallaJuego::~PantallaJuego()
@@ -130,5 +144,21 @@ void PantallaJuego::on_listWidget_8_itemChanged(QListWidgetItem *item)
     }
 
     vector<Carta> nuevasCartas = this->tablero.obtenerMazo().dividirMazo(3).obtenerCartasMazo();
+    cout << "HOLAAAAAAA"<<endl;
+
+    QString stringCarta(URL_REVERSO_CARTA_POR_DEFECTO.data());
+
+    cout << ui->manoJugador1_1->count() << endl;
+
+    cout << ui->manoJugador1_1->item(0)->text().toStdString() << endl;
+    ui->manoJugador1_1->item(0)->setIcon(QIcon(stringCarta));
+    //ui->manoJugador1_1.dr
+    //ui->manoJugador1_1->currentItem()->setIcon(QIcon(stringCarta));
+}
+
+
+void PantallaJuego::on_listWidget_2_itemEntered(QListWidgetItem *item)
+{
+    cout << "heyyyy" << endl;
 }
 

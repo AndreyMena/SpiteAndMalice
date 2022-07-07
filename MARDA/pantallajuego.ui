@@ -571,6 +571,25 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="ListWidget" name="Listwidget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>120</height>
+            </size>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
       </layout>
@@ -1396,6 +1415,14 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ListWidget</class>
+   <extends>QWidget</extends>
+   <header>listwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
