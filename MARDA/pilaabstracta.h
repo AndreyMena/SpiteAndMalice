@@ -13,6 +13,7 @@ public:
     PilaAbstracta();
     ~PilaAbstracta();
     virtual bool agregarCarta(Carta carta) = 0;
+    stack<Carta> obtenerCartas();
 protected:
     stack<Carta> cartas;
 };

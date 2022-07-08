@@ -9,14 +9,19 @@ Tablero::Tablero(int cantidadJugadores)
     }
     //Se define el turno de jugador en -1 indicando que ningun jugador tiene un turno asignado aun.
     this->turnoJugador = -1;
-    // Se crean los jugadores y se añaden al vector de jugadores del tablero
-    for (int i = 0; i < cantidadJugadores; i++) {
-        this->jugadores.emplace_back(Jugador(i+1, &mazoCentral, &pilasCentrales));
-    }
 
     for (int i = 0; i < CANTIDAD_PILAS_CENTRALES; i++) {
-        this->pilasCentrales.emplace_back(PilaCentral(&mazoCentral));
+        PilaCentral *pilaCentral = new PilaCentral(&mazoCentral);
+        this->pilasCentrales.push_back(pilaCentral);
+        //this->pilasCentrales.emplace_back(PilaCentral(&mazoCentral));
     }
+
+    // Se crean los jugadores y se añaden al vector de jugadores del tablero
+    for (int i = 0; i < cantidadJugadores; i++) {
+        this->jugadores.emplace_back(Jugador(i+1, &mazoCentral, this->pilasCentrales));
+    }
+
+
 }
 
 Tablero::~Tablero()
@@ -36,10 +41,10 @@ bool Tablero::esTurnoJugador(int numeroJugador) {
     return resultado;
 }
 
-vector<Jugador> Tablero::obtenerJugadores() {
-    return this->jugadores;
+Jugador* Tablero::obtenerJugador(int numeroJugador) {
+    return &this->jugadores[numeroJugador-1];
 }
 
-Mazo& Tablero::obtenerMazo() {
-    return this->mazoCentral;
+vector<Jugador>* Tablero::obtenerJugadores() {
+    return &this->jugadores;
 }

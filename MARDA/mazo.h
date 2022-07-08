@@ -5,6 +5,7 @@
 #include <vector>
 #include <random>
 #include <chrono>
+
 using namespace std;
 
 #include "carta.h"
@@ -28,6 +29,21 @@ public:
      * @brief barajarMazo Baraja el mazo de manera aleatoria
      */
     void barajarMazo();
+
+    /**
+     * @brief sacarCartaMazo Saca una carta al mazo actual
+     * @param posicion Posicion de la carta a sacar
+     * @return Devuelve la carta sacada
+     */
+    Carta sacarCartaMazo(int posicion);
+
+    /**
+     * @brief agregarCartaMazo Agrega una carta al mazo actual
+     * @param carta Carta a insertar en el mazo
+     * @param posicion Posicion a insertar la carta
+     * @return No devuelve nada
+     */
+    void agregarCartaMazo(Carta carta, int posicion);
     /**
      * @brief agregarCartasMazo Agrega el vector de cartas al mazo actual
      * @param cartas Cartas a insertar en el mazo
@@ -38,7 +54,7 @@ public:
      * @brief dividirMazo Separa la cantidad de cartas indicadas del mazo
      * @param cantidadCartas Cantidad de cartas que se quieren separar
      * @return Devuelve un mazo con las cartas extraidas
-     */
+     */  
     Mazo dividirMazo(unsigned int cantidadCartas);
     /**
      * @brief obtenerCartasMazo Devuelve las cartas que contiene el mazo

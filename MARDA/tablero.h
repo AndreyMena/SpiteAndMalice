@@ -26,15 +26,15 @@ public:
 
     bool esTurnoJugador(int numeroJugador);
 
-    vector<Jugador> obtenerJugadores();
+    Jugador* obtenerJugador(int numeroJugador);
 
-    Mazo& obtenerMazo();
+    vector<Jugador>* obtenerJugadores();
 
 private:
     vector<Jugador> jugadores;
     int turnoJugador;
     Mazo mazoCentral;
-    vector<PilaCentral> pilasCentrales;
+    vector<PilaCentral*> pilasCentrales;
 };
 
 #endif // TABLERO_H

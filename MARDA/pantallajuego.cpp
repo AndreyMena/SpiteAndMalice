@@ -10,8 +10,6 @@
 #include <QListWidget>
 #include <QMainWindow>
 
-//#include <fstream>
-#include <QDrag>
 #include <QDropEvent>
 #include <QtDebug>
 #include <QAbstractItemView>
@@ -23,9 +21,6 @@ PantallaJuego::PantallaJuego(Tablero tablero) :
 {
     ui->setupUi(this);
 
-    // Se generan los espacios para cada jugador
-    vector<vector<QListWidget*>> espacios;
-
     //Espacio de cartas Jugador 1
     vector<QListWidget*> espaciosJ1;
     espaciosJ1.push_back(this->ui->manoJugador1_1);
@@ -33,7 +28,7 @@ PantallaJuego::PantallaJuego(Tablero tablero) :
     espaciosJ1.push_back(this->ui->manoJugador1_3);
     espaciosJ1.push_back(this->ui->manoJugador1_4);
     espaciosJ1.push_back(this->ui->manoJugador1_5);
-
+    espaciosJ1.push_back(this->ui->mazo_personal_J1);
     //Espacio de cartas Jugador 2
     vector<QListWidget*> espaciosJ2;
     espaciosJ2.push_back(this->ui->manoJugador2_1);
@@ -41,35 +36,41 @@ PantallaJuego::PantallaJuego(Tablero tablero) :
     espaciosJ2.push_back(this->ui->manoJugador2_3);
     espaciosJ2.push_back(this->ui->manoJugador2_4);
     espaciosJ2.push_back(this->ui->manoJugador2_5);
+    espaciosJ2.push_back(this->ui->mazo_personal_J2);
 
-    espacios.push_back(espaciosJ1);
-    espacios.push_back(espaciosJ2);
+    // Se generan los espacios para cada jugador
+    this->espacios.push_back(espaciosJ1);
+    this->espacios.push_back(espaciosJ2);
 
-    for (auto &&n : tablero.obtenerJugadores()) {
+    for (auto &&n : *tablero.obtenerJugadores()) {
+        Mazo *mazoJugador = n.obtenerMazoPersonal();
+        Carta cartaMazoPersonal = mazoJugador->sacarCartaMazo(n.obtenerMazoPersonal()->obtenerCartasMazo().size()-1);
         if (this->tablero.esTurnoJugador(n.obtenerNumeroJugador())) {
-            vector<Carta> cartas = n.obtenerMano();
+            vector<Carta> *cartas = n.obtenerMano();
             int espacioContador = 0;
-            for (auto &&carta : cartas) {
-                generarCarta(carta, espacios[n.obtenerNumeroJugador()-1][espacioContador]);
+            for (auto &&carta : *cartas) {
+                generarCarta(carta, espacios[n.obtenerNumeroJugador()-1][espacioContador], n.obtenerNumeroJugador(), espacioContador);
                 espacioContador++;
             }
+            generarCarta(cartaMazoPersonal, espacios[n.obtenerNumeroJugador()-1][espacioContador], n.obtenerNumeroJugador(), -1);
         } else {
             for (int i = 0; i < 5; i++) {
                 generarCartaOculta(espacios[n.obtenerNumeroJugador()-1][i]);
             }
+            generarCarta(cartaMazoPersonal, espacios[n.obtenerNumeroJugador()-1][5], n.obtenerNumeroJugador(), -1);
         }
     }
-    //this->ui->listWidgetJ1_1.pos
+    //Desabilita las pilas del rival
     if (this->tablero.esTurnoJugador(1)) {
-        this->ui->listWidgetJ2_1->setAcceptDrops(0);
-        this->ui->listWidgetJ2_2->setAcceptDrops(0);
-        this->ui->listWidgetJ2_3->setAcceptDrops(0);
-        this->ui->listWidgetJ2_4->setAcceptDrops(0);
-    }else{
-        this->ui->listWidgetJ1_1->setAcceptDrops(0);
-        this->ui->listWidgetJ1_2->setAcceptDrops(0);
-        this->ui->listWidgetJ1_3->setAcceptDrops(0);
-        this->ui->listWidgetJ1_4->setAcceptDrops(0);
+        this->ui->piladescarte_J2_1->setAcceptDrops(0);
+        this->ui->piladescarte_J2_2->setAcceptDrops(0);
+        this->ui->piladescarte_J2_3->setAcceptDrops(0);
+        this->ui->piladescarte_J2_4->setAcceptDrops(0);
+    }else {
+        this->ui->piladescarte_J1_1->setAcceptDrops(0);
+        this->ui->piladescarte_J1_2->setAcceptDrops(0);
+        this->ui->piladescarte_J1_3->setAcceptDrops(0);
+        this->ui->piladescarte_J1_4->setAcceptDrops(0);
     }
 }
 
@@ -78,13 +79,15 @@ PantallaJuego::~PantallaJuego()
     delete ui;
 }
 
-void PantallaJuego::generarCarta(Carta carta, QListWidget* espacio) {
+void PantallaJuego::generarCarta(Carta carta, QListWidget* espacio, int numeroJugador, int posicionCarta) {
     string url = URL_POR_DEFECTO+carta.obtenerNombre() + EXTENSION_POR_DEFECTO;
     QString stringCarta(url.data());
+    string texto = carta.obtenerNombre() + "," + std::to_string(carta.obtenerValor())
+            + "," + std::to_string(numeroJugador) + "," + std::to_string(posicionCarta);
+    QString textoCarta(texto.data());
     QListWidgetItem* nuevaCarta = new QListWidgetItem(espacio);
     nuevaCarta->setIcon(QIcon(stringCarta));
-    //nuevaCarta->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
-    nuevaCarta->setText(stringCarta);
+    nuevaCarta->setText(textoCarta);
     nuevaCarta->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
 }
 
@@ -92,133 +95,105 @@ void PantallaJuego::generarCartaOculta(QListWidget* espacio) {
     QString stringCarta(URL_REVERSO_CARTA_POR_DEFECTO.data());
     QListWidgetItem* nuevaCarta = new QListWidgetItem(espacio);
     nuevaCarta->setIcon(QIcon(stringCarta));
-    //nuevaCarta->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
     nuevaCarta->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 }
 
-/*void PantallaJuego::on_pushButton_2_clicked()
-{
-    this->ui->pushButton_2->setStyleSheet(
-                "image: url(:/img/img/7_of_clubs.png)");
-}*/
-
-void PantallaJuego::on_listWidget_2_itemChanged(QListWidgetItem *item)
-{
-    std::cout << "Ingreso a pila 1" <<  std::endl;
-    /*
-    qDebug().nospace() << "abc" << qPrintable(item->icon().name()) << "def";
-    qDebug("abc" + item->icon().name().toLatin1() + "def");
-    qDebug(qUtf8Printable(item->icon().name()));
-    cout << item->icon().name().size() << endl;
-    cout << item->text().size() << endl;
-    cout << item->whatsThis().size()<< endl;
-    */
-    //cout << item->listWidget().<< endl;
+void PantallaJuego::cambiarTurno(int numeroJugador) {
+    if (numeroJugador == 1) {
+        tablero.asignarTurno(2);
+    } else {
+        tablero.asignarTurno(1);
+    }
+    //Desabilita las pilas del rival
+    if (this->tablero.esTurnoJugador(1)) {
+        this->ui->piladescarte_J1_1->setAcceptDrops(1);
+        this->ui->piladescarte_J1_2->setAcceptDrops(1);
+        this->ui->piladescarte_J1_3->setAcceptDrops(1);
+        this->ui->piladescarte_J1_4->setAcceptDrops(1);
+        this->ui->piladescarte_J2_1->setAcceptDrops(0);
+        this->ui->piladescarte_J2_2->setAcceptDrops(0);
+        this->ui->piladescarte_J2_3->setAcceptDrops(0);
+        this->ui->piladescarte_J2_4->setAcceptDrops(0);
+    } else {
+        this->ui->piladescarte_J1_1->setAcceptDrops(0);
+        this->ui->piladescarte_J1_2->setAcceptDrops(0);
+        this->ui->piladescarte_J1_3->setAcceptDrops(0);
+        this->ui->piladescarte_J1_4->setAcceptDrops(0);
+        this->ui->piladescarte_J2_1->setAcceptDrops(1);
+        this->ui->piladescarte_J2_2->setAcceptDrops(1);
+        this->ui->piladescarte_J2_3->setAcceptDrops(1);
+        this->ui->piladescarte_J2_4->setAcceptDrops(1);
+    }
+    for (auto &&n : *tablero.obtenerJugadores()) {
+        if (this->tablero.esTurnoJugador(n.obtenerNumeroJugador())) {
+            activarManoJugador(n.obtenerNumeroJugador());
+            n.rellenarMano();
+            vector<Carta> *cartas = n.obtenerMano();
+            int espacioContador = 0;
+            for (auto &&carta : *cartas) {
+                for(int i = 0; i < this->espacios[n.obtenerNumeroJugador()-1][espacioContador]->count(); ++i)
+                {
+                    QListWidgetItem* cartaBorrada = this->espacios[n.obtenerNumeroJugador()-1][espacioContador]->item(i);
+                    delete espacios[n.obtenerNumeroJugador()-1][espacioContador]->takeItem(espacios[n.obtenerNumeroJugador()-1][espacioContador]->row(cartaBorrada));
+                }
+                generarCarta(carta, espacios[n.obtenerNumeroJugador()-1][espacioContador], n.obtenerNumeroJugador(), espacioContador);
+                espacioContador++;
+            }
+        } else {
+            //desactivarManoJugador(n.obtenerNumeroJugador());
+            for (int i = 0; i < 5; i++) {
+                for(int j = 0; j < this->espacios[n.obtenerNumeroJugador()-1][j]->count(); ++j)
+                {
+                    QListWidgetItem* cartaBorrada = this->espacios[n.obtenerNumeroJugador()-1][i]->item(j);
+                    delete espacios[n.obtenerNumeroJugador()-1][i]->takeItem(espacios[n.obtenerNumeroJugador()-1][i]->row(cartaBorrada));
+                }
+                generarCartaOculta(espacios[n.obtenerNumeroJugador()-1][i]);
+            }
+        }
+    }
 }
 
-void PantallaJuego::on_listWidget_5_itemChanged(QListWidgetItem *item)
-{
-    std::cout << "Ingreso a pila 2" << std::endl;
-}
+void PantallaJuego::insertarCartaEnLaPila(std::string informacionCarta, int tipoPila, int numeroPila) {
+    //Modularizar este codigo
+    std::string auxiliar = "";
+    stringstream stringInformacionCartaString(informacionCarta);
 
+    std::getline(stringInformacionCartaString,auxiliar,',');
+    string nombreCarta = auxiliar;
 
-void PantallaJuego::on_listWidget_6_itemChanged(QListWidgetItem *item)
-{
+    std::getline(stringInformacionCartaString,auxiliar,',');
+    int valorCarta = stoi(auxiliar);
 
-    std::cout << "Ingreso a pila 3" <<std::endl;
-}
+    std::getline(stringInformacionCartaString,auxiliar,',');
+    int numeroJugador = stoi(auxiliar);
 
-void PantallaJuego::on_listWidget_8_itemChanged(QListWidgetItem *item)
-{
-    // Agregar los siguientes métodos
-    // Voltear cartas de jugador que termina su jugada
-    // Voltear las del jugador en turno
-    // Llenar las cartas del otro jugador
-    std::cout << "Esto pasa con el descarte" <<std::endl;
-    std::cout << "Items: " << this->ui->manoJugador1_5->count() << std::endl;
-    std::cout << item->text().toStdString() << std::endl;
-    if (this->ui->manoJugador1_5->count() == 1) {
-        std::cout << "Se puede cambiar la carta" <<std::endl;
-        QListWidgetItem *l1 = new QListWidgetItem(this->ui->manoJugador1_5);
-        l1->setIcon(QIcon(":/img/img/7_of_clubs.png"));
-        l1->setData(Qt::UserRole, QVariant("image: url(:/img/img/7_of_clubs.png)"));
-        l1->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+    std::getline(stringInformacionCartaString,auxiliar,',');
+    int posicionCarta = stoi(auxiliar);
+
+    Jugador *jugador = tablero.obtenerJugador(numeroJugador);
+    if (posicionCarta == -1) {
+        int posicion = jugador->obtenerMazoPersonal()->obtenerCartasMazo().size()-1;
+        if (posicion != -1) {
+            cout << "Entree Numero jugador: " << numeroJugador << endl;
+            Carta cartaMazoPersonal = jugador->obtenerMazoPersonal()->sacarCartaMazo(posicion);
+            cout << "Entree Carta jugador: " << cartaMazoPersonal.obtenerNombre() << endl;
+            cout << "Entree Carta jugador: " << cartaMazoPersonal.obtenerValor() << endl;
+            generarCarta(cartaMazoPersonal, this->espacios[numeroJugador-1][5],numeroJugador, -1);
+        }
+    } else {
+        Carta cartaVacia("Vacia", 0);
+        jugador->sacarCartaMano(posicionCarta);
+        jugador->agregarCartaMano(cartaVacia, posicionCarta);
+
+        cout << "Mano:" << endl;
+        for (auto &&n : *jugador->obtenerMano()) {
+            cout << "Carta: " << n.obtenerNombre() << " " << n.obtenerValor() << endl;
+        }
     }
 
-    vector<Carta> nuevasCartas = this->tablero.obtenerMazo().dividirMazo(3).obtenerCartasMazo();
-    cout << "HOLAAAAAAA"<<endl;
-
-    QString stringCarta(URL_REVERSO_CARTA_POR_DEFECTO.data());
-
-    cout << ui->manoJugador1_1->count() << endl;
-
-    cout << ui->manoJugador1_1->item(0)->text().toStdString() << endl;
-    ui->manoJugador1_1->item(0)->setIcon(QIcon(stringCarta));
-    //ui->manoJugador1_1.dr
-    //ui->manoJugador1_1->currentItem()->setIcon(QIcon(stringCarta));
-}
-
-
-void PantallaJuego::on_listWidget_2_itemEntered(QListWidgetItem *item)
-{
-    cout << "heyyyy" << endl;
-}
-
-// Primer Jugador
-void PantallaJuego::on_descarteJ1_1_clicked()
-{
-    if (this->ui->listWidgetJ1_1->count() >= 1) {
-        cout << "Hay "<< this->ui->listWidgetJ1_1->count() << " elementos "<<endl;
-    }else{
-        cout << "No hay elementos"<<endl;
-    }
-    for (int i = 0; i < this->ui->listWidgetJ1_1->count(); i++) {
-        qDebug() << this->ui->listWidgetJ1_1->item(i)->text();
-    }
-
-}
-
-
-void PantallaJuego::on_descarteJ1_2_clicked()
-{
-
-}
-
-
-void PantallaJuego::on_descarteJ1_3_clicked()
-{
-
-}
-
-
-void PantallaJuego::on_descarteJ1_4_clicked()
-{
-
-}
-
-// Segundo Jugador
-
-void PantallaJuego::on_descarteJ2_1_clicked()
-{
-
-}
-
-
-void PantallaJuego::on_descarteJ2_2_clicked()
-{
-
-}
-
-
-void PantallaJuego::on_descarteJ2_3_clicked()
-{
-
-}
-
-
-void PantallaJuego::on_descarteJ2_4_clicked()
-{
-
+    Carta cartaJugador(nombreCarta, valorCarta);
+    std::cout << "Carta Jugador: " << cartaJugador.obtenerNombre() << " " << cartaJugador.obtenerValor() << std::endl;
+    jugador->agregarCartaPila(cartaJugador, tipoPila, numeroPila-1);
 }
 
 void PantallaJuego::desactivarManoJugador(int jugador) {
@@ -277,133 +252,129 @@ void PantallaJuego::activarManoJugador(int jugador) {
     }
 }
 
-// Pilas de descarte
-void PantallaJuego::on_listWidgetJ1_1_itemChanged(QListWidgetItem *item)
-{
-    //desactivarManoJugador(1);
-/*
-    if (this->ui->listWidgetJ1_1->count() >= 1) {
-        cout << "Hay "<< this->ui->listWidgetJ1_1->count() << " elementos "<<endl;
-    }else{
-        cout << "No hay elementos"<<endl;
-    }
-    for (int i = 0; i < this->ui->listWidgetJ1_1->count(); i++) {
-        qDebug() << this->ui->listWidgetJ1_1->item(i)->text();
-    }
-    */
-}
+// Pilas Descartes Jugador1
 
-void PantallaJuego::on_listWidgetJ1_2_itemChanged(QListWidgetItem *item)
-{
-    desactivarManoJugador(1);
-}
-
-
-void PantallaJuego::on_listWidgetJ1_3_itemChanged(QListWidgetItem *item)
-{
-    desactivarManoJugador(1);
-}
-
-void PantallaJuego::on_listWidgetJ1_4_itemChanged(QListWidgetItem *item)
-{
-    desactivarManoJugador(1);
-}
-
-
-void PantallaJuego::on_listWidgetJ2_1_itemChanged(QListWidgetItem *item)
-{
-    desactivarManoJugador(2);
-}
-
-
-void PantallaJuego::on_listWidgetJ2_2_itemChanged(QListWidgetItem *item)
-{
-    desactivarManoJugador(2);
-}
-
-
-void PantallaJuego::on_listWidgetJ2_3_itemChanged(QListWidgetItem *item)
-{
-    desactivarManoJugador(2);
-}
-
-
-void PantallaJuego::on_listWidgetJ2_4_itemChanged(QListWidgetItem *item)
-{
-    desactivarManoJugador(2);
-}
-
-// Descartes
 void PantallaJuego::on_descartarJ1_1_clicked()
 {
-    if (this->ui->listWidgetJ1_1->count() >= 1) {
-        cout << "Hay "<< this->ui->listWidgetJ1_1->count() << " elementos "<<endl;
-    }else{
-        cout << "No hay elementos"<<endl;
-    }
-    for (int i = 0; i < this->ui->listWidgetJ1_1->count(); i++) {
-        qDebug() << this->ui->listWidgetJ1_1->item(i)->text();
+    if (this->ui->piladescarte_J1_1->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->piladescarte_J1_1->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 1);
+        cambiarTurno(1);
     }
 }
-
 
 void PantallaJuego::on_descartarJ1_2_clicked()
 {
-
+    if (this->ui->piladescarte_J1_2->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->piladescarte_J1_2->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 2);
+        cambiarTurno(1);
+    }
 }
 
 
 void PantallaJuego::on_descartarJ1_3_clicked()
 {
-
+    if (this->ui->piladescarte_J1_3->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->piladescarte_J1_3->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 3);
+        cambiarTurno(1);
+    }
 }
-
 
 void PantallaJuego::on_descartarJ1_4_clicked()
 {
-
+    if (this->ui->piladescarte_J1_4->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->piladescarte_J1_4->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 4);
+        cambiarTurno(1);
+    }
 }
 
-//
+// Pilas Descarte Jugador 2
 
 void PantallaJuego::on_descartarJ2_1_clicked()
 {
-
+    if (this->ui->piladescarte_J2_1->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->piladescarte_J2_1->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 1);
+        cambiarTurno(2);
+    }
 }
 
 
 void PantallaJuego::on_descartarJ2_2_clicked()
 {
-
+    if (this->ui->piladescarte_J2_2->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->piladescarte_J2_2->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 2);
+        cambiarTurno(2);
+    }
 }
 
 
 void PantallaJuego::on_descartarJ2_3_clicked()
 {
-
+    if (this->ui->piladescarte_J2_3->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->piladescarte_J2_3->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 3);
+        cambiarTurno(2);
+    }
 }
 
 
 void PantallaJuego::on_descartarJ2_4_clicked()
 {
-
+    if (this->ui->piladescarte_J2_4->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->piladescarte_J2_4->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 4);
+        cambiarTurno(2);
+    }
 }
 
-//Pilas
+//Pilas Centrales
+
+void PantallaJuego::on_pilacentral_1_itemChanged(QListWidgetItem *item)
+{
+    for(int i = 1; i < this->ui->pilacentral_1->count(); ++i)
+    {
+        QListWidgetItem* cartaBorrada = this->ui->pilacentral_1->item(i);
+        delete ui->pilacentral_1->takeItem(ui->pilacentral_1->row(cartaBorrada));
+    }
+}
+
+
+void PantallaJuego::on_pilacentral_2_itemChanged(QListWidgetItem *item)
+{
+    for(int i = 1; i < this->ui->pilacentral_2->count(); ++i)
+    {
+        QListWidgetItem* cartaBorrada = this->ui->pilacentral_2->item(i);
+        delete ui->pilacentral_2->takeItem(ui->pilacentral_2->row(cartaBorrada));
+    }
+}
+
+
+void PantallaJuego::on_pilacentral_3_itemChanged(QListWidgetItem *item)
+{
+    for(int i = 1; i < this->ui->pilacentral_3->count(); ++i)
+    {
+        QListWidgetItem* cartaBorrada = this->ui->pilacentral_3->item(i);
+        delete ui->pilacentral_3->takeItem(ui->pilacentral_3->row(cartaBorrada));
+    }
+}
+
 void PantallaJuego::on_boton_pilacentral_1_clicked()
 {
-
+    if (this->ui->pilacentral_1->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->pilacentral_1->item(0)->text().toStdString(), TIPO_PILA_CENTRAL, 1);
+    }
 }
 
 
 void PantallaJuego::on_boton_pilacentral_2_clicked()
 {
-
+    if (this->ui->pilacentral_2->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->pilacentral_2->item(0)->text().toStdString(), TIPO_PILA_CENTRAL, 2);
+    }
 }
 
 
 void PantallaJuego::on_boton_pilacentral_3_clicked()
 {
-
+    if (this->ui->pilacentral_3->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->pilacentral_3->item(0)->text().toStdString(), TIPO_PILA_CENTRAL, 3);
+    }
 }
 

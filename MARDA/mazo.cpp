@@ -26,6 +26,16 @@ void Mazo::barajarMazo() {
     std::shuffle(this->cartas.begin(), this->cartas.end(), std::default_random_engine(seed));
 }
 
+Carta Mazo::sacarCartaMazo(int posicion) {
+    Carta carta = this->cartas[posicion];
+    this->cartas.erase(this->cartas.begin()+posicion);
+    return carta;
+}
+
+void Mazo::agregarCartaMazo(Carta carta, int posicion) {
+    this->cartas.insert(this->cartas.begin()+posicion, carta);
+}
+
 void Mazo::agregarCartasMazo(vector<Carta> cartas) {
     for (auto &&n : cartas) {
         this->cartas.insert(this->cartas.begin(), n);

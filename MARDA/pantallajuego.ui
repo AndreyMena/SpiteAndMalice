@@ -73,7 +73,7 @@
             </spacer>
            </item>
            <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QListWidget" name="listWidgetJ1_1">
+            <widget class="QListWidget" name="piladescarte_J1_1">
              <property name="minimumSize">
               <size>
                <width>80</width>
@@ -94,6 +94,15 @@
              </property>
              <property name="horizontalScrollBarPolicy">
               <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="dragEnabled">
+              <bool>true</bool>
+             </property>
+             <property name="dragDropMode">
+              <enum>QAbstractItemView::DragDrop</enum>
+             </property>
+             <property name="defaultDropAction">
+              <enum>Qt::MoveAction</enum>
              </property>
              <property name="iconSize">
               <size>
@@ -129,7 +138,7 @@ color: rgb(0, 0, 0);</string>
             </spacer>
            </item>
            <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QListWidget" name="listWidgetJ1_3">
+            <widget class="QListWidget" name="piladescarte_J1_3">
              <property name="minimumSize">
               <size>
                <width>80</width>
@@ -150,6 +159,15 @@ color: rgb(0, 0, 0);</string>
              </property>
              <property name="horizontalScrollBarPolicy">
               <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="dragEnabled">
+              <bool>true</bool>
+             </property>
+             <property name="dragDropMode">
+              <enum>QAbstractItemView::DragDrop</enum>
+             </property>
+             <property name="defaultDropAction">
+              <enum>Qt::MoveAction</enum>
              </property>
              <property name="iconSize">
               <size>
@@ -202,7 +220,7 @@ color: rgb(0, 0, 0);</string>
             </spacer>
            </item>
            <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QListWidget" name="listWidgetJ1_2">
+            <widget class="QListWidget" name="piladescarte_J1_2">
              <property name="minimumSize">
               <size>
                <width>80</width>
@@ -223,6 +241,15 @@ color: rgb(0, 0, 0);</string>
              </property>
              <property name="horizontalScrollBarPolicy">
               <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="dragEnabled">
+              <bool>true</bool>
+             </property>
+             <property name="dragDropMode">
+              <enum>QAbstractItemView::DragDrop</enum>
+             </property>
+             <property name="defaultDropAction">
+              <enum>Qt::MoveAction</enum>
              </property>
              <property name="iconSize">
               <size>
@@ -258,7 +285,7 @@ color: rgb(0, 0, 0);</string>
             </spacer>
            </item>
            <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QListWidget" name="listWidgetJ1_4">
+            <widget class="QListWidget" name="piladescarte_J1_4">
              <property name="minimumSize">
               <size>
                <width>80</width>
@@ -279,6 +306,15 @@ color: rgb(0, 0, 0);</string>
              </property>
              <property name="horizontalScrollBarPolicy">
               <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="dragEnabled">
+              <bool>true</bool>
+             </property>
+             <property name="dragDropMode">
+              <enum>QAbstractItemView::DragDrop</enum>
+             </property>
+             <property name="defaultDropAction">
+              <enum>Qt::MoveAction</enum>
              </property>
              <property name="iconSize">
               <size>
@@ -346,7 +382,7 @@ color: rgb(0, 0, 0);</string>
           </spacer>
          </item>
          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QListWidget" name="listWidget_15">
+          <widget class="QListWidget" name="mazo_personal_J1">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -357,6 +393,30 @@ color: rgb(0, 0, 0);</string>
             <size>
              <width>80</width>
              <height>120</height>
+            </size>
+           </property>
+           <property name="acceptDrops">
+            <bool>false</bool>
+           </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="dragDropMode">
+            <enum>QAbstractItemView::DragDrop</enum>
+           </property>
+           <property name="defaultDropAction">
+            <enum>Qt::MoveAction</enum>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>75</width>
+             <height>100</height>
             </size>
            </property>
           </widget>
@@ -678,7 +738,7 @@ color: rgb(0, 0, 0);</string>
         </spacer>
        </item>
        <item alignment="Qt::AlignHCenter">
-        <widget class="QListWidget" name="pilacentral_3">
+        <widget class="QListWidget" name="pilacentral_1">
          <property name="minimumSize">
           <size>
            <width>75</width>
@@ -715,7 +775,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="boton_pilacentral_3">
+        <widget class="QPushButton" name="boton_pilacentral_1">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);
 font: 700 9pt &quot;Segoe UI&quot;;
@@ -802,7 +862,7 @@ color: rgb(0, 0, 0);</string>
         </spacer>
        </item>
        <item alignment="Qt::AlignHCenter">
-        <widget class="QListWidget" name="pilacentral_1">
+        <widget class="QListWidget" name="pilacentral_3">
          <property name="minimumSize">
           <size>
            <width>75</width>
@@ -839,7 +899,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="boton_pilacentral_1">
+        <widget class="QPushButton" name="boton_pilacentral_3">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);
 font: 700 9pt &quot;Segoe UI&quot;;
@@ -912,7 +972,7 @@ color: rgb(0, 0, 0);</string>
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QListWidget" name="listWidgetJ2_1">
+          <widget class="QListWidget" name="piladescarte_J2_1">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -933,6 +993,15 @@ color: rgb(0, 0, 0);</string>
            </property>
            <property name="horizontalScrollBarPolicy">
             <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="dragDropMode">
+            <enum>QAbstractItemView::DragDrop</enum>
+           </property>
+           <property name="defaultDropAction">
+            <enum>Qt::MoveAction</enum>
            </property>
            <property name="iconSize">
             <size>
@@ -968,7 +1037,7 @@ color: rgb(0, 0, 0);</string>
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QListWidget" name="listWidgetJ2_3">
+          <widget class="QListWidget" name="piladescarte_J2_3">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -989,6 +1058,15 @@ color: rgb(0, 0, 0);</string>
            </property>
            <property name="horizontalScrollBarPolicy">
             <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="dragDropMode">
+            <enum>QAbstractItemView::DragDrop</enum>
+           </property>
+           <property name="defaultDropAction">
+            <enum>Qt::MoveAction</enum>
            </property>
            <property name="iconSize">
             <size>
@@ -1041,7 +1119,7 @@ color: rgb(0, 0, 0);</string>
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QListWidget" name="listWidgetJ2_2">
+          <widget class="QListWidget" name="piladescarte_J2_2">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -1062,6 +1140,15 @@ color: rgb(0, 0, 0);</string>
            </property>
            <property name="horizontalScrollBarPolicy">
             <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="dragDropMode">
+            <enum>QAbstractItemView::DragDrop</enum>
+           </property>
+           <property name="defaultDropAction">
+            <enum>Qt::MoveAction</enum>
            </property>
            <property name="iconSize">
             <size>
@@ -1097,7 +1184,7 @@ color: rgb(0, 0, 0);</string>
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QListWidget" name="listWidgetJ2_4">
+          <widget class="QListWidget" name="piladescarte_J2_4">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -1118,6 +1205,15 @@ color: rgb(0, 0, 0);</string>
            </property>
            <property name="horizontalScrollBarPolicy">
             <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="dragDropMode">
+            <enum>QAbstractItemView::DragDrop</enum>
+           </property>
+           <property name="defaultDropAction">
+            <enum>Qt::MoveAction</enum>
            </property>
            <property name="iconSize">
             <size>
@@ -1195,7 +1291,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-        <widget class="QListWidget" name="listWidget_16">
+        <widget class="QListWidget" name="mazo_personal_J2">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -1206,6 +1302,27 @@ color: rgb(0, 0, 0);</string>
           <size>
            <width>80</width>
            <height>120</height>
+          </size>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="dragEnabled">
+          <bool>true</bool>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DragDrop</enum>
+         </property>
+         <property name="defaultDropAction">
+          <enum>Qt::MoveAction</enum>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>75</width>
+           <height>100</height>
           </size>
          </property>
         </widget>

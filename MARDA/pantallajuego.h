@@ -6,6 +6,8 @@
 #include <QListWidgetItem>
 
 #include <iostream>
+#include <string>
+#include <sstream>
 
 #include "tablero.h"
 namespace Ui {
@@ -17,6 +19,8 @@ class PantallaJuego : public QWidget
     Q_OBJECT
 
 public:
+    const int TIPO_PILA_DESCARTE = 0;
+    const int TIPO_PILA_CENTRAL = 1;
     const string URL_POR_DEFECTO = ":/img/img/";
     const string EXTENSION_POR_DEFECTO = ".png";
     const string URL_REVERSO_CARTA_POR_DEFECTO =  ":/img/img/backsideCard.png";
@@ -32,62 +36,21 @@ public:
      */
     ~PantallaJuego();
 
-     void generarCarta(Carta carta, QListWidget* espacio);
+     void generarCarta(Carta carta, QListWidget* espacio, int numeroJugador, int posicionCarta);
 
      void generarCartaOculta (QListWidget* espacio);
 
 private slots:
-    /**
-     * @brief Realiza las acciones que se dicten dentro del código del método
-     * cuando el usuario le da clic a este botón en específico.
-     */
-    //void on_pushButton_2_clicked();
+
+    void cambiarTurno(int numeroJugador);
+
+    void insertarCartaEnLaPila(std::string informacionCarta, int tipoPila, int numeroPila);
 
     void desactivarManoJugador(int jugador);
 
     void activarManoJugador(int jugador);
 
-    void on_listWidget_2_itemChanged(QListWidgetItem *item);
-
-    void on_listWidget_5_itemChanged(QListWidgetItem *item);
-
-    void on_listWidget_6_itemChanged(QListWidgetItem *item);
-
-    void on_listWidget_8_itemChanged(QListWidgetItem *item);
-
-    void on_listWidget_2_itemEntered(QListWidgetItem *item);
-
-    void on_descarteJ1_1_clicked();
-
-    void on_descarteJ1_2_clicked();
-
-    void on_descarteJ1_3_clicked();
-
-    void on_descarteJ1_4_clicked();
-
-    void on_descarteJ2_1_clicked();
-
-    void on_descarteJ2_2_clicked();
-
-    void on_descarteJ2_3_clicked();
-
-    void on_descarteJ2_4_clicked();
-
-    void on_listWidgetJ1_1_itemChanged(QListWidgetItem *item);
-
-    void on_listWidgetJ1_2_itemChanged(QListWidgetItem *item);
-
-    void on_listWidgetJ1_3_itemChanged(QListWidgetItem *item);
-
-    void on_listWidgetJ1_4_itemChanged(QListWidgetItem *item);
-
-    void on_listWidgetJ2_1_itemChanged(QListWidgetItem *item);
-
-    void on_listWidgetJ2_2_itemChanged(QListWidgetItem *item);
-
-    void on_listWidgetJ2_3_itemChanged(QListWidgetItem *item);
-
-    void on_listWidgetJ2_4_itemChanged(QListWidgetItem *item);
+    // Pilas Descarte
 
     void on_descartarJ1_1_clicked();
 
@@ -105,9 +68,24 @@ private slots:
 
     void on_descartarJ2_4_clicked();
 
+    // Pilas Centrales
+
+    void on_pilacentral_1_itemChanged(QListWidgetItem *item);
+
+    void on_pilacentral_2_itemChanged(QListWidgetItem *item);
+
+    void on_pilacentral_3_itemChanged(QListWidgetItem *item);
+
+    void on_boton_pilacentral_1_clicked();
+
+    void on_boton_pilacentral_2_clicked();
+
+    void on_boton_pilacentral_3_clicked();
+
 private:
     Ui::PantallaJuego *ui;
     Tablero tablero;
+    vector<vector<QListWidget*>> espacios;
 };
 
 #endif // PANTALLAJUEGO_H
