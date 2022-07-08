@@ -14,6 +14,9 @@
 #include <QtDebug>
 #include <QAbstractItemView>
 
+#include "ganador1.h"
+#include "ganador2.h"
+
 PantallaJuego::PantallaJuego(Tablero tablero) :
     QWidget(nullptr),
     ui(new Ui::PantallaJuego),
@@ -174,11 +177,17 @@ void PantallaJuego::insertarCartaEnLaPila(std::string informacionCarta, int tipo
     if (posicionCarta == -1) {
         int posicion = jugador->obtenerMazoPersonal()->obtenerCartasMazo().size()-1;
         if (posicion != -1) {
-            cout << "Entree Numero jugador: " << numeroJugador << endl;
             Carta cartaMazoPersonal = jugador->obtenerMazoPersonal()->sacarCartaMazo(posicion);
-            cout << "Entree Carta jugador: " << cartaMazoPersonal.obtenerNombre() << endl;
-            cout << "Entree Carta jugador: " << cartaMazoPersonal.obtenerValor() << endl;
             generarCarta(cartaMazoPersonal, this->espacios[numeroJugador-1][5],numeroJugador, -1);
+        } else {
+            if (numeroJugador == 1) {
+                Ganador1 *ganador1 = new Ganador1();
+                ganador1->show();
+            } else {
+                Ganador2 *ganador2 = new Ganador2();
+                ganador2->show();
+            }
+            this->hide();
         }
     } else {
         Carta cartaVacia("Vacia", 0);

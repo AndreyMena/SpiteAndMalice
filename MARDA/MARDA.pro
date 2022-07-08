@@ -11,6 +11,8 @@ CONFIG += c++11
 SOURCES += \
     carta.cpp \
     eleccionjugador.cpp \
+    ganador1.cpp \
+    ganador2.cpp \
     jugador.cpp \
     main.cpp \
     mazo.cpp \
@@ -25,6 +27,8 @@ SOURCES += \
 HEADERS += \
     carta.h \
     eleccionjugador.h \
+    ganador1.h \
+    ganador2.h \
     jugador.h \
     mazo.h \
     menujuego.h \
