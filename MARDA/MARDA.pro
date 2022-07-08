@@ -37,6 +37,8 @@ HEADERS += \
 
 FORMS += \
     eleccionjugador.ui \
+    ganador1.ui \
+    ganador2.ui \
     menujuego.ui \
     pantallajuego.ui \
     reglas.ui
