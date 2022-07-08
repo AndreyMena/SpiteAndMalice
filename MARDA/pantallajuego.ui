@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>768</height>
+    <height>769</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -73,7 +73,7 @@
             </spacer>
            </item>
            <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QListWidget" name="listWidget_7">
+            <widget class="QListWidget" name="listWidgetJ1_1">
              <property name="minimumSize">
               <size>
                <width>80</width>
@@ -104,6 +104,18 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="descartarJ1_1">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Descartar</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <spacer name="horizontalSpacer_2">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -117,7 +129,7 @@
             </spacer>
            </item>
            <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QListWidget" name="listWidget_3">
+            <widget class="QListWidget" name="listWidgetJ1_3">
              <property name="minimumSize">
               <size>
                <width>80</width>
@@ -144,6 +156,18 @@
                <width>75</width>
                <height>100</height>
               </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="descartarJ1_3">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Descartar</string>
              </property>
             </widget>
            </item>
@@ -178,7 +202,7 @@
             </spacer>
            </item>
            <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QListWidget" name="listWidget_9">
+            <widget class="QListWidget" name="listWidgetJ1_2">
              <property name="minimumSize">
               <size>
                <width>80</width>
@@ -209,6 +233,18 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="descartarJ1_2">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Descartar</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <spacer name="horizontalSpacer_5">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -222,7 +258,7 @@
             </spacer>
            </item>
            <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QListWidget" name="listWidget_8">
+            <widget class="QListWidget" name="listWidgetJ1_4">
              <property name="minimumSize">
               <size>
                <width>80</width>
@@ -249,6 +285,18 @@
                <width>75</width>
                <height>100</height>
               </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="descartarJ1_4">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Descartar</string>
              </property>
             </widget>
            </item>
@@ -617,32 +665,6 @@
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer_6">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_7">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
         <spacer name="verticalSpacer_4">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -656,7 +678,7 @@
         </spacer>
        </item>
        <item alignment="Qt::AlignHCenter">
-        <widget class="QListWidget" name="listWidget_4">
+        <widget class="QListWidget" name="pilacentral_3">
          <property name="minimumSize">
           <size>
            <width>75</width>
@@ -689,6 +711,18 @@
            <width>75</width>
            <height>100</height>
           </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="boton_pilacentral_3">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Colocar</string>
          </property>
         </widget>
        </item>
@@ -706,7 +740,7 @@
         </spacer>
        </item>
        <item alignment="Qt::AlignHCenter">
-        <widget class="QListWidget" name="listWidget_6">
+        <widget class="QListWidget" name="pilacentral_2">
          <property name="minimumSize">
           <size>
            <width>75</width>
@@ -739,6 +773,18 @@
            <width>75</width>
            <height>100</height>
           </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="boton_pilacentral_2">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Colocar</string>
          </property>
         </widget>
        </item>
@@ -756,7 +802,7 @@
         </spacer>
        </item>
        <item alignment="Qt::AlignHCenter">
-        <widget class="QListWidget" name="listWidget_5">
+        <widget class="QListWidget" name="pilacentral_1">
          <property name="minimumSize">
           <size>
            <width>75</width>
@@ -789,67 +835,23 @@
            <width>75</width>
            <height>100</height>
           </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="boton_pilacentral_1">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Colocar</string>
          </property>
         </widget>
        </item>
        <item>
         <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item alignment="Qt::AlignHCenter">
-        <widget class="QListWidget" name="listWidget_2">
-         <property name="minimumSize">
-          <size>
-           <width>75</width>
-           <height>110</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>120</height>
-          </size>
-         </property>
-         <property name="acceptDrops">
-          <bool>true</bool>
-         </property>
-         <property name="verticalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="autoScroll">
-          <bool>false</bool>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
-         </property>
-         <property name="dragDropMode">
-          <enum>QAbstractItemView::DropOnly</enum>
-         </property>
-         <property name="defaultDropAction">
-          <enum>Qt::MoveAction</enum>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>75</width>
-           <height>100</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_5">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -897,8 +899,20 @@
            </property>
           </spacer>
          </item>
+         <item>
+          <widget class="QPushButton" name="descartarJ2_1">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Descartar</string>
+           </property>
+          </widget>
+         </item>
          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QListWidget" name="listWidget_11">
+          <widget class="QListWidget" name="listWidgetJ2_1">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -941,8 +955,20 @@
            </property>
           </spacer>
          </item>
+         <item>
+          <widget class="QPushButton" name="descartarJ2_3">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Descartar</string>
+           </property>
+          </widget>
+         </item>
          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QListWidget" name="listWidget_10">
+          <widget class="QListWidget" name="listWidgetJ2_3">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -1002,8 +1028,20 @@
            </property>
           </spacer>
          </item>
+         <item>
+          <widget class="QPushButton" name="descartarJ2_2">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Descartar</string>
+           </property>
+          </widget>
+         </item>
          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QListWidget" name="listWidget_13">
+          <widget class="QListWidget" name="listWidgetJ2_2">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -1046,8 +1084,20 @@
            </property>
           </spacer>
          </item>
+         <item>
+          <widget class="QPushButton" name="descartarJ2_4">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Descartar</string>
+           </property>
+          </widget>
+         </item>
          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-          <widget class="QListWidget" name="listWidget_12">
+          <widget class="QListWidget" name="listWidgetJ2_4">
            <property name="minimumSize">
             <size>
              <width>80</width>

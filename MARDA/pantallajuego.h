@@ -43,6 +43,10 @@ private slots:
      */
     //void on_pushButton_2_clicked();
 
+    void desactivarManoJugador(int jugador);
+
+    void activarManoJugador(int jugador);
+
     void on_listWidget_2_itemChanged(QListWidgetItem *item);
 
     void on_listWidget_5_itemChanged(QListWidgetItem *item);
@@ -52,6 +56,54 @@ private slots:
     void on_listWidget_8_itemChanged(QListWidgetItem *item);
 
     void on_listWidget_2_itemEntered(QListWidgetItem *item);
+
+    void on_descarteJ1_1_clicked();
+
+    void on_descarteJ1_2_clicked();
+
+    void on_descarteJ1_3_clicked();
+
+    void on_descarteJ1_4_clicked();
+
+    void on_descarteJ2_1_clicked();
+
+    void on_descarteJ2_2_clicked();
+
+    void on_descarteJ2_3_clicked();
+
+    void on_descarteJ2_4_clicked();
+
+    void on_listWidgetJ1_1_itemChanged(QListWidgetItem *item);
+
+    void on_listWidgetJ1_2_itemChanged(QListWidgetItem *item);
+
+    void on_listWidgetJ1_3_itemChanged(QListWidgetItem *item);
+
+    void on_listWidgetJ1_4_itemChanged(QListWidgetItem *item);
+
+    void on_listWidgetJ2_1_itemChanged(QListWidgetItem *item);
+
+    void on_listWidgetJ2_2_itemChanged(QListWidgetItem *item);
+
+    void on_listWidgetJ2_3_itemChanged(QListWidgetItem *item);
+
+    void on_listWidgetJ2_4_itemChanged(QListWidgetItem *item);
+
+    void on_descartarJ1_1_clicked();
+
+    void on_descartarJ1_2_clicked();
+
+    void on_descartarJ1_3_clicked();
+
+    void on_descartarJ1_4_clicked();
+
+    void on_descartarJ2_1_clicked();
+
+    void on_descartarJ2_2_clicked();
+
+    void on_descartarJ2_3_clicked();
+
+    void on_descartarJ2_4_clicked();
 
 private:
     Ui::PantallaJuego *ui;

@@ -14,6 +14,7 @@
 #include <QDrag>
 #include <QDropEvent>
 #include <QtDebug>
+#include <QAbstractItemView>
 
 PantallaJuego::PantallaJuego(Tablero tablero) :
     QWidget(nullptr),
@@ -57,6 +58,18 @@ PantallaJuego::PantallaJuego(Tablero tablero) :
                 generarCartaOculta(espacios[n.obtenerNumeroJugador()-1][i]);
             }
         }
+    }
+    //this->ui->listWidgetJ1_1.pos
+    if (this->tablero.esTurnoJugador(1)) {
+        this->ui->listWidgetJ2_1->setAcceptDrops(0);
+        this->ui->listWidgetJ2_2->setAcceptDrops(0);
+        this->ui->listWidgetJ2_3->setAcceptDrops(0);
+        this->ui->listWidgetJ2_4->setAcceptDrops(0);
+    }else{
+        this->ui->listWidgetJ1_1->setAcceptDrops(0);
+        this->ui->listWidgetJ1_2->setAcceptDrops(0);
+        this->ui->listWidgetJ1_3->setAcceptDrops(0);
+        this->ui->listWidgetJ1_4->setAcceptDrops(0);
     }
 }
 
@@ -111,9 +124,9 @@ void PantallaJuego::on_listWidget_5_itemChanged(QListWidgetItem *item)
 
 void PantallaJuego::on_listWidget_6_itemChanged(QListWidgetItem *item)
 {
+
     std::cout << "Ingreso a pila 3" <<std::endl;
 }
-
 
 void PantallaJuego::on_listWidget_8_itemChanged(QListWidgetItem *item)
 {
@@ -149,5 +162,248 @@ void PantallaJuego::on_listWidget_8_itemChanged(QListWidgetItem *item)
 void PantallaJuego::on_listWidget_2_itemEntered(QListWidgetItem *item)
 {
     cout << "heyyyy" << endl;
+}
+
+// Primer Jugador
+void PantallaJuego::on_descarteJ1_1_clicked()
+{
+    if (this->ui->listWidgetJ1_1->count() >= 1) {
+        cout << "Hay "<< this->ui->listWidgetJ1_1->count() << " elementos "<<endl;
+    }else{
+        cout << "No hay elementos"<<endl;
+    }
+    for (int i = 0; i < this->ui->listWidgetJ1_1->count(); i++) {
+        qDebug() << this->ui->listWidgetJ1_1->item(i)->text();
+    }
+
+}
+
+
+void PantallaJuego::on_descarteJ1_2_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_descarteJ1_3_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_descarteJ1_4_clicked()
+{
+
+}
+
+// Segundo Jugador
+
+void PantallaJuego::on_descarteJ2_1_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_descarteJ2_2_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_descarteJ2_3_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_descarteJ2_4_clicked()
+{
+
+}
+
+void PantallaJuego::desactivarManoJugador(int jugador) {
+    if (jugador == 1) {
+        this->ui->manoJugador1_1->setEnabled(0);
+        this->ui->manoJugador1_2->setEnabled(0);
+        this->ui->manoJugador1_3->setEnabled(0);
+        this->ui->manoJugador1_4->setEnabled(0);
+        this->ui->manoJugador1_5->setEnabled(0);
+
+        this->ui->manoJugador1_1->setDragEnabled(0);
+        this->ui->manoJugador1_2->setDragEnabled(0);
+        this->ui->manoJugador1_3->setDragEnabled(0);
+        this->ui->manoJugador1_4->setDragEnabled(0);
+        this->ui->manoJugador1_5->setDragEnabled(0);
+    }else if (jugador == 2){
+        this->ui->manoJugador2_1->setEnabled(0);
+        this->ui->manoJugador2_2->setEnabled(0);
+        this->ui->manoJugador2_3->setEnabled(0);
+        this->ui->manoJugador2_4->setEnabled(0);
+        this->ui->manoJugador2_5->setEnabled(0);
+
+        this->ui->manoJugador2_1->setDragEnabled(0);
+        this->ui->manoJugador2_2->setDragEnabled(0);
+        this->ui->manoJugador2_3->setDragEnabled(0);
+        this->ui->manoJugador2_4->setDragEnabled(0);
+        this->ui->manoJugador2_5->setDragEnabled(0);
+    }
+}
+
+void PantallaJuego::activarManoJugador(int jugador) {
+    if (jugador == 1) {
+        this->ui->manoJugador1_1->setEnabled(1);
+        this->ui->manoJugador1_2->setEnabled(1);
+        this->ui->manoJugador1_3->setEnabled(1);
+        this->ui->manoJugador1_4->setEnabled(1);
+        this->ui->manoJugador1_5->setEnabled(1);
+
+        this->ui->manoJugador1_1->setDragEnabled(1);
+        this->ui->manoJugador1_2->setDragEnabled(1);
+        this->ui->manoJugador1_3->setDragEnabled(1);
+        this->ui->manoJugador1_4->setDragEnabled(1);
+        this->ui->manoJugador1_5->setDragEnabled(1);
+    }else if (jugador == 2){
+        this->ui->manoJugador2_1->setEnabled(1);
+        this->ui->manoJugador2_2->setEnabled(1);
+        this->ui->manoJugador2_3->setEnabled(1);
+        this->ui->manoJugador2_4->setEnabled(1);
+        this->ui->manoJugador2_5->setEnabled(1);
+
+        this->ui->manoJugador2_1->setDragEnabled(1);
+        this->ui->manoJugador2_2->setDragEnabled(1);
+        this->ui->manoJugador2_3->setDragEnabled(1);
+        this->ui->manoJugador2_4->setDragEnabled(1);
+        this->ui->manoJugador2_5->setDragEnabled(1);
+    }
+}
+
+// Pilas de descarte
+void PantallaJuego::on_listWidgetJ1_1_itemChanged(QListWidgetItem *item)
+{
+    //desactivarManoJugador(1);
+/*
+    if (this->ui->listWidgetJ1_1->count() >= 1) {
+        cout << "Hay "<< this->ui->listWidgetJ1_1->count() << " elementos "<<endl;
+    }else{
+        cout << "No hay elementos"<<endl;
+    }
+    for (int i = 0; i < this->ui->listWidgetJ1_1->count(); i++) {
+        qDebug() << this->ui->listWidgetJ1_1->item(i)->text();
+    }
+    */
+}
+
+void PantallaJuego::on_listWidgetJ1_2_itemChanged(QListWidgetItem *item)
+{
+    desactivarManoJugador(1);
+}
+
+
+void PantallaJuego::on_listWidgetJ1_3_itemChanged(QListWidgetItem *item)
+{
+    desactivarManoJugador(1);
+}
+
+void PantallaJuego::on_listWidgetJ1_4_itemChanged(QListWidgetItem *item)
+{
+    desactivarManoJugador(1);
+}
+
+
+void PantallaJuego::on_listWidgetJ2_1_itemChanged(QListWidgetItem *item)
+{
+    desactivarManoJugador(2);
+}
+
+
+void PantallaJuego::on_listWidgetJ2_2_itemChanged(QListWidgetItem *item)
+{
+    desactivarManoJugador(2);
+}
+
+
+void PantallaJuego::on_listWidgetJ2_3_itemChanged(QListWidgetItem *item)
+{
+    desactivarManoJugador(2);
+}
+
+
+void PantallaJuego::on_listWidgetJ2_4_itemChanged(QListWidgetItem *item)
+{
+    desactivarManoJugador(2);
+}
+
+// Descartes
+void PantallaJuego::on_descartarJ1_1_clicked()
+{
+    if (this->ui->listWidgetJ1_1->count() >= 1) {
+        cout << "Hay "<< this->ui->listWidgetJ1_1->count() << " elementos "<<endl;
+    }else{
+        cout << "No hay elementos"<<endl;
+    }
+    for (int i = 0; i < this->ui->listWidgetJ1_1->count(); i++) {
+        qDebug() << this->ui->listWidgetJ1_1->item(i)->text();
+    }
+}
+
+
+void PantallaJuego::on_descartarJ1_2_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_descartarJ1_3_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_descartarJ1_4_clicked()
+{
+
+}
+
+//
+
+void PantallaJuego::on_descartarJ2_1_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_descartarJ2_2_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_descartarJ2_3_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_descartarJ2_4_clicked()
+{
+
+}
+
+//Pilas
+void PantallaJuego::on_boton_pilacentral_1_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_boton_pilacentral_2_clicked()
+{
+
+}
+
+
+void PantallaJuego::on_boton_pilacentral_3_clicked()
+{
+
 }
 
