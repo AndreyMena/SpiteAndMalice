@@ -12,7 +12,6 @@ SOURCES += \
     carta.cpp \
     eleccionjugador.cpp \
     jugador.cpp \
-    listwidget.cpp \
     main.cpp \
     mazo.cpp \
     menujuego.cpp \
@@ -27,7 +26,6 @@ HEADERS += \
     carta.h \
     eleccionjugador.h \
     jugador.h \
-    listwidget.h \
     mazo.h \
     menujuego.h \
     pantallajuego.h \

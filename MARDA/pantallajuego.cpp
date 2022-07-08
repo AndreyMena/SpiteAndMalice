@@ -15,10 +15,6 @@
 #include <QDropEvent>
 #include <QtDebug>
 
-
-
-#include "listwidget.h"
-
 PantallaJuego::PantallaJuego(Tablero tablero) :
     QWidget(nullptr),
     ui(new Ui::PantallaJuego),
@@ -62,13 +58,6 @@ PantallaJuego::PantallaJuego(Tablero tablero) :
             }
         }
     }
-
-    //ListWidget listwidget(this);
-    //this.
-    //listwidget.show();
-    ui->Listwidget->setAcceptDrops(1);
-    //ui->Listwidget.
-    //ui->Listwidget->setDragDropMode(Qt::ItemIsDropEnabled);
 }
 
 PantallaJuego::~PantallaJuego()
