@@ -727,18 +727,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="boton_pilacentral_1">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);
-font: 700 9pt &quot;Segoe UI&quot;;
-color: rgb(0, 0, 0);</string>
-         </property>
-         <property name="text">
-          <string>Colocar</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -789,18 +777,6 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="boton_pilacentral_2">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);
-font: 700 9pt &quot;Segoe UI&quot;;
-color: rgb(0, 0, 0);</string>
-         </property>
-         <property name="text">
-          <string>Colocar</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <spacer name="verticalSpacer_2">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -847,18 +823,6 @@ color: rgb(0, 0, 0);</string>
            <width>75</width>
            <height>100</height>
           </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="boton_pilacentral_3">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);
-font: 700 9pt &quot;Segoe UI&quot;;
-color: rgb(0, 0, 0);</string>
-         </property>
-         <property name="text">
-          <string>Colocar</string>
          </property>
         </widget>
        </item>

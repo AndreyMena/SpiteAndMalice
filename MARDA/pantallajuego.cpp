@@ -267,7 +267,8 @@ void PantallaJuego::on_piladescarte_J1_1_itemChanged(QListWidgetItem *item)
 {
     this->ui->piladescarte_J1_1->addItem(item);
     this->ui->piladescarte_J1_1->setCurrentRow(0);
-    //this.ui->piladescarte_J1_1->setCurrentRow()
+    //this->ui.
+    //this.ui->piladescarte_J1_1.
     cout<<"HOLA"<<endl;
 }
 
@@ -384,58 +385,54 @@ void PantallaJuego::on_piladescarte_J2_4_currentRowChanged(int currentRow)
 
 void PantallaJuego::on_pilacentral_1_itemChanged(QListWidgetItem *item)
 {
+    this->ui->pilacentral_1->addItem(item);
+    this->ui->pilacentral_1->setCurrentRow(0);
+}
+
+void PantallaJuego::on_pilacentral_1_currentRowChanged(int currentRow)
+{
     for(int i = 1; i < this->ui->pilacentral_1->count(); ++i)
     {
         QListWidgetItem* cartaBorrada = this->ui->pilacentral_1->item(i);
         delete ui->pilacentral_1->takeItem(ui->pilacentral_1->row(cartaBorrada));
     }
+    if (this->ui->pilacentral_1->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->pilacentral_1->item(currentRow)->text().toStdString(), TIPO_PILA_CENTRAL, 1);
+    }
 }
 
-
 void PantallaJuego::on_pilacentral_2_itemChanged(QListWidgetItem *item)
+{
+    this->ui->pilacentral_2->addItem(item);
+    this->ui->pilacentral_2->setCurrentRow(0);
+}
+
+void PantallaJuego::on_pilacentral_2_currentRowChanged(int currentRow)
 {
     for(int i = 1; i < this->ui->pilacentral_2->count(); ++i)
     {
         QListWidgetItem* cartaBorrada = this->ui->pilacentral_2->item(i);
         delete ui->pilacentral_2->takeItem(ui->pilacentral_2->row(cartaBorrada));
     }
+    if (this->ui->pilacentral_2->count() >= 1) {
+        insertarCartaEnLaPila( this->ui->pilacentral_2->item(currentRow)->text().toStdString(), TIPO_PILA_CENTRAL, 2);
+    }
 }
 
-
 void PantallaJuego::on_pilacentral_3_itemChanged(QListWidgetItem *item)
+{
+    this->ui->pilacentral_3->addItem(item);
+    this->ui->pilacentral_3->setCurrentRow(0);
+}
+
+void PantallaJuego::on_pilacentral_3_currentRowChanged(int currentRow)
 {
     for(int i = 1; i < this->ui->pilacentral_3->count(); ++i)
     {
         QListWidgetItem* cartaBorrada = this->ui->pilacentral_3->item(i);
         delete ui->pilacentral_3->takeItem(ui->pilacentral_3->row(cartaBorrada));
     }
-}
-
-void PantallaJuego::on_boton_pilacentral_1_clicked()
-{
-    if (this->ui->pilacentral_1->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->pilacentral_1->item(0)->text().toStdString(), TIPO_PILA_CENTRAL, 1);
-    }
-}
-
-
-void PantallaJuego::on_boton_pilacentral_2_clicked()
-{
-    if (this->ui->pilacentral_2->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->pilacentral_2->item(0)->text().toStdString(), TIPO_PILA_CENTRAL, 2);
-    }
-}
-
-
-void PantallaJuego::on_boton_pilacentral_3_clicked()
-{
     if (this->ui->pilacentral_3->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->pilacentral_3->item(0)->text().toStdString(), TIPO_PILA_CENTRAL, 3);
+        insertarCartaEnLaPila( this->ui->pilacentral_3->item(currentRow)->text().toStdString(), TIPO_PILA_CENTRAL, 3);
     }
 }
-
-//
-
-
-
-

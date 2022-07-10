@@ -79,17 +79,13 @@ private slots:
     // Pilas Centrales
 
     void on_pilacentral_1_itemChanged(QListWidgetItem *item);
+    void on_pilacentral_1_currentRowChanged(int currentRow);
 
     void on_pilacentral_2_itemChanged(QListWidgetItem *item);
+    void on_pilacentral_2_currentRowChanged(int currentRow);
 
     void on_pilacentral_3_itemChanged(QListWidgetItem *item);
-
-    void on_boton_pilacentral_1_clicked();
-
-    void on_boton_pilacentral_2_clicked();
-
-    void on_boton_pilacentral_3_clicked();
-
+    void on_pilacentral_3_currentRowChanged(int currentRow);
 
 private:
     Ui::PantallaJuego *ui;
