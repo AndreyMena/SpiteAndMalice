@@ -52,21 +52,29 @@ private slots:
 
     // Pilas Descarte
 
-    void on_descartarJ1_1_clicked();
+    void on_piladescarte_J1_1_itemChanged(QListWidgetItem *item);
+    void on_piladescarte_J1_1_currentRowChanged(int currentRow);
 
-    void on_descartarJ1_2_clicked();
+    void on_piladescarte_J1_2_itemChanged(QListWidgetItem *item);
+    void on_piladescarte_J1_2_currentRowChanged(int currentRow);
 
-    void on_descartarJ1_3_clicked();
+    void on_piladescarte_J1_3_itemChanged(QListWidgetItem *item);
+    void on_piladescarte_J1_3_currentRowChanged(int currentRow);
 
-    void on_descartarJ1_4_clicked();
+    void on_piladescarte_J1_4_itemChanged(QListWidgetItem *item);
+    void on_piladescarte_J1_4_currentRowChanged(int currentRow);
 
-    void on_descartarJ2_1_clicked();
+    void on_piladescarte_J2_1_itemChanged(QListWidgetItem *item);
+    void on_piladescarte_J2_1_currentRowChanged(int currentRow);
 
-    void on_descartarJ2_2_clicked();
+    void on_piladescarte_J2_2_itemChanged(QListWidgetItem *item);
+    void on_piladescarte_J2_2_currentRowChanged(int currentRow);
 
-    void on_descartarJ2_3_clicked();
+    void on_piladescarte_J2_3_itemChanged(QListWidgetItem *item);
+    void on_piladescarte_J2_3_currentRowChanged(int currentRow);
 
-    void on_descartarJ2_4_clicked();
+    void on_piladescarte_J2_4_itemChanged(QListWidgetItem *item);
+    void on_piladescarte_J2_4_currentRowChanged(int currentRow);
 
     // Pilas Centrales
 
@@ -81,6 +89,7 @@ private slots:
     void on_boton_pilacentral_2_clicked();
 
     void on_boton_pilacentral_3_clicked();
+
 
 private:
     Ui::PantallaJuego *ui;

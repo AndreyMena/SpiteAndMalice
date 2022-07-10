@@ -263,72 +263,119 @@ void PantallaJuego::activarManoJugador(int jugador) {
 
 // Pilas Descartes Jugador1
 
-void PantallaJuego::on_descartarJ1_1_clicked()
+void PantallaJuego::on_piladescarte_J1_1_itemChanged(QListWidgetItem *item)
+{
+    this->ui->piladescarte_J1_1->addItem(item);
+    this->ui->piladescarte_J1_1->setCurrentRow(0);
+    //this.ui->piladescarte_J1_1->setCurrentRow()
+    cout<<"HOLA"<<endl;
+}
+
+void PantallaJuego::on_piladescarte_J1_1_currentRowChanged(int currentRow)
 {
     if (this->ui->piladescarte_J1_1->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->piladescarte_J1_1->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 1);
+        insertarCartaEnLaPila( this->ui->piladescarte_J1_1->item(currentRow)->text().toStdString(), TIPO_PILA_DESCARTE, 1);
         cambiarTurno(1);
     }
+    cout<<"Cambio"<<endl;
 }
 
-void PantallaJuego::on_descartarJ1_2_clicked()
+void PantallaJuego::on_piladescarte_J1_2_itemChanged(QListWidgetItem *item)
+{
+    this->ui->piladescarte_J1_2->addItem(item);
+    this->ui->piladescarte_J1_2->setCurrentRow(0);
+}
+
+void PantallaJuego::on_piladescarte_J1_2_currentRowChanged(int currentRow)
 {
     if (this->ui->piladescarte_J1_2->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->piladescarte_J1_2->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 2);
+        insertarCartaEnLaPila( this->ui->piladescarte_J1_2->item(currentRow)->text().toStdString(), TIPO_PILA_DESCARTE, 2);
         cambiarTurno(1);
     }
 }
 
+void PantallaJuego::on_piladescarte_J1_3_itemChanged(QListWidgetItem *item)
+{
+    this->ui->piladescarte_J1_3->addItem(item);
+    this->ui->piladescarte_J1_3->setCurrentRow(0);
+}
 
-void PantallaJuego::on_descartarJ1_3_clicked()
+void PantallaJuego::on_piladescarte_J1_3_currentRowChanged(int currentRow)
 {
     if (this->ui->piladescarte_J1_3->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->piladescarte_J1_3->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 3);
+        insertarCartaEnLaPila( this->ui->piladescarte_J1_3->item(currentRow)->text().toStdString(), TIPO_PILA_DESCARTE, 3);
         cambiarTurno(1);
     }
 }
 
-void PantallaJuego::on_descartarJ1_4_clicked()
+void PantallaJuego::on_piladescarte_J1_4_itemChanged(QListWidgetItem *item)
+{
+    this->ui->piladescarte_J1_4->addItem(item);
+    this->ui->piladescarte_J1_4->setCurrentRow(0);
+}
+
+void PantallaJuego::on_piladescarte_J1_4_currentRowChanged(int currentRow)
 {
     if (this->ui->piladescarte_J1_4->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->piladescarte_J1_4->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 4);
+        insertarCartaEnLaPila( this->ui->piladescarte_J1_4->item(currentRow)->text().toStdString(), TIPO_PILA_DESCARTE, 4);
         cambiarTurno(1);
     }
 }
 
 // Pilas Descarte Jugador 2
 
-void PantallaJuego::on_descartarJ2_1_clicked()
+void PantallaJuego::on_piladescarte_J2_1_itemChanged(QListWidgetItem *item)
+{
+    this->ui->piladescarte_J2_1->addItem(item);
+    this->ui->piladescarte_J2_1->setCurrentRow(0);
+}
+
+void PantallaJuego::on_piladescarte_J2_1_currentRowChanged(int currentRow)
 {
     if (this->ui->piladescarte_J2_1->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->piladescarte_J2_1->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 1);
+        insertarCartaEnLaPila( this->ui->piladescarte_J2_1->item(currentRow)->text().toStdString(), TIPO_PILA_DESCARTE, 1);
         cambiarTurno(2);
     }
 }
 
+void PantallaJuego::on_piladescarte_J2_2_itemChanged(QListWidgetItem *item)
+{
+    this->ui->piladescarte_J2_2->addItem(item);
+    this->ui->piladescarte_J2_2->setCurrentRow(0);
+}
 
-void PantallaJuego::on_descartarJ2_2_clicked()
+void PantallaJuego::on_piladescarte_J2_2_currentRowChanged(int currentRow)
 {
     if (this->ui->piladescarte_J2_2->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->piladescarte_J2_2->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 2);
+        insertarCartaEnLaPila( this->ui->piladescarte_J2_2->item(currentRow)->text().toStdString(), TIPO_PILA_DESCARTE, 2);
         cambiarTurno(2);
     }
 }
 
+void PantallaJuego::on_piladescarte_J2_3_itemChanged(QListWidgetItem *item)
+{
+    this->ui->piladescarte_J2_3->addItem(item);
+    this->ui->piladescarte_J2_3->setCurrentRow(0);
+}
 
-void PantallaJuego::on_descartarJ2_3_clicked()
+void PantallaJuego::on_piladescarte_J2_3_currentRowChanged(int currentRow)
 {
     if (this->ui->piladescarte_J2_3->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->piladescarte_J2_3->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 3);
+        insertarCartaEnLaPila( this->ui->piladescarte_J2_3->item(currentRow)->text().toStdString(), TIPO_PILA_DESCARTE, 3);
         cambiarTurno(2);
     }
 }
 
+void PantallaJuego::on_piladescarte_J2_4_itemChanged(QListWidgetItem *item)
+{
+    this->ui->piladescarte_J2_4->addItem(item);
+    this->ui->piladescarte_J2_4->setCurrentRow(0);
+}
 
-void PantallaJuego::on_descartarJ2_4_clicked()
+void PantallaJuego::on_piladescarte_J2_4_currentRowChanged(int currentRow)
 {
     if (this->ui->piladescarte_J2_4->count() >= 1) {
-        insertarCartaEnLaPila( this->ui->piladescarte_J2_4->item(0)->text().toStdString(), TIPO_PILA_DESCARTE, 4);
+        insertarCartaEnLaPila( this->ui->piladescarte_J2_4->item(currentRow)->text().toStdString(), TIPO_PILA_DESCARTE, 4);
         cambiarTurno(2);
     }
 }
@@ -386,4 +433,9 @@ void PantallaJuego::on_boton_pilacentral_3_clicked()
         insertarCartaEnLaPila( this->ui->pilacentral_3->item(0)->text().toStdString(), TIPO_PILA_CENTRAL, 3);
     }
 }
+
+//
+
+
+
 
