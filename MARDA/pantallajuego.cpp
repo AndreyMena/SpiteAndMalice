@@ -4,6 +4,7 @@
 #include "mazo.h"
 #include "ganador1.h"
 #include "ganador2.h"
+#include "pantallaempate.h"
 
 using namespace std;
 
@@ -137,7 +138,6 @@ void PantallaJuego::cambiarTurno(int numeroJugador) {
 }
 
 void PantallaJuego::insertarCartaEnLaPila(std::string informacionCarta, int tipoPila, int numeroPila) {
-    //Modularizar este codigo
     std::string auxiliar = "";
     stringstream stringInformacionCartaString(informacionCarta);
 
@@ -179,7 +179,9 @@ void PantallaJuego::insertarCartaEnLaPila(std::string informacionCarta, int tipo
             jugador->sacarCartaMano(posicionCarta);
             jugador->agregarCartaMano(cartaVacia, posicionCarta);
         } else {
-            //reenvia a vista de empate
+            PantallaEmpate *empate = new PantallaEmpate();
+            empate->show();
+            this->hide();
         }
     }
 

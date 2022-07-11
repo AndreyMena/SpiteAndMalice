@@ -7,7 +7,7 @@ namespace Ui {
 class pantallaempate;
 }
 
-class pantallaempate : public QWidget
+class PantallaEmpate : public QWidget
 {
     Q_OBJECT
 
@@ -16,8 +16,8 @@ public:
      * @brief Muestra un mensaje indicando que ha habido un empate
      * @param parent
      */
-    explicit pantallaempate(QWidget *parent = nullptr);
-    ~pantallaempate();
+    explicit PantallaEmpate(QWidget *parent = nullptr);
+    ~PantallaEmpate();
 
 private:
     Ui::pantallaempate *ui;
