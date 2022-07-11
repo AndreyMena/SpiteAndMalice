@@ -18,6 +18,7 @@ SOURCES += \
     main.cpp \
     mazo.cpp \
     menujuego.cpp \
+    pantallaempate.cpp \
     pantallajuego.cpp \
     pilaabstracta.cpp \
     pilacentral.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     jugador.h \
     mazo.h \
     menujuego.h \
+    pantallaempate.h \
     pantallajuego.h \
     pilaabstracta.h \
     pilacentral.h \
@@ -47,6 +49,7 @@ FORMS += \
     ganador2.ui \
     guardarpartida.ui \
     menujuego.ui \
+    pantallaempate.ui \
     pantallajuego.ui \
     reglas.ui
 
