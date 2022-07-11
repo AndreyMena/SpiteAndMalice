@@ -1,4 +1,5 @@
 build-MARDA-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/
+*.txt
 
 # C++ objects and libs
 *.slo
