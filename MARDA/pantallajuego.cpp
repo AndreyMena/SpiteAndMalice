@@ -437,9 +437,14 @@ void PantallaJuego::on_pushButton_clicked()
     string nombreArchivo = "../bitacora.txt";
     ofstream archivo;
     archivo.open(nombreArchivo.c_str(), fstream::out);
-
+    if (this->tablero.esTurnoJugador(1)) {
+        archivo << "1" << endl;
+    }else{
+        archivo << "2" << endl;
+    }
+    archivo << "$" << endl;
     //archivo.close();
-/*
+    /*
     std::ofstream fs;
     fs.open("tableroGuardado.txt", std::ofstream::out | std::ofstream::app); */
     //Obtencion de pilas centrales
@@ -477,6 +482,36 @@ void PantallaJuego::on_pushButton_clicked()
     }
     archivo<< "$"<<endl;
 
+    //Mano J1
+    vector<Carta>* manoJ1 = this->tablero.obtenerJugador(1)->obtenerMano();
+    for (int index =0; index < manoJ1->size(); index++) {
+        archivo << manoJ1->at(index).obtenerNombre() <<endl;
+    }
+    archivo<< "$"<<endl;
+
+    //ManoJ2
+    vector<Carta>* manoJ2 = this->tablero.obtenerJugador(2)->obtenerMano();
+    for (int index =0; index < manoJ2->size(); index++) {
+        archivo << manoJ2->at(index).obtenerNombre() <<endl;
+    }
+    archivo<< "$"<<endl;
+
+    //MazoJ1
+    Mazo mazoJ1 = this->tablero.obtenerJugador(1)->obtenerMazoPersonal();
+    vector<Carta>* mazoCartasJ1 = mazoJ1.obtenerCartasMazo();
+    for (int index =0; index < mazoCartasJ1->size(); index++) {
+        archivo << mazoCartasJ1->at(index).obtenerNombre() <<endl;
+    }
+    archivo<< "$"<<endl;
+
+    //MazoJ2
+    Mazo mazoJ2 = this->tablero.obtenerJugador(2)->obtenerMazoPersonal();
+    vector<Carta>* mazoCartasJ2 = mazoJ2.obtenerCartasMazo();
+    for (int index =0; index < mazoCartasJ1->size(); index++) {
+        archivo << mazoCartasJ2->at(index).obtenerNombre() <<endl;
+    }
+    archivo<< "$"<<endl;
+
     //Pilas descarteJ1
     vector<vector<string>> pilaDescartesGuardadosJ1;
     for (int indexI = 0; indexI < 4; indexI++) {
@@ -491,6 +526,7 @@ void PantallaJuego::on_pushButton_clicked()
         pilaDescartesGuardadosJ1.push_back(pilaGuardado);
         pilaGuardado.clear();
     }
+
     //Pilas descarteJ2
     vector<vector<string>> pilaDescartesGuardadosJ2;
     for (int indexI = 0; indexI < 4; indexI++) {
@@ -504,26 +540,27 @@ void PantallaJuego::on_pushButton_clicked()
         pilaGuardado.clear();
     }
 
-/*
-    for (int indexI = 0; indexI < 4; indexI++) {
-        cout << "Pila " << indexI << " jugador 1 con size: "<< pilaDescartesGuardadosJ1[indexI].size()<< endl;
-        for (int indexJ = 0; indexJ < pilaDescartesGuardadosJ1[indexI].size(); indexJ++) {
-            cout << pilaDescartesGuardadosJ1[indexI].top() << endl;
-            //Guardar
-            pilaDescartesGuardadosJ1[indexI].pop();
+
+    for (int indexI = 0; indexI < pilaDescartesGuardadosJ1.size(); indexI++) {
+        for (int indexJ = pilaDescartesGuardadosJ1[indexI].size()-1; indexJ >= 0; indexJ--) {
+            archivo << pilaDescartesGuardadosJ1[indexI][indexJ] << endl;
         }
-        cout<<endl;
+        archivo<< "$"<<endl;
+        cout << endl;
     }
-    for (int indexI = 0; indexI < 4; indexI++) {
-        cout << "Pila " << indexI << " jugador 2 con size: : "<< pilaDescartesGuardadosJ2[indexI].size()<< endl;
-        for (int indexJ = 0; indexJ < pilaDescartesGuardadosJ2[indexI].size(); indexJ++) {
-            cout << pilaDescartesGuardadosJ2[indexI].top() << endl;
-            //Guardar
-            pilaDescartesGuardadosJ2[indexI].pop();
+
+    for (int indexI = 0; indexI < pilaDescartesGuardadosJ2.size(); indexI++) {
+        for (int indexJ = pilaDescartesGuardadosJ2[indexI].size()-1; indexJ >= 0; indexJ--) {
+            archivo << pilaDescartesGuardadosJ2[indexI][indexJ] << endl;
         }
-        cout<<endl;
+        archivo<< "$"<<endl;
+        cout << endl;
     }
-*/
     archivo.close();
+}
+
+
+void PantallaJuego::on_pushButton_2_clicked()
+{
 }
 

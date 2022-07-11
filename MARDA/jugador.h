@@ -16,6 +16,8 @@ public:
      * @brief Constructor de la clase Jugador
      */
     Jugador(int numeroJugador, Mazo *mazoCentral, vector<PilaCentral>* pilasCentrales);
+
+    Jugador(int numeroJugadorAux, Mazo *mazoCentral, vector<PilaCentral>* pilasCentralesAux, vector<Carta> *manoAux, Mazo mazoAux, vector<PilaDescarte*> PilasdeDescarteAux);
     /**
      * @brief Destructor de la clase Jugador
      */

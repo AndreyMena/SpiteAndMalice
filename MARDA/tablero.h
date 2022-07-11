@@ -17,6 +17,8 @@ public:
      * @brief Tablero Constructor de la clase Tablero
      */
     Tablero(int cantidadJugadores);
+
+    Tablero(Mazo* mazoCentral, vector<PilaCentral>* pilasCentrales,int turnoJugador, vector<Jugador*> jugadores);
     /**
      * @brief Destructor de la clase Tablero
      */

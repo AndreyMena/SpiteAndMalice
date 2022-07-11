@@ -5,6 +5,7 @@ Jugador::Jugador(int numeroJugador, Mazo *mazoCentral, vector<PilaCentral>* pila
     mazoCentral(mazoCentral),
     pilasCentrales(pilasCentrales)
 {
+
     this->mano = new vector<Carta>();
     this->mazo = this->mazoCentral->dividirMazo(20);
     this->mano = this->mazoCentral->dividirMazo(5).obtenerCartasMazo();
@@ -12,6 +13,22 @@ Jugador::Jugador(int numeroJugador, Mazo *mazoCentral, vector<PilaCentral>* pila
         PilaDescarte* pilaDescarte = new PilaDescarte();
         this->pilasDescarte.push_back(pilaDescarte);
     }
+}
+
+Jugador::Jugador(int numeroJugadorAux, Mazo *mazoCentral, vector<PilaCentral>* pilasCentralesAux, vector<Carta> *manoAux, Mazo mazoAux, vector<PilaDescarte*> PilasdeDescarteAux)
+{
+    this->mano = manoAux;
+    this->mazoCentral = mazoCentral;
+    this->mazo = mazoAux;
+    this->numeroJugador = numeroJugadorAux;
+    this->pilasCentrales = pilasCentralesAux;
+    this->pilasDescarte = PilasdeDescarteAux;
+    /*
+    for (int i = 0; i < CANTIDAD_PILAS_DESCARTE; i++) {
+        PilaDescarte* pilaDescarte = new PilaDescarte();
+        this->pilasDescarte.push_back(pilaDescarte);
+    }
+    */
 }
 
 Jugador::~Jugador()

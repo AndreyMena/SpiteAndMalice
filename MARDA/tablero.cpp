@@ -25,6 +25,14 @@ Tablero::Tablero(int cantidadJugadores)
     }
 }
 
+Tablero::Tablero(Mazo* mazoCentralAux, vector<PilaCentral>* pilasCentralesAux,int turnoJugadorAux, vector<Jugador*> jugadoresAux)
+{
+    this->mazoCentral = mazoCentralAux;
+    this->pilasCentrales = pilasCentralesAux;
+    this->turnoJugador = turnoJugadorAux;
+    this->jugadores = jugadoresAux;
+}
+
 Tablero::~Tablero()
 {
 }
