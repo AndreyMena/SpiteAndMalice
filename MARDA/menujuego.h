@@ -40,7 +40,8 @@ private slots:
      * @brief Realiza las acciones que se dicten dentro del código del método
      * cuando el usuario le da clic a este botón en específico.
      */
-    void on_pushButton_3_clicked();
+
+    void on_cargarPartida_clicked();
 
 private:
     Ui::MenuJuego *ui;

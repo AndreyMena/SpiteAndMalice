@@ -14,8 +14,13 @@
 #include <QtDebug>
 #include <QAbstractItemView>
 
+#include <iostream>
+#include <fstream>
+
 #include "ganador1.h"
 #include "ganador2.h"
+
+using namespace std;
 
 PantallaJuego::PantallaJuego(Tablero tablero) :
     QWidget(nullptr),
@@ -426,3 +431,99 @@ void PantallaJuego::on_pilacentral_3_itemChanged(QListWidgetItem *item)
         this->informacionCartaActual.erase("cartaCambio");
     }
 }
+
+void PantallaJuego::on_pushButton_clicked()
+{
+    string nombreArchivo = "../bitacora.txt";
+    ofstream archivo;
+    archivo.open(nombreArchivo.c_str(), fstream::out);
+
+    //archivo.close();
+/*
+    std::ofstream fs;
+    fs.open("tableroGuardado.txt", std::ofstream::out | std::ofstream::app); */
+    //Obtencion de pilas centrales
+    vector<vector<string>> pilasCentralesGuardadas;
+    for (int indexI = 0; indexI < this->tablero.CANTIDAD_PILAS_CENTRALES; indexI++) {
+        PilaCentral pilaCentral = this->tablero.obtenerPilaCentral(indexI);
+        stack<Carta> pila = pilaCentral.obtenerCartas();
+        vector<string> pilaCentralI;
+        for (int indexJ = 0; indexJ < pilaCentral.obtenerCartas().size(); indexJ++) {
+            pilaCentralI.push_back(pila.top().obtenerNombre());
+            pila.pop();
+        }
+        pilasCentralesGuardadas.push_back(pilaCentralI);
+        pilaCentralI.clear();
+    }
+
+    for (int indexI = 0; indexI < pilasCentralesGuardadas.size(); indexI++) {
+        //cout << "Pila central "<<indexI <<":"<<endl;
+        for (int indexJ = pilasCentralesGuardadas[indexI].size()-1; indexJ >= 0; indexJ--) {
+            //Guardar pilasCentralesGuardadas[indexI][indexJ]
+            archivo << pilasCentralesGuardadas[indexI][indexJ] << endl;
+            //cout << pilasCentralesGuardadas[indexI][indexJ] << endl;
+        }
+        archivo<< "$"<<endl;
+        cout << endl;
+    }
+
+    //Mazo Central.
+    vector<Carta>* mazoCentral = this->tablero.obtenerMazoCentral()->obtenerCartasMazo();
+    //cout << "Mazo Central " << mazoCentral->size()<<endl;
+    for (int indexI = 0; indexI < mazoCentral->size(); indexI++) {
+        //cout << mazoCentral->at(indexI).obtenerNombre() << endl;
+        //Guardar mazoCentral->at(indexI).obtenerNombre()
+        archivo << mazoCentral->at(indexI).obtenerNombre() << endl;
+    }
+    archivo<< "$"<<endl;
+
+    //Pilas descarteJ1
+    vector<vector<string>> pilaDescartesGuardadosJ1;
+    for (int indexI = 0; indexI < 4; indexI++) {
+        stack<Carta> pilaDescarteI = this->tablero.obtenerJugador(1)->obtenerPilaDescarte(indexI)->obtenerCartas();
+        vector<string> pilaGuardado;
+        cout << "Pila " << indexI << ": con size "<< pilaDescarteI.size() <<endl;
+        for (int indexJ = 0; indexJ < pilaDescarteI.size(); indexJ++) {
+            cout << pilaDescarteI.top().obtenerNombre() <<endl;
+            pilaGuardado.push_back(pilaDescarteI.top().obtenerNombre());
+            pilaDescarteI.pop();
+        }
+        pilaDescartesGuardadosJ1.push_back(pilaGuardado);
+        pilaGuardado.clear();
+    }
+    //Pilas descarteJ2
+    vector<vector<string>> pilaDescartesGuardadosJ2;
+    for (int indexI = 0; indexI < 4; indexI++) {
+        stack<Carta> pilaDescarteI = this->tablero.obtenerJugador(1)->obtenerPilaDescarte(indexI)->obtenerCartas();
+        vector<string> pilaGuardado;
+        for (int indexJ = 0; indexJ < pilaDescarteI.size(); indexJ++) {
+            pilaGuardado.push_back(pilaDescarteI.top().obtenerNombre());
+            pilaDescarteI.pop();
+        }
+        pilaDescartesGuardadosJ2.push_back(pilaGuardado);
+        pilaGuardado.clear();
+    }
+
+/*
+    for (int indexI = 0; indexI < 4; indexI++) {
+        cout << "Pila " << indexI << " jugador 1 con size: "<< pilaDescartesGuardadosJ1[indexI].size()<< endl;
+        for (int indexJ = 0; indexJ < pilaDescartesGuardadosJ1[indexI].size(); indexJ++) {
+            cout << pilaDescartesGuardadosJ1[indexI].top() << endl;
+            //Guardar
+            pilaDescartesGuardadosJ1[indexI].pop();
+        }
+        cout<<endl;
+    }
+    for (int indexI = 0; indexI < 4; indexI++) {
+        cout << "Pila " << indexI << " jugador 2 con size: : "<< pilaDescartesGuardadosJ2[indexI].size()<< endl;
+        for (int indexJ = 0; indexJ < pilaDescartesGuardadosJ2[indexI].size(); indexJ++) {
+            cout << pilaDescartesGuardadosJ2[indexI].top() << endl;
+            //Guardar
+            pilaDescartesGuardadosJ2[indexI].pop();
+        }
+        cout<<endl;
+    }
+*/
+    archivo.close();
+}
+

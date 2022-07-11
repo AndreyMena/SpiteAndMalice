@@ -1,6 +1,9 @@
 #include "menujuego.h"
 #include "ui_menujuego.h"
 #include "reglas.h"
+#include "pantallajuego.h"
+#include "tablero.h"
+#include <fstream>
 
 MenuJuego::MenuJuego(QWidget *parent)
     : QMainWindow(parent)
@@ -30,8 +33,16 @@ void MenuJuego::on_pushButton_4_clicked()
 }
 
 
-void MenuJuego::on_pushButton_3_clicked()
+void MenuJuego::on_cargarPartida_clicked()
 {
-
+    Tablero tablero(2);
+    std::ifstream ifs ("../bitacora.txt", std::ifstream::in);
+    string line;
+    std::getline(ifs, line);
+    cout << "LA LINEA: "<<line<< endl;
+    //tablero.asignarTurno(TURNO_JUGADOR2);
+    //PantallaJuego *pantallaJuego = new PantallaJuego(tablero);
+    //pantallaJuego->show();
+    //this->hide();
 }
 

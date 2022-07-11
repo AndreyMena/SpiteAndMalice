@@ -89,7 +89,7 @@
       </widget>
      </item>
      <item alignment="Qt::AlignHCenter">
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="cargarPartida">
        <property name="font">
         <font>
          <family>Ravie</family>

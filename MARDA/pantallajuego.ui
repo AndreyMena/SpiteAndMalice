@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>769</height>
+    <height>768</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -42,6 +42,30 @@
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+        <widget class="QPushButton" name="pushButton">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+background-color: rgb(36, 198, 0);</string>
+         </property>
+         <property name="text">
+          <string>Guardar Partida</string>
+         </property>
+        </widget>
+       </item>
        <item>
         <spacer name="verticalSpacer_13">
          <property name="orientation">
@@ -848,6 +872,30 @@
    </item>
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>150</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+font: 700 9pt &quot;Segoe UI&quot;;
+background-color: rgb(36, 198, 0);</string>
+       </property>
+       <property name="text">
+        <string>Abandonar Partida</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <spacer name="verticalSpacer_14">
        <property name="orientation">

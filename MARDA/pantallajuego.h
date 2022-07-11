@@ -56,6 +56,8 @@ private slots:
     void on_pilacentral_2_itemChanged(QListWidgetItem *item);
     void on_pilacentral_3_itemChanged(QListWidgetItem *item);
 
+    void on_pushButton_clicked();
+
 private:
     void asignarEspaciosJugadores();
 
