@@ -12,8 +12,20 @@ class PilaAbstracta
 public:
     PilaAbstracta();
     ~PilaAbstracta();
+
+    /**
+     * @brief Agrega una carta a la pila
+     * @param carta
+     * @return
+     */
     virtual bool agregarCarta(Carta carta) = 0;
+
+    /**
+     * @brief Obtiene la carta de la pila indicada
+     * @return
+     */
     stack<Carta> obtenerCartas();
+
 protected:
     stack<Carta> cartas;
 };

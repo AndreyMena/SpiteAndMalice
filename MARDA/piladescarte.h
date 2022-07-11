@@ -10,6 +10,13 @@ class PilaDescarte : public PilaAbstracta
 public:
     PilaDescarte();
     ~PilaDescarte();
+
+    /**
+     * @brief Agrega cartas a la pila de descarte y maneja las acciones que eso
+     * conlleva
+     * @param carta
+     * @return
+     */
     bool agregarCarta(Carta carta) override;
 };
 

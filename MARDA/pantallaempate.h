@@ -12,6 +12,10 @@ class pantallaempate : public QWidget
     Q_OBJECT
 
 public:
+    /**
+     * @brief Muestra un mensaje indicando que ha habido un empate
+     * @param parent
+     */
     explicit pantallaempate(QWidget *parent = nullptr);
     ~pantallaempate();
 

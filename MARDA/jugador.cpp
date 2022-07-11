@@ -23,12 +23,6 @@ Jugador::Jugador(int numeroJugadorAux, Mazo *mazoCentral, vector<PilaCentral>* p
     this->numeroJugador = numeroJugadorAux;
     this->pilasCentrales = pilasCentralesAux;
     this->pilasDescarte = PilasdeDescarteAux;
-    /*
-    for (int i = 0; i < CANTIDAD_PILAS_DESCARTE; i++) {
-        PilaDescarte* pilaDescarte = new PilaDescarte();
-        this->pilasDescarte.push_back(pilaDescarte);
-    }
-    */
 }
 
 Jugador::~Jugador()
@@ -71,7 +65,6 @@ void Jugador::rellenarMano() {
         }
     }
 }
-
 
 Mazo Jugador::obtenerMazoPersonal() {
     return this->mazo;

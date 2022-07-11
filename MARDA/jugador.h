@@ -40,15 +40,39 @@ public:
      */
     void agregarCartaMano(Carta carta, int posicion);
 
+    /**
+     * @brief Agrega una carta a la pila que se le indique
+     * @param carta
+     * @param tipoPila
+     * @param posicion
+     * @return
+     */
     bool agregarCartaPila(Carta carta, int tipoPila, int posicion);
 
+    /**
+     * @brief Rellena el mazo con cartas en orden aleatorio
+     */
     void rellenarMano();
 
+    /**
+     * @brief Se obtiene un mazo personal para cada jugador
+     * @return
+     */
     Mazo obtenerMazoPersonal();
 
+    /**
+     * @brief Genera la mano del jugador
+     * @return Devuelve un vector con las cartas del jugador
+     */
     vector<Carta>* obtenerMano();
 
+    /**
+     * @brief Devuelve el contenido de una determinada pila de descarte
+     * @param posicion
+     * @return
+     */
     PilaDescarte* obtenerPilaDescarte(int posicion);
+
 private:
     int numeroJugador;
     /**

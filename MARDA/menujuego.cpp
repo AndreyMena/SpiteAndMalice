@@ -29,7 +29,6 @@ void MenuJuego::on_pushButton_clicked()
     this->hide();
 }
 
-
 void MenuJuego::on_pushButton_4_clicked()
 {
     Reglas *reglas = new Reglas();
@@ -499,41 +498,7 @@ void MenuJuego::on_cargarPartida_clicked()
     Jugador* jugador2 = new Jugador(2, mazoCentralAux, pilasCentralesAux, manoAuxJ1, mazoAuxJ1, PilasdeDescarteAux1);
     jugadoresAux.push_back(jugador1);
     jugadoresAux.push_back(jugador2);
-    //for (int i = 0; i < 2; i++) {
-        //Jugador* jugador = new Jugador(i+1,mazoCentralAux, pilasCentralesAux);
-        //jugadoresAux.push_back(jugador);
-    //}
     Tablero tablero(/*Mazo**/ mazoCentralAux, /*vector<PilaCentral>* */pilasCentralesAux,/*int*/ turnoJugadorAux, /*vector<Jugador*> */jugadoresAux);
-
-
-
-
-
-
-    /*
-    this->mazoCentral = new Mazo();
-    this->pilasCentrales = new vector<PilaCentral>();
-    //Se llena el mazo central con 52 cartas por jugador en el caso que sean dos jugadores por ejemplo
-    // se llenaria el mazo con 104 cartas
-    for (int i = 0; i < cantidadJugadores; i++) {
-        this->mazoCentral->llenarMazo();
-    }
-    //Se define el turno de jugador en -1 indicando que ningun jugador tiene un turno asignado aun.
-    this->turnoJugador = -1;
-
-    for (int i = 0; i < CANTIDAD_PILAS_CENTRALES; i++) {
-        PilaCentral pilaCentral(mazoCentral);
-        this->pilasCentrales->push_back(pilaCentral);
-        //this->pilasCentrales.emplace_back(PilaCentral(&mazoCentral));
-    }
-
-    // Se crean los jugadores y se añaden al vector de jugadores del tablero
-    for (int i = 0; i < cantidadJugadores; i++) {
-        Jugador* jugador = new Jugador(i+1,mazoCentral, this->pilasCentrales);
-        this->jugadores.push_back(jugador);
-    }
-    */
-
 
     PantallaJuego *pantallaJuego = new PantallaJuego(tablero);
     pantallaJuego->show();

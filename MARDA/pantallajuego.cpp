@@ -2,21 +2,6 @@
 #include "ui_pantallajuego.h"
 #include "menujuego.h"
 #include "mazo.h"
-#include <QListWidgetItem>
-#include <QDrag>
-#include <QDragEnterEvent>
-#include <QMimeData>
-#include <QPainter>
-#include <QListWidget>
-#include <QMainWindow>
-
-#include <QDropEvent>
-#include <QtDebug>
-#include <QAbstractItemView>
-
-#include <iostream>
-#include <fstream>
-
 #include "ganador1.h"
 #include "ganador2.h"
 
@@ -562,5 +547,6 @@ void PantallaJuego::on_pushButton_clicked()
 
 void PantallaJuego::on_pushButton_2_clicked()
 {
+    this->hide();
 }
 
