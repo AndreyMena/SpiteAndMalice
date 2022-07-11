@@ -13,6 +13,7 @@ SOURCES += \
     eleccionjugador.cpp \
     ganador1.cpp \
     ganador2.cpp \
+    guardarpartida.cpp \
     jugador.cpp \
     main.cpp \
     mazo.cpp \
@@ -29,6 +30,7 @@ HEADERS += \
     eleccionjugador.h \
     ganador1.h \
     ganador2.h \
+    guardarpartida.h \
     jugador.h \
     mazo.h \
     menujuego.h \
@@ -43,6 +45,7 @@ FORMS += \
     eleccionjugador.ui \
     ganador1.ui \
     ganador2.ui \
+    guardarpartida.ui \
     menujuego.ui \
     pantallajuego.ui \
     reglas.ui
