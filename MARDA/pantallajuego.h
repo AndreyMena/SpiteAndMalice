@@ -42,7 +42,7 @@ public:
      * juego.
      * @param tablero Modelo que contiene toda la informacion de la partida
      */
-     PantallaJuego(Tablero tablero);
+     PantallaJuego(Tablero tablero, bool cargarPartida);
 
     /**
      * @brief Destructor de la clase PantallaJuego

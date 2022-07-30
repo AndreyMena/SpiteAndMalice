@@ -4,28 +4,80 @@
 #include "ganador1.h"
 #include "ganador2.h"
 #include "pantallaempate.h"
+#include <stack>
+
+//#include ""
 
 using namespace std;
 
-PantallaJuego::PantallaJuego(Tablero tablero) :
+PantallaJuego::PantallaJuego(Tablero tablero, bool cargarPartida) :
     QWidget(nullptr),
     ui(new Ui::PantallaJuego),
     tablero(tablero)
 {
     ui->setupUi(this);
+    if (cargarPartida) {
+        //cout << "cargarPartida" << endl;
+        this->asignarEspaciosJugadores();
 
-    this->asignarEspaciosJugadores();
+        vector<QListWidget*> pilasDesc;
+        pilasDesc.push_back(this->ui->piladescarte_J1_1);
+        pilasDesc.push_back(this->ui->piladescarte_J1_2);
+        pilasDesc.push_back(this->ui->piladescarte_J1_3);
+        pilasDesc.push_back(this->ui->piladescarte_J1_4);
 
-    if (this->tablero.esTurnoJugador(1)) {
-        this->generarCartasJugador(1);
-        this->generarCartasOcultasJugador(2);
-        this->generarCartaMazoJugador(1);
-        this->generarCartaMazoJugador(2);
-    } else {
-        this->generarCartasJugador(2);
-        this->generarCartasOcultasJugador(1);
-        this->generarCartaMazoJugador(1);
-        this->generarCartaMazoJugador(2);
+        pilasDesc.push_back(this->ui->piladescarte_J2_1);
+        pilasDesc.push_back(this->ui->piladescarte_J2_2);
+        pilasDesc.push_back(this->ui->piladescarte_J2_3);
+        pilasDesc.push_back(this->ui->piladescarte_J2_4);
+        int contador = 0;
+        for (int indexJugador = 1; indexJugador <= 2; indexJugador++) {
+            for (int indexPila = 0; indexPila < 4; indexPila++) {
+                stack<Carta> pila = tablero.obtenerJugador(indexJugador)->obtenerPilaDescarte(indexPila)->obtenerCartas();
+                QListWidget* espacio = pilasDesc[contador];
+                int size = pila.size();
+                for (int index = 0; index < size; index++) {
+                    Carta carta = pila.top();
+                    int numeroJugador = indexJugador;
+                    int posicionCarta = -1;  // no se porque -1
+                    generarCarta(pila.top(), espacio, numeroJugador, -1);
+                    //cout << pila.top().obtenerNombre() << endl;
+                    pila.pop();
+                }
+                contador++;
+            }
+            pilasDesc.clear();
+            vector<QListWidget*> pilasDesc;
+        }
+
+
+        if (this->tablero.esTurnoJugador(1)) {
+            this->generarCartasJugador(1);
+            this->generarCartasOcultasJugador(2);
+            this->generarCartaMazoJugador(1);
+            this->generarCartaMazoJugador(2);
+        } else {
+            this->generarCartasJugador(2);
+            this->generarCartasOcultasJugador(1);
+            this->generarCartaMazoJugador(1);
+            this->generarCartaMazoJugador(2);
+        }
+
+    }else{
+
+        this->asignarEspaciosJugadores();
+
+        if (this->tablero.esTurnoJugador(1)) {
+            this->generarCartasJugador(1);
+            this->generarCartasOcultasJugador(2);
+            this->generarCartaMazoJugador(1);
+            this->generarCartaMazoJugador(2);
+        } else {
+            this->generarCartasJugador(2);
+            this->generarCartasOcultasJugador(1);
+            this->generarCartaMazoJugador(1);
+            this->generarCartaMazoJugador(2);
+        }
     }
 }
 
@@ -439,7 +491,8 @@ void PantallaJuego::on_pushButton_clicked()
         PilaCentral pilaCentral = this->tablero.obtenerPilaCentral(indexI);
         stack<Carta> pila = pilaCentral.obtenerCartas();
         vector<string> pilaCentralI;
-        for (int indexJ = 0; indexJ < pilaCentral.obtenerCartas().size(); indexJ++) {
+        int size = pila.size();
+        for (int indexJ = 0; indexJ < size; indexJ++) {
             pilaCentralI.push_back(pila.top().obtenerNombre());
             pila.pop();
         }
@@ -503,10 +556,10 @@ void PantallaJuego::on_pushButton_clicked()
     for (int indexI = 0; indexI < 4; indexI++) {
         stack<Carta> pilaDescarteI = this->tablero.obtenerJugador(1)->obtenerPilaDescarte(indexI)->obtenerCartas();
         vector<string> pilaGuardado;
-        cout << "Pila " << indexI << ": con size "<< pilaDescarteI.size() <<endl;
-        for (int indexJ = 0; indexJ < pilaDescarteI.size(); indexJ++) {
-            cout << pilaDescarteI.top().obtenerNombre() <<endl;
-            pilaGuardado.push_back(pilaDescarteI.top().obtenerNombre());
+        int size =  pilaDescarteI.size();
+        for (int indexJ = 0; indexJ < size; indexJ++) {
+            Carta carta = pilaDescarteI.top();
+            pilaGuardado.push_back(carta.obtenerNombre());
             pilaDescarteI.pop();
         }
         pilaDescartesGuardadosJ1.push_back(pilaGuardado);
@@ -516,10 +569,12 @@ void PantallaJuego::on_pushButton_clicked()
     //Pilas descarteJ2
     vector<vector<string>> pilaDescartesGuardadosJ2;
     for (int indexI = 0; indexI < 4; indexI++) {
-        stack<Carta> pilaDescarteI = this->tablero.obtenerJugador(1)->obtenerPilaDescarte(indexI)->obtenerCartas();
+        stack<Carta> pilaDescarteI = this->tablero.obtenerJugador(2)->obtenerPilaDescarte(indexI)->obtenerCartas();
         vector<string> pilaGuardado;
-        for (int indexJ = 0; indexJ < pilaDescarteI.size(); indexJ++) {
-            pilaGuardado.push_back(pilaDescarteI.top().obtenerNombre());
+        int size =  pilaDescarteI.size();
+        for (int indexJ = 0; indexJ < size; indexJ++) {
+            Carta carta = pilaDescarteI.top();
+            pilaGuardado.push_back(carta.obtenerNombre());
             pilaDescarteI.pop();
         }
         pilaDescartesGuardadosJ2.push_back(pilaGuardado);
