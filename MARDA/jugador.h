@@ -14,16 +14,25 @@ public:
     const int CANTIDAD_PILAS_DESCARTE = 4;
 
     /**
-     * @brief Constructor de la clase Jugador
+     * @brief Constructores de la clase Jugador
      */
-    Jugador(int numeroJugador, Mazo *mazoCentral, vector<PilaCentral>* pilasCentrales);
+    Jugador(int numeroJugador, Mazo *mazoCentral,
+            vector<PilaCentral>* pilasCentrales);
 
-    Jugador(int numeroJugadorAux, Mazo *mazoCentral, vector<PilaCentral>* pilasCentralesAux, vector<Carta> *manoAux, Mazo mazoAux, vector<PilaDescarte*> PilasdeDescarteAux);
+    Jugador(int numeroJugadorAux, Mazo *mazoCentral,
+            vector<PilaCentral>* pilasCentralesAux, vector<Carta> *manoAux,
+            Mazo mazoAux, vector<PilaDescarte*> PilasdeDescarteAux);
+
     /**
      * @brief Destructor de la clase Jugador
      */
     ~Jugador();
 
+    /**
+     * @brief obtenerNumeroJugador Devuelve un entero con el número que
+     * identifica a un jugador
+     * @return
+     */
     int obtenerNumeroJugador();
 
     /**
@@ -75,25 +84,35 @@ public:
     PilaDescarte* obtenerPilaDescarte(int posicion);
 
 private:
+    /**
+     * @brief numeroJugador Identificador único de cada jugador
+     */
     int numeroJugador;
+
     /**
      * @brief mazo Mazo que corresponde al jugador
      */
     Mazo mazo;
+
     /**
      * @brief mano Cartas que el jugador tiene en la mano
      */
     vector<Carta> *mano;
+
     /**
      * @brief mazoCentral Mazo que corresponde al mazo central del tablero
      */
     Mazo *mazoCentral;
+
     /**
-     * @brief pilasDescarte Pilas donde el jugador puede descartar las cartas que no quiera usar
+     * @brief pilasDescarte Pilas donde el jugador puede descartar las cartas
+     * que no quiera usar
      */
     vector<PilaCentral>* pilasCentrales;
+
     /**
-     * @brief pilasDescarte Pilas donde el jugador puede descartar las cartas que no quiera usar
+     * @brief pilasDescarte Pilas donde el jugador puede descartar las cartas
+     * que no quiera usar
      */
     vector<PilaDescarte*> pilasDescarte;
 };

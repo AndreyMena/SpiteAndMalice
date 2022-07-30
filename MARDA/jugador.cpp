@@ -1,6 +1,7 @@
 #include "jugador.h"
 
-Jugador::Jugador(int numeroJugador, Mazo *mazoCentral, vector<PilaCentral>* pilasCentrales) :
+Jugador::Jugador(int numeroJugador, Mazo *mazoCentral,
+                 vector<PilaCentral>* pilasCentrales) :
     numeroJugador(numeroJugador),
     mazoCentral(mazoCentral),
     pilasCentrales(pilasCentrales)
@@ -15,7 +16,9 @@ Jugador::Jugador(int numeroJugador, Mazo *mazoCentral, vector<PilaCentral>* pila
     }
 }
 
-Jugador::Jugador(int numeroJugadorAux, Mazo *mazoCentral, vector<PilaCentral>* pilasCentralesAux, vector<Carta> *manoAux, Mazo mazoAux, vector<PilaDescarte*> PilasdeDescarteAux)
+Jugador::Jugador(int numeroJugadorAux, Mazo *mazoCentral,
+                 vector<PilaCentral>* pilasCentralesAux, vector<Carta> *manoAux,
+                 Mazo mazoAux, vector<PilaDescarte*> PilasdeDescarteAux)
 {
     this->mano = manoAux;
     this->mazoCentral = mazoCentral;
@@ -27,7 +30,6 @@ Jugador::Jugador(int numeroJugadorAux, Mazo *mazoCentral, vector<PilaCentral>* p
 
 Jugador::~Jugador()
 {
-
 }
 
 int Jugador::obtenerNumeroJugador() {
@@ -77,5 +79,3 @@ vector<Carta>* Jugador::obtenerMano() {
 PilaDescarte* Jugador::obtenerPilaDescarte(int posicion) {
     return this->pilasDescarte.at(posicion);
 }
-
-

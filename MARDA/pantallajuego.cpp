@@ -1,6 +1,5 @@
 #include "pantallajuego.h"
 #include "ui_pantallajuego.h"
-#include "menujuego.h"
 #include "mazo.h"
 #include "ganador1.h"
 #include "ganador2.h"

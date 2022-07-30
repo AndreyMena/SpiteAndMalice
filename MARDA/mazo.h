@@ -22,7 +22,8 @@ public:
     ~Mazo();
 
     /**
-     * @brief llenarMazo Asigna al mazo las 52 cartas correspodientes de la baraja francesa y las baraja
+     * @brief llenarMazo Asigna al mazo las 52 cartas correspodientes de la
+     * baraja francesa y las baraja
      */
     void llenarMazo() override;
 
@@ -49,8 +50,9 @@ public:
     Mazo dividirMazo(unsigned int cantidadCartas);
 
 private:
-    vector<string> numerosCarta{"ace", "2", "3", "4", "5", "6",
-                                "7", "8", "9", "10", "jack", "queen", "king"};
-    vector<string> simbolosCarta{"_of_hearts", "_of_diamonds", "_of_clubs", "_of_spades"};
+    vector<string> numerosCarta{"ace", "2", "3", "4", "5", "6", "7", "8", "9",
+                                "10", "jack", "queen", "king"};
+    vector<string> simbolosCarta{"_of_hearts", "_of_diamonds", "_of_clubs",
+                                 "_of_spades"};
 };
 

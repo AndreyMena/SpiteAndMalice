@@ -15,13 +15,13 @@
 #include <QAbstractItemView>
 
 #include <fstream>
-
 #include <iostream>
 #include <map>
 #include <string>
 #include <sstream>
 
 #include "tablero.h"
+
 namespace Ui {
 class PantallaJuego;
 }
@@ -36,6 +36,7 @@ public:
     const string URL_POR_DEFECTO = ":/img/img/";
     const string EXTENSION_POR_DEFECTO = ".png";
     const string URL_REVERSO_CARTA_POR_DEFECTO =  ":/img/img/backsideCard.png";
+
     /**
      * @brief Constructor de la clase PantallaJuego donde se muestra y juega el
      * juego.
@@ -88,7 +89,8 @@ private:
      * @param numeroJugador
      * @param posicionCarta
      */
-    void generarCarta(Carta carta, QListWidget* espacio, int numeroJugador, int posicionCarta);
+    void generarCarta(Carta carta, QListWidget* espacio, int numeroJugador,
+                      int posicionCarta);
 
     /**
      * @brief Genera una carta que muestra la parte trasera de una carta real
@@ -133,7 +135,8 @@ private:
      * @param tipoPila
      * @param numeroPila
      */
-    void insertarCartaEnLaPila(std::string informacionCarta, int tipoPila, int numeroPila);
+    void insertarCartaEnLaPila(std::string informacionCarta, int tipoPila,
+                               int numeroPila);
 
     /**
      * @brief Desactiva la mano de un jugador cuando no es su turno

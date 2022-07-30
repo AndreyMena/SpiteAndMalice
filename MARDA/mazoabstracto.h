@@ -28,7 +28,8 @@ public:
     ~MazoAbstracto();
 
     /**
-     * @brief llenarMazo Asigna al mazo las 52 cartas correspodientes de la baraja francesa y las baraja
+     * @brief llenarMazo Asigna al mazo las 52 cartas correspodientes de la
+     * baraja francesa y las baraja
      */
     virtual void llenarMazo() = 0;
 
@@ -52,9 +53,9 @@ public:
 
     /**
      * @brief obtenerTamanioMazo Devuelve la cantidad de cartas del mazo
-     * @return Devuelve un entero que corresponde a la cantidad de cartas del mazo
+     * @return Devuelve un entero que corresponde a la cantidad de cartas del
+     * mazo
      */
-
     int obtenerTamanioMazo();
 
 protected:

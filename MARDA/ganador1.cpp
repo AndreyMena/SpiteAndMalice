@@ -1,6 +1,5 @@
 #include "ganador1.h"
 #include "ui_ganador1.h"
-#include "pantallajuego.h"
 
 Ganador1::Ganador1(QWidget *parent) :
     QWidget(parent),

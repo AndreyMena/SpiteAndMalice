@@ -15,16 +15,17 @@ public:
     const int TURNO_JUGADOR1 = 1;
     const int TURNO_JUGADOR2 = 2;
     const int CANTIDAD_JUGADORES = 2;
+
     /**
      * @brief EleccionJugador Muestra la pantalla para elegir que jugador se quiere que juegue primero
      * @param parent Parámetro de la clase padre QWidget
      */
     explicit Ganador2(QWidget *parent = nullptr);
+
     ~Ganador2();
-private slots:
+
 private:
     Ui::Ganador2 *ui;
 };
-
 
 #endif // GANADOR2_H

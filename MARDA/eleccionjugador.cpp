@@ -33,4 +33,3 @@ void EleccionJugador::on_eleccionJugador2_clicked()
     pantallaJuego->show();
     this->hide();
 }
-
