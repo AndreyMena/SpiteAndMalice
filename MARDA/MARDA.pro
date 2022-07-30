@@ -16,6 +16,7 @@ SOURCES += \
     guardarpartida.cpp \
     jugador.cpp \
     main.cpp \
+    mainviewcardgames.cpp \
     mazo.cpp \
     menujuego.cpp \
     pantallaempate.cpp \
@@ -33,6 +34,7 @@ HEADERS += \
     ganador2.h \
     guardarpartida.h \
     jugador.h \
+    mainviewcardgames.h \
     mazo.h \
     menujuego.h \
     pantallaempate.h \
@@ -48,6 +50,7 @@ FORMS += \
     ganador1.ui \
     ganador2.ui \
     guardarpartida.ui \
+    mainviewcardgames.ui \
     menujuego.ui \
     pantallaempate.ui \
     pantallajuego.ui \

@@ -1,12 +1,11 @@
-#include "menujuego.h"
-#include "mazo.h"
+#include "mainviewcardgames.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MenuJuego w;
-    w.show();
+    MainViewCardGames menuJuegos;
+    menuJuegos.show();
     return a.exec();
 }
