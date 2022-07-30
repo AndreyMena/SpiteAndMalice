@@ -22,17 +22,6 @@ void Mazo::llenarMazo() {
     this->barajarMazo();
 }
 
-void Mazo::barajarMazo() {
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    std::shuffle(this->cartas->begin(), this->cartas->end(), std::default_random_engine(seed));
-}
-
-Carta Mazo::sacarCartaMazo(int posicion) {
-    Carta carta = this->cartas->at(posicion);
-    this->cartas->erase(this->cartas->begin()+posicion);
-    return carta;
-}
-
 void Mazo::agregarCartaMazo(Carta carta, int posicion) {
     this->cartas->insert(this->cartas->begin()+posicion, carta);
 }
@@ -58,6 +47,4 @@ Mazo Mazo::dividirMazo(unsigned int cantidadCartas) {
     return nuevoMazo;
 }
 
-vector<Carta>* Mazo::obtenerCartasMazo() {
-    return this->cartas;
-}
+

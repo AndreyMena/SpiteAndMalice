@@ -15,9 +15,11 @@ SOURCES += \
     ganador2.cpp \
     guardarpartida.cpp \
     jugador.cpp \
+    jugadorabstracto.cpp \
     main.cpp \
     mainviewcardgames.cpp \
     mazo.cpp \
+    mazoabstracto.cpp \
     menujuego.cpp \
     pantallaempate.cpp \
     pantallajuego.cpp \
@@ -25,7 +27,8 @@ SOURCES += \
     pilacentral.cpp \
     piladescarte.cpp \
     reglas.cpp \
-    tablero.cpp
+    tablero.cpp \
+    tableroabstracto.cpp
 
 HEADERS += \
     carta.h \
@@ -34,8 +37,10 @@ HEADERS += \
     ganador2.h \
     guardarpartida.h \
     jugador.h \
+    jugadorabstracto.h \
     mainviewcardgames.h \
     mazo.h \
+    mazoabstracto.h \
     menujuego.h \
     pantallaempate.h \
     pantallajuego.h \
@@ -43,7 +48,8 @@ HEADERS += \
     pilacentral.h \
     piladescarte.h \
     reglas.h \
-    tablero.h
+    tablero.h \
+    tableroabstracto.h
 
 FORMS += \
     eleccionjugador.ui \

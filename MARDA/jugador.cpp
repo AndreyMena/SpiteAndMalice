@@ -77,3 +77,5 @@ vector<Carta>* Jugador::obtenerMano() {
 PilaDescarte* Jugador::obtenerPilaDescarte(int posicion) {
     return this->pilasDescarte.at(posicion);
 }
+
+

@@ -12,6 +12,7 @@ public:
     const int TIPO_PILA_DESCARTE = 0;
     const int TIPO_PILA_CENTRAL = 1;
     const int CANTIDAD_PILAS_DESCARTE = 4;
+
     /**
      * @brief Constructor de la clase Jugador
      */
@@ -98,3 +99,4 @@ private:
 };
 
 #endif // JUGADOR_H
+

@@ -53,3 +53,4 @@ vector<Carta> PilaCentral::sacarCartas() {
     }
     return cartasVector;
 }
+
