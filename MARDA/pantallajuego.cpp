@@ -429,10 +429,6 @@ void PantallaJuego::on_pushButton_clicked()
         archivo << "2" << endl;
     }
     archivo << "$" << endl;
-    //archivo.close();
-    /*
-    std::ofstream fs;
-    fs.open("tableroGuardado.txt", std::ofstream::out | std::ofstream::app); */
     //Obtencion de pilas centrales
     vector<vector<string>> pilasCentralesGuardadas;
     for (int indexI = 0; indexI < this->tablero.CANTIDAD_PILAS_CENTRALES; indexI++) {
@@ -448,11 +444,9 @@ void PantallaJuego::on_pushButton_clicked()
     }
 
     for (int indexI = 0; indexI < pilasCentralesGuardadas.size(); indexI++) {
-        //cout << "Pila central "<<indexI <<":"<<endl;
         for (int indexJ = pilasCentralesGuardadas[indexI].size()-1; indexJ >= 0; indexJ--) {
             //Guardar pilasCentralesGuardadas[indexI][indexJ]
             archivo << pilasCentralesGuardadas[indexI][indexJ] << endl;
-            //cout << pilasCentralesGuardadas[indexI][indexJ] << endl;
         }
         archivo<< "$"<<endl;
         cout << endl;
@@ -460,9 +454,7 @@ void PantallaJuego::on_pushButton_clicked()
 
     //Mazo Central.
     vector<Carta>* mazoCentral = this->tablero.obtenerMazoCentral()->obtenerCartasMazo();
-    //cout << "Mazo Central " << mazoCentral->size()<<endl;
     for (int indexI = 0; indexI < mazoCentral->size(); indexI++) {
-        //cout << mazoCentral->at(indexI).obtenerNombre() << endl;
         //Guardar mazoCentral->at(indexI).obtenerNombre()
         archivo << mazoCentral->at(indexI).obtenerNombre() << endl;
     }
@@ -544,7 +536,6 @@ void PantallaJuego::on_pushButton_clicked()
     }
     archivo.close();
 }
-
 
 void PantallaJuego::on_pushButton_2_clicked()
 {
