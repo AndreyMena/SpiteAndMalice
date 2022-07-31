@@ -55,4 +55,3 @@ private:
     vector<string> simbolosCarta{"_of_hearts", "_of_diamonds", "_of_clubs",
                                  "_of_spades"};
 };
-

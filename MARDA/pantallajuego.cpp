@@ -57,6 +57,9 @@ PantallaJuego::PantallaJuego(Tablero tablero, bool cargarPartida) :
         stack<Carta> cartasPilaC3 = tablero.obtenerPilaCentral(2).obtenerCartas();
         generarCarta(cartasPilaC3.top(), this->ui->pilacentral_3, 0, -1);
 
+
+        this->tablero.obtenerJugador(1)->rellenarMano();
+        this->tablero.obtenerJugador(2)->rellenarMano();
         if (this->tablero.esTurnoJugador(1)) {
             this->generarCartasJugador(1);
             this->generarCartasOcultasJugador(2);

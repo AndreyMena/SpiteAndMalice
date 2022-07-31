@@ -79,7 +79,6 @@ void MenuJuego::on_cargarPartida_clicked()
         }
         std::getline(ifs, line);
         cout <<endl<< endl << pilacentral1.obtenerCartas().size() <<endl <<endl;
-        //cout << "uwu" << endl;
     }
     pilasCentralesAux->push_back(pilacentral1);
     cout<< line<<endl;

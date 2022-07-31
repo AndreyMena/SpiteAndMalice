@@ -6,7 +6,8 @@ Jugador::Jugador(int numeroJugador, Mazo *mazoCentral,
     mazoCentral(mazoCentral),
     pilasCentrales(pilasCentrales)
 {
-
+    this->nombre = "";
+    this->puntaje = 0;
     this->mano = new vector<Carta>();
     this->mazo = this->mazoCentral->dividirMazo(20);
     this->mano = this->mazoCentral->dividirMazo(5).obtenerCartasMazo();
@@ -14,6 +15,7 @@ Jugador::Jugador(int numeroJugador, Mazo *mazoCentral,
         PilaDescarte* pilaDescarte = new PilaDescarte();
         this->pilasDescarte.push_back(pilaDescarte);
     }
+    this->cartaJugadaPilaDescarte = false;
 }
 
 Jugador::Jugador(int numeroJugadorAux, Mazo *mazoCentral,
@@ -26,6 +28,7 @@ Jugador::Jugador(int numeroJugadorAux, Mazo *mazoCentral,
     this->numeroJugador = numeroJugadorAux;
     this->pilasCentrales = pilasCentralesAux;
     this->pilasDescarte = PilasdeDescarteAux;
+    this->cartaJugadaPilaDescarte = false;
 }
 
 Jugador::~Jugador()
@@ -36,22 +39,13 @@ int Jugador::obtenerNumeroJugador() {
     return this->numeroJugador;
 }
 
-Carta Jugador::sacarCartaMano(int posicion) {
-    Carta carta = this->mano->at(posicion);
-    this->mano->erase(this->mano->begin()+posicion);
-    return carta;
-}
-
-void Jugador::agregarCartaMano(Carta carta, int posicion) {
-    this->mano->insert(this->mano->begin()+posicion, carta);
-}
-
 bool Jugador::agregarCartaPila(Carta carta, int tipoPila, int posicion) {
     bool resultado = false;
     if (tipoPila == TIPO_PILA_CENTRAL) {
         resultado = this->pilasCentrales->at(posicion).agregarCarta(carta);
     } else {
         resultado = this->pilasDescarte.at(posicion)->agregarCarta(carta);
+        this->cartaJugadaPilaDescarte = true;
     }
     return resultado;
 }
@@ -72,10 +66,10 @@ Mazo Jugador::obtenerMazoPersonal() {
     return this->mazo;
 }
 
-vector<Carta>* Jugador::obtenerMano() {
-    return this->mano;
-}
-
 PilaDescarte* Jugador::obtenerPilaDescarte(int posicion) {
     return this->pilasDescarte.at(posicion);
+}
+
+bool Jugador::seDescartoCarta() {
+  return this->seAgregoCartaPilaDescarte;
 }

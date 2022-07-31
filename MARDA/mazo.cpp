@@ -46,5 +46,3 @@ Mazo Mazo::dividirMazo(unsigned int cantidadCartas) {
     }
     return nuevoMazo;
 }
-
-
