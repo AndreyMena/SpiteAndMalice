@@ -15,7 +15,7 @@ public:
     /**
      * @brief guardarpartida se encarga de guardar la partida en el estado
      * que se encuentre en ese momento.
-     * @param parent
+     * @param parent Parámetro de la clase padre QWidget
      */
     explicit guardarpartida(QWidget *parent = nullptr);
     ~guardarpartida();

@@ -22,6 +22,9 @@ public:
      */
     explicit EleccionJugador(QWidget *parent = nullptr);
 
+    /**
+     * Destructor de la clase
+    */
     ~EleccionJugador();
 
 private slots:

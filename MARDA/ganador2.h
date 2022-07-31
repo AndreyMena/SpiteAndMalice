@@ -22,6 +22,9 @@ public:
      */
     explicit Ganador2(QWidget *parent = nullptr);
 
+    /**
+     * Destructor de la clase
+    */
     ~Ganador2();
 
 private:

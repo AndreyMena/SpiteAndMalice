@@ -20,6 +20,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    /**
+     * @brief on_comboBox_activated Boton con menu de lista desplegable
+     * @param index El item de la lista que se selecciona
+     */
     void on_comboBox_activated(int index);
 
 private:
