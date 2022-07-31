@@ -17,7 +17,6 @@ PantallaJuego::PantallaJuego(Tablero tablero, bool cargarPartida) :
 {
     ui->setupUi(this);
     if (cargarPartida) {
-        //cout << "cargarPartida" << endl;
         this->asignarEspaciosJugadores();
 
         vector<QListWidget*> pilasDesc;
@@ -39,9 +38,7 @@ PantallaJuego::PantallaJuego(Tablero tablero, bool cargarPartida) :
                 for (int index = 0; index < size; index++) {
                     Carta carta = pila.top();
                     int numeroJugador = indexJugador;
-                    int posicionCarta = -1;  // no se porque -1
                     generarCarta(pila.top(), espacio, numeroJugador, -1);
-                    //cout << pila.top().obtenerNombre() << endl;
                     pila.pop();
                 }
                 contador++;
@@ -49,7 +46,16 @@ PantallaJuego::PantallaJuego(Tablero tablero, bool cargarPartida) :
             pilasDesc.clear();
             vector<QListWidget*> pilasDesc;
         }
+        stack<Carta> cartasPilaC1 = tablero.obtenerPilaCentral(0).obtenerCartas();
+        //cout << endl<<cartasPilaC1.top().obtenerNombre() << endl;
+        //cout << endl<<cartasPilaC1.size() << endl;
+        generarCarta(cartasPilaC1.top(), this->ui->pilacentral_1, 0, -1);
 
+        stack<Carta> cartasPilaC2 = tablero.obtenerPilaCentral(1).obtenerCartas();
+        generarCarta(cartasPilaC2.top(), this->ui->pilacentral_2, 0, -1);
+
+        stack<Carta> cartasPilaC3 = tablero.obtenerPilaCentral(2).obtenerCartas();
+        generarCarta(cartasPilaC3.top(), this->ui->pilacentral_3, 0, -1);
 
         if (this->tablero.esTurnoJugador(1)) {
             this->generarCartasJugador(1);
@@ -538,7 +544,7 @@ void PantallaJuego::on_pushButton_clicked()
     //MazoJ2
     Mazo mazoJ2 = this->tablero.obtenerJugador(2)->obtenerMazoPersonal();
     vector<Carta>* mazoCartasJ2 = mazoJ2.obtenerCartasMazo();
-    for (int index =0; index < mazoCartasJ1->size(); index++) {
+    for (int index =0; index < mazoCartasJ2->size(); index++) {
         archivo << mazoCartasJ2->at(index).obtenerNombre() <<endl;
     }
     archivo<< "$"<<endl;

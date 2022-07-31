@@ -67,17 +67,26 @@ void MenuJuego::on_cargarPartida_clicked()
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
             pilacentral1.agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
+            pilacentral1.agregarCarta(carta);
         }else{
             char a = line.at(0);
             int num = a-48;
             Carta carta(line, num);
             pilacentral1.agregarCarta(carta);
+
         }
         std::getline(ifs, line);
+        cout <<endl<< endl << pilacentral1.obtenerCartas().size() <<endl <<endl;
+        //cout << "uwu" << endl;
     }
     pilasCentralesAux->push_back(pilacentral1);
     cout<< line<<endl;
     std::getline(ifs, line);
+
+
+
     //PilaCentral2
     Mazo *mazoPilaC2 = new Mazo();
     PilaCentral pilacentral2(mazoPilaC2);
@@ -94,6 +103,9 @@ void MenuJuego::on_cargarPartida_clicked()
             pilacentral2.agregarCarta(carta);
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
+            pilacentral2.agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
             pilacentral2.agregarCarta(carta);
         }else{
             char a = line.at(0);
@@ -125,6 +137,9 @@ void MenuJuego::on_cargarPartida_clicked()
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
             pilacentral3.agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
+            pilacentral3.agregarCarta(carta);
         }else{
             char a = line.at(0);
             int num = a-48;
@@ -152,6 +167,9 @@ void MenuJuego::on_cargarPartida_clicked()
             mazoCentralAux->agregarCartaMazo(carta, 0); //
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
+            mazoCentralAux->agregarCartaMazo(carta, 0); //
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
             mazoCentralAux->agregarCartaMazo(carta, 0); //
         }else{
             char a = line.at(0);
@@ -193,7 +211,6 @@ void MenuJuego::on_cargarPartida_clicked()
     }
     cout<< line<<endl;
     std::getline(ifs, line);
-
     //ManoJ1
     vector<Carta> *manoAuxJ2 = new vector<Carta>();
     while (line.compare("$") != 0) {
@@ -240,6 +257,9 @@ void MenuJuego::on_cargarPartida_clicked()
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
             mazoAuxJ1.agregarCartaMazo(carta, 0); //
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
+            mazoAuxJ1.agregarCartaMazo(carta, 0); //
         }else{
             char a = line.at(0);
             int num = a-48;
@@ -251,6 +271,7 @@ void MenuJuego::on_cargarPartida_clicked()
     cout<< line<<endl;
     std::getline(ifs, line);
 
+    cout << "holaasdasdasdasdsadasdasddasdsdadsdsasdasd" <<endl;
     //MazoJ2
     Mazo mazoAuxJ2;
     while (line.compare("$") != 0) {
@@ -266,6 +287,9 @@ void MenuJuego::on_cargarPartida_clicked()
             mazoAuxJ2.agregarCartaMazo(carta, 0); //
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
+            mazoAuxJ2.agregarCartaMazo(carta, 0); //
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
             mazoAuxJ2.agregarCartaMazo(carta, 0); //
         }else{
             char a = line.at(0);
@@ -295,6 +319,9 @@ void MenuJuego::on_cargarPartida_clicked()
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
             pilaDes1->agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
+            pilaDes1->agregarCarta(carta);
         }else{
             char a = line.at(0);
             int num = a-48;
@@ -320,6 +347,9 @@ void MenuJuego::on_cargarPartida_clicked()
             pilaDes2->agregarCarta(carta);
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
+            pilaDes2->agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
             pilaDes2->agregarCarta(carta);
         }else{
             char a = line.at(0);
@@ -347,6 +377,9 @@ void MenuJuego::on_cargarPartida_clicked()
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
             pilaDes3->agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
+            pilaDes3->agregarCarta(carta);
         }else{
             char a = line.at(0);
             int num = a-48;
@@ -372,6 +405,9 @@ void MenuJuego::on_cargarPartida_clicked()
             pilaDes4->agregarCarta(carta);
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
+            pilaDes4->agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
             pilaDes4->agregarCarta(carta);
         }else{
             char a = line.at(0);
@@ -404,6 +440,9 @@ void MenuJuego::on_cargarPartida_clicked()
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
             pila2Des1->agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
+            pila2Des1->agregarCarta(carta);
         }else{
             char a = line.at(0);
             int num = a-48;
@@ -429,6 +468,9 @@ void MenuJuego::on_cargarPartida_clicked()
             pila2Des2->agregarCarta(carta);
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
+            pila2Des2->agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
             pila2Des2->agregarCarta(carta);
         }else{
             char a = line.at(0);
@@ -456,6 +498,9 @@ void MenuJuego::on_cargarPartida_clicked()
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
             pila2Des3->agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
+            pila2Des3->agregarCarta(carta);
         }else{
             char a = line.at(0);
             int num = a-48;
@@ -482,6 +527,9 @@ void MenuJuego::on_cargarPartida_clicked()
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
             pila2Des4->agregarCarta(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
+            pila2Des4->agregarCarta(carta);
         }else{
             char a = line.at(0);
             int num = a-48;
@@ -497,7 +545,7 @@ void MenuJuego::on_cargarPartida_clicked()
     cout<< line<<endl;
     std::getline(ifs, line);
 
-
+    //cout << "holaasdasdasd" <<endl;
     //Jugadores
     vector<Jugador*> jugadoresAux;
     Jugador* jugador1 = new Jugador(1, mazoCentralAux, pilasCentralesAux, manoAuxJ1, mazoAuxJ1, PilasdeDescarteAux1);
