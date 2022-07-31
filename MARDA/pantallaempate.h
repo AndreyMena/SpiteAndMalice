@@ -17,6 +17,10 @@ public:
      * @param parent
      */
     explicit PantallaEmpate(QWidget *parent = nullptr);
+
+    /**
+     * @brief Destructor
+     */
     ~PantallaEmpate();
 
 private:

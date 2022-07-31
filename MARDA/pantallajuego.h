@@ -41,6 +41,7 @@ public:
      * @brief Constructor de la clase PantallaJuego donde se muestra y juega el
      * juego.
      * @param tablero Modelo que contiene toda la informacion de la partida
+     * @param cargarPartida booleano que define si se carga una partida.
      */
      PantallaJuego(Tablero tablero, bool cargarPartida);
 
@@ -50,24 +51,93 @@ public:
     ~PantallaJuego();
 
 private slots:
-    // Métodos asociados a las acciones realizadas sobre las pilas de descarte.
-    // Son generados por el framework
-
+     /**
+      * @brief Método asociado a las acciones realizadas sobre las pilas de descarte.
+      *        Son generados por el framework.
+      * @param QListWidgetItem *item
+      * @return void
+      */
     void on_piladescarte_J1_1_itemChanged(QListWidgetItem *item);
+
+    /**
+     * @brief Método asociado a las acciones realizadas sobre las pilas de descarte.
+     *        Son generados por el framework.
+     * @param QListWidgetItem *item
+     * @return void
+     */
     void on_piladescarte_J1_2_itemChanged(QListWidgetItem *item);
+
+    /**
+     * @brief Método asociado a las acciones realizadas sobre las pilas de descarte.
+     *        Son generados por el framework.
+     * @param QListWidgetItem *item
+     * @return void
+     */
+
     void on_piladescarte_J1_3_itemChanged(QListWidgetItem *item);
+
+    /**
+     * @brief Método asociado a las acciones realizadas sobre las pilas de descarte.
+     *        Son generados por el framework.
+     * @param QListWidgetItem *item
+     * @return void
+     */
     void on_piladescarte_J1_4_itemChanged(QListWidgetItem *item);
 
+    /**
+     * @brief Método asociado a las acciones realizadas sobre las pilas de descarte.
+     *        Son generados por el framework.
+     * @param QListWidgetItem *item
+     * @return void
+     */
     void on_piladescarte_J2_1_itemChanged(QListWidgetItem *item);
+
+    /**
+     * @brief Método asociado a las acciones realizadas sobre las pilas de descarte.
+     *        Son generados por el framework.
+     * @param QListWidgetItem *item
+     * @return void
+     */
     void on_piladescarte_J2_2_itemChanged(QListWidgetItem *item);
+
+    /**
+     * @brief Método asociado a las acciones realizadas sobre las pilas de descarte.
+     *        Son generados por el framework.
+     * @param QListWidgetItem *item
+     * @return void
+     */
     void on_piladescarte_J2_3_itemChanged(QListWidgetItem *item);
+
+    /**
+     * @brief Método asociado a las acciones realizadas sobre las pilas de descarte.
+     *        Son generados por el framework.
+     * @param QListWidgetItem *item
+     * @return void
+     */
     void on_piladescarte_J2_4_itemChanged(QListWidgetItem *item);
 
-    // Métodos asociados a las acciones realizadas sobre las pilas de centrales.
-    // Son generados por el framework
-
+    /**
+     * @brief Método asociado a las acciones realizadas sobre las pilas de centrales.
+     *        Son generados por el framework.
+     * @param QListWidgetItem *item
+     * @return void
+     */
     void on_pilacentral_1_itemChanged(QListWidgetItem *item);
+
+    /**
+     * @brief Método asociado a las acciones realizadas sobre las pilas de centrales.
+     *        Son generados por el framework.
+     * @param QListWidgetItem *item
+     * @return void
+     */
     void on_pilacentral_2_itemChanged(QListWidgetItem *item);
+
+    /**
+     * @brief Método asociado a las acciones realizadas sobre las pilas de centrales.
+     *        Son generados por el framework.
+     * @param QListWidgetItem *item
+     * @return void
+     */
     void on_pilacentral_3_itemChanged(QListWidgetItem *item);
 
     // Botones del tablero
@@ -150,11 +220,34 @@ private:
      */
     void activarManoJugador(int jugador);
 
+    /**
+     * @brief Puntero a interfaz de pantalla juego
+     */
     Ui::PantallaJuego *ui;
+
+    /**
+     * @brief Tabler del juego
+     */
     Tablero tablero;
+
+    /**
+     * @brief Espacios de la interfaz
+     */
     vector<vector<QListWidget*>> espacios;
+
+    /**
+     * @brief mapa utilizado para accesar a la informacion de la carta
+     */
     map<string,string> informacionCartaActual;
+
+    /**
+     * @brief Contador para pila central
+     */
     int contadorPilaCentral1 = 0;
+
+    /**
+     * @brief Contador auxiliar para pila central
+     */
     int contadorAuxPilaCentral1 = 0;
 };
 

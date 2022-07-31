@@ -27,6 +27,9 @@ public:
     stack<Carta> obtenerCartas();
 
 protected:
+    /**
+     * @brief pila de cartas
+     */
     stack<Carta> cartas;
 };
 

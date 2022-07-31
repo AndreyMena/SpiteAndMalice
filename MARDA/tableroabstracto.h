@@ -12,11 +12,22 @@ class TableroAbstracto
 {
 public:
     TableroAbstracto();
+
     /**
-     * @brief Tablero Constructor de la clase TableroAbstracto
+     * @brief Contructor de tablero abstracto
+     * @param turnoJugador
+     * @param jugadores
      */
     TableroAbstracto(int turnoJugador, vector<JugadorAbstracto*> jugadores);
+
+    /**
+     * @brief Contructor de tablero abstracto con mazoCentral
+     * @param turnoJugador
+     * @param jugadores
+     * @param mazoCentral
+     */
     TableroAbstracto(int turnoJugador, vector<JugadorAbstracto*> jugadores, MazoAbstracto* mazoCentral);
+
     /**
      * @brief Destructor de la clase TableroAbstracto
      */
@@ -54,12 +65,34 @@ public:
      */
     MazoAbstracto* obtenerMazoCentral();
 
+    /**
+     * @brief Metodo para realizar una jugada.
+     * @param jugador
+     * @param posicionCartaMano
+     * @return void
+     */
     void hacerJugada(JugadorAbstracto* jugador, int posicionCartaMano);
 
+    /**
+     * @brief Metodo para jugar Carta
+     * @param jugador
+     * @param posicionCartaMano
+     * @return void
+     */
     virtual void jugarCarta(JugadorAbstracto* jugador, int posicionCartaMano) = 0;
 
+    /**
+     * @brief Metodo para cambiar turno.
+     * @param jugador
+     * @return void
+     */
     virtual void cambiarTurno(JugadorAbstracto* jugador) = 0;
 
+    /**
+     * @brief Metodo para verificar ganador
+     * @param jugador
+     * @return void
+     */
     virtual void verificarGanador(JugadorAbstracto* jugador) = 0;
 
 protected:

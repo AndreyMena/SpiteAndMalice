@@ -17,7 +17,21 @@ public:
      * @brief Tablero Constructores de la clase Tablero
      */
     Tablero(int cantidadJugadores);
+
+    /**
+     * @brief Contructor de tablero especifico.
+     * @param pilasCentrales
+     * @param turnoJugador
+     * @param jugadores
+     */
     Tablero(vector<PilaCentral>* pilasCentrales,int turnoJugador, vector<JugadorAbstracto*> jugadores);
+
+    /**
+     * @brief Contructor de tablero para cargar partida.
+     * @param pilasCentrales
+     * @param turnoJugador
+     * @param jugadores
+     */
     Tablero(MazoAbstracto* mazoCentral, vector<PilaCentral>* pilasCentrales,int turnoJugador, vector<JugadorAbstracto*> jugadores);
 
     /**
@@ -32,10 +46,26 @@ public:
      */
     PilaCentral& obtenerPilaCentral(int posicion);
 
+    /**
+     * @brief Metodo plantilla para jugar una carta
+     * @param jugador
+     * @param posicionCartaMano
+     * @return void
+     */
     void jugarCarta(JugadorAbstracto* jugador, int posicionCartaMano) override;
 
+    /**
+     * @brief Metodo para cambiar el turno de un jugador a otro.
+     * @param jugador
+     * @return void
+     */
     void cambiarTurno(JugadorAbstracto* jugador) override;
 
+    /**
+     * @brief Metodo que verifica el ganador
+     * @param jugador
+     * @return void
+     */
     void verificarGanador(JugadorAbstracto* jugador) override;
 
 private:
