@@ -45,6 +45,9 @@ private slots:
     void on_cargarPartida_clicked();
 
 private:
+    /**
+     * @brief Puntero a interfaz de menujuego
+     */
     Ui::MenuJuego *ui;
 };
 #endif // MENUJUEGO_H

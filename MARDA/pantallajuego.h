@@ -142,7 +142,18 @@ private slots:
 
     // Botones del tablero
 
+    /**
+     * @brief Método asociado a las acciones realizadas para guardar partida.
+     *        Son generados por el framework.
+     * @return void
+     */
     void on_pushButton_clicked();
+
+    /**
+     * @brief Método asociado a las acciones realizadas para abandonar partida.
+     *        Son generados por el framework.
+     * @return void
+     */
     void on_pushButton_2_clicked();
 
 private:

@@ -24,6 +24,10 @@ public:
     ~PantallaEmpate();
 
 private:
+
+    /**
+     * @brief Puntero a interfaz de pantalla de empate
+     */
     Ui::pantallaempate *ui;
 };
 

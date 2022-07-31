@@ -8,7 +8,14 @@
 class PilaDescarte : public PilaAbstracta
 {
 public:
+    /**
+     * @brief Constructor de PilaDescarte
+     */
     PilaDescarte();
+
+    /**
+     * @brief Destructor de PilaDescarte
+     */
     ~PilaDescarte();
 
     /**

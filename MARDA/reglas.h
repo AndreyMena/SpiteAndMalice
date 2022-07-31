@@ -18,12 +18,16 @@ public:
      * @param parent Parámetro de la clase padre QWidget
      */
     explicit Reglas(QWidget *parent = nullptr);
+
     /**
      * @brief Destructor de la clase Reglas
      */
     ~Reglas();
 
 private:
+    /**
+     * @brief Puntero a interfaz para reglas.
+     */
     Ui::Reglas *ui;
 };
 
