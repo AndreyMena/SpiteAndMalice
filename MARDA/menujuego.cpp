@@ -180,6 +180,9 @@ void MenuJuego::on_cargarPartida_clicked()
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
             manoAuxJ1->push_back(carta);
+        }else if (line.at(0)=='V'){
+            Carta carta(line, 0);
+            manoAuxJ1->push_back(carta);
         }else{
             char a = line.at(0);
             int num = a-48;
@@ -206,6 +209,9 @@ void MenuJuego::on_cargarPartida_clicked()
             manoAuxJ2->push_back(carta);
         }else if (line.at(0)=='j'){  //quenn
             Carta carta(line, 11);
+            manoAuxJ2->push_back(carta);
+        }else if (line.at(0)=='V') {
+            Carta carta(line, 0);
             manoAuxJ2->push_back(carta);
         }else{
             char a = line.at(0);
@@ -495,12 +501,12 @@ void MenuJuego::on_cargarPartida_clicked()
     //Jugadores
     vector<Jugador*> jugadoresAux;
     Jugador* jugador1 = new Jugador(1, mazoCentralAux, pilasCentralesAux, manoAuxJ1, mazoAuxJ1, PilasdeDescarteAux1);
-    Jugador* jugador2 = new Jugador(2, mazoCentralAux, pilasCentralesAux, manoAuxJ1, mazoAuxJ1, PilasdeDescarteAux1);
+    Jugador* jugador2 = new Jugador(2, mazoCentralAux, pilasCentralesAux, manoAuxJ2, mazoAuxJ2, PilasdeDescarteAux1);
     jugadoresAux.push_back(jugador1);
     jugadoresAux.push_back(jugador2);
     Tablero tablero(/*Mazo**/ mazoCentralAux, /*vector<PilaCentral>* */pilasCentralesAux,/*int*/ turnoJugadorAux, /*vector<Jugador*> */jugadoresAux);
 
-    PantallaJuego *pantallaJuego = new PantallaJuego(tablero);
+    PantallaJuego *pantallaJuego = new PantallaJuego(tablero, 1);
     pantallaJuego->show();
     this->hide();
 }
