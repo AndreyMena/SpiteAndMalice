@@ -20,17 +20,18 @@ public:
 
     /**
      * @brief Contructor de tablero especifico.
-     * @param pilasCentrales
-     * @param turnoJugador
-     * @param jugadores
+     * @param pilasCentrales vector de las pilas centrales del tablero.
+     * @param turnoJugador entero que define el turno de jugador
+     * @param jugadores vector de jugadores del tablero
      */
     Tablero(vector<PilaCentral>* pilasCentrales,int turnoJugador, vector<JugadorAbstracto*> jugadores);
 
     /**
      * @brief Contructor de tablero para cargar partida.
-     * @param pilasCentrales
-     * @param turnoJugador
-     * @param jugadores
+     * @param MazoAbstracto* MazoAbstracto
+     * @param pilasCentrales vector de pilas centrales del tablero
+     * @param turnoJugador entero que define el turno de jugador
+     * @param jugadores vector de jugadores del tablero
      */
     Tablero(MazoAbstracto* mazoCentral, vector<PilaCentral>* pilasCentrales,int turnoJugador, vector<JugadorAbstracto*> jugadores);
 
@@ -41,29 +42,29 @@ public:
 
     /**
      * @brief Devuelve la pila central del tablero
-     * @param posicion
-     * @return
+     * @param posicion entero para la posicion de la pila.
+     * @return PilaCentral pila central del tablero.
      */
     PilaCentral& obtenerPilaCentral(int posicion);
 
     /**
      * @brief Metodo plantilla para jugar una carta
-     * @param jugador
-     * @param posicionCartaMano
+     * @param jugador Jugador abstracto que jugara la carta.
+     * @param posicionCartaMano entero que refleja la posicion de la carta en la mano.
      * @return void
      */
     void jugarCarta(JugadorAbstracto* jugador, int posicionCartaMano) override;
 
     /**
      * @brief Metodo para cambiar el turno de un jugador a otro.
-     * @param jugador
+     * @param jugador Jugador abstracto que cambiara de turno
      * @return void
      */
     void cambiarTurno(JugadorAbstracto* jugador) override;
 
     /**
      * @brief Metodo que verifica el ganador
-     * @param jugador
+     * @param jugador Jugador abstracto que se verificara si es ganador
      * @return void
      */
     void verificarGanador(JugadorAbstracto* jugador) override;

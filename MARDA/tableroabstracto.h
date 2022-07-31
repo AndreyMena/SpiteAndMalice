@@ -15,16 +15,16 @@ public:
 
     /**
      * @brief Contructor de tablero abstracto
-     * @param turnoJugador
-     * @param jugadores
+     * @param turnoJugador un entero para turno del jugador
+     * @param jugadores un vector con los jugadores Abstractos
      */
     TableroAbstracto(int turnoJugador, vector<JugadorAbstracto*> jugadores);
 
     /**
      * @brief Contructor de tablero abstracto con mazoCentral
-     * @param turnoJugador
-     * @param jugadores
-     * @param mazoCentral
+     * @param turnoJugador entero para turno jugador
+     * @param jugadores  un vector con los jugadores Abstractos
+     * @param mazoCentral Mazo central abstracto del tablero
      */
     TableroAbstracto(int turnoJugador, vector<JugadorAbstracto*> jugadores, MazoAbstracto* mazoCentral);
 
@@ -35,63 +35,63 @@ public:
 
     /**
      * @brief Asigna el turno a un jugador
-     * @param numeroJugador
+     * @param numeroJugador un entero para turno del jugador
      */
     void asignarTurno(int numeroJugador);
 
     /**
      * @brief Indica si es el turno de un jugador o del otro
-     * @param numeroJugador
-     * @return
+     * @param numeroJugador un entero para turno del jugador
+     * @return bool define si es el turno del jugador.
      */
     bool esTurnoJugador(int numeroJugador);
 
     /**
      * @brief Devuelve el jugador actual en turno
-     * @param numeroJugador
-     * @return
+     * @param numeroJugador un entero para turno del jugador
+     * @return JugadorAbstracto* retorna el jugador de acuerdo a su numero
      */
     JugadorAbstracto* obtenerJugador(int numeroJugador);
 
     /**
      * @brief Devuelve un vector con los jugadores actuales
-     * @return
+     * @return vector<JugadorAbstracto*>& un vector de los Jugadores del tablero.
      */
     vector<JugadorAbstracto*>& obtenerJugadores();
 
     /**
      * @brief Devuelve el mazo central del tablero
-     * @return
+     * @return MazoAbstracto* el mazo central del tablero
      */
     MazoAbstracto* obtenerMazoCentral();
 
     /**
      * @brief Metodo para realizar una jugada.
-     * @param jugador
-     * @param posicionCartaMano
-     * @return void
+     * @param jugador el jugador que realizara la jugada
+     * @param posicionCartaMano entero que refleja la posicion de la carta en la mano
+     * @return No devuelve nada
      */
     void hacerJugada(JugadorAbstracto* jugador, int posicionCartaMano);
 
     /**
      * @brief Metodo para jugar Carta
-     * @param jugador
+     * @param jugador el jugador que realizara la jugada
      * @param posicionCartaMano
-     * @return void
+     * @return No devuelve nada
      */
     virtual void jugarCarta(JugadorAbstracto* jugador, int posicionCartaMano) = 0;
 
     /**
      * @brief Metodo para cambiar turno.
-     * @param jugador
-     * @return void
+     * @param jugador el jugador que cambiara de turno
+     * @return No devuelve nada
      */
     virtual void cambiarTurno(JugadorAbstracto* jugador) = 0;
 
     /**
      * @brief Metodo para verificar ganador
-     * @param jugador
-     * @return void
+     * @param jugador el jugador que se verificara si es ganador
+     * @return No devuelve nada
      */
     virtual void verificarGanador(JugadorAbstracto* jugador) = 0;
 
