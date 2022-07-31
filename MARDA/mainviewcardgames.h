@@ -14,10 +14,21 @@ class MainViewCardGames : public QWidget
     Q_OBJECT
 
 public:
+    /**
+     * @brief MainViewCardGames Muestra la pantalla donde se seleccionara el juego deseado
+     * @param parent Parámetro de la clase padre QWidget
+     */
     explicit MainViewCardGames(QWidget *parent = nullptr);
+
+    /**
+     * Destructor de la clase
+     */
     ~MainViewCardGames();
 
 private slots:
+    /**
+     * @brief on_pushButton_clicked Boton para confirmar el juego deseado y comenzar a jugar.
+     */
     void on_pushButton_clicked();
 
     /**

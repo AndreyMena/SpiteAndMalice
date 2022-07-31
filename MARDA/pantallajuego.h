@@ -165,35 +165,35 @@ private:
     /**
      * @brief Genera una carta basándose en el espacio y en el jugador al que
      * se la asigna
-     * @param carta
-     * @param espacio
-     * @param numeroJugador
-     * @param posicionCarta
+     * @param carta Carta que se va a generar
+     * @param espacio El espacio donde se va a generar dicha carta
+     * @param numeroJugador Numero del jugador a quien pertenece la carta generada
+     * @param posicionCarta Posicion de la carta que se va a generar
      */
     void generarCarta(Carta carta, QListWidget* espacio, int numeroJugador,
                       int posicionCarta);
 
     /**
      * @brief Genera una carta que muestra la parte trasera de una carta real
-     * @param espacio
+     * @param espacio Espacio donde se va a generar esta carta oculta
      */
     void generarCartaOculta (QListWidget* espacio);
 
     /**
      * @brief Genera las cartas de la mano de cada jugador
-     * @param numeroJugador
+     * @param numeroJugador Numero del jugador al que se le generara la mano
      */
     void generarCartasJugador(int numeroJugador);
 
     /**
      * @brief Genera cartas vueltas (ocultas) de cada jugador
-     * @param numeroJugador
+     * @param numeroJugador Numero del jugador al que se le generara una mano de cartas ocultas
      */
     void generarCartasOcultasJugador(int numeroJugador);
 
     /**
      * @brief Genera la carta del mazo personal de cada jugador
-     * @param numeroJugador
+     * @param numeroJugador Numero del jugador a quien se le generara la carta del mazo
      */
     void generarCartaMazoJugador(int numeroJugador);
 
@@ -205,29 +205,29 @@ private:
 
     /**
      * @brief Cambia el turno entre ambos jugadores
-     * @param numeroJugador
+     * @param numeroJugador Numero que corresponde al jugador a quien se va a cambiar de turno
      */
     void cambiarTurno(int numeroJugador);
 
     /**
      * @brief Inserta una carta en la pila. Se refiere al proceso que conlleva,
      * desde la revision de reglas hasta las acciones que eso desencadena
-     * @param informacionCarta
-     * @param tipoPila
-     * @param numeroPila
+     * @param informacionCarta Un String que contiene la informacion necesaria de la carta para poder identificarla
+     * @param tipoPila El tipo de pila donde se insertara dicha carta
+     * @param numeroPila El numero de la pila donde se va a insertar la carta
      */
     void insertarCartaEnLaPila(std::string informacionCarta, int tipoPila,
                                int numeroPila);
 
     /**
      * @brief Desactiva la mano de un jugador cuando no es su turno
-     * @param jugador
+     * @param jugador Numero del jugador a quien se desea desactivar la mano
      */
     void desactivarManoJugador(int jugador);
 
     /**
      * @brief Activa la mano de un jugador cuando le corresponde jugar
-     * @param jugador
+     * @param jugador Numero del jugador a quien se desea activar la mano
      */
     void activarManoJugador(int jugador);
 
