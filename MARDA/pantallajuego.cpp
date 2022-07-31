@@ -427,13 +427,13 @@ void PantallaJuego::on_pilacentral_1_itemChanged(QListWidgetItem *item)
         for(int i = 1; i < this->ui->pilacentral_1->count(); ++i)
         {
             QListWidgetItem* cartaBorrada = this->ui->pilacentral_1->item(i);
-            delete ui->pilacentral_1->takeItem(ui->pilacentral_1->row(cartaBorrada));
+            //delete ui->pilacentral_1->takeItem(ui->pilacentral_1->row(cartaBorrada));
         }
         if (this->ui->pilacentral_1->count() == 1) {
             insertarCartaEnLaPila( this->ui->pilacentral_1->item(this->ui->pilacentral_1->row(item))->text().toStdString(), TIPO_PILA_CENTRAL, 1);
             if (tablero.obtenerPilaCentral(0).estaCompleta()) {
                 QListWidgetItem* cartaBorrada = this->ui->pilacentral_1->item(0);
-                delete ui->pilacentral_1->takeItem(ui->pilacentral_1->row(cartaBorrada));
+                //delete ui->pilacentral_1->takeItem(ui->pilacentral_1->row(cartaBorrada));
             }
         }
     } else {
@@ -448,13 +448,13 @@ void PantallaJuego::on_pilacentral_2_itemChanged(QListWidgetItem *item)
         for(int i = 1; i < this->ui->pilacentral_2->count(); ++i)
         {
             QListWidgetItem* cartaBorrada = this->ui->pilacentral_2->item(i);
-            delete ui->pilacentral_2->takeItem(ui->pilacentral_2->row(cartaBorrada));
+            //delete ui->pilacentral_2->takeItem(ui->pilacentral_2->row(cartaBorrada));
         }
         if (this->ui->pilacentral_2->count() >= 1) {
             insertarCartaEnLaPila( this->ui->pilacentral_2->item(this->ui->pilacentral_2->row(item))->text().toStdString(), TIPO_PILA_CENTRAL, 2);
             if (tablero.obtenerPilaCentral(1).estaCompleta()) {
                 QListWidgetItem* cartaBorrada = this->ui->pilacentral_2->item(0);
-                delete ui->pilacentral_2->takeItem(ui->pilacentral_2->row(cartaBorrada));
+                //delete ui->pilacentral_2->takeItem(ui->pilacentral_2->row(cartaBorrada));
             }
         }
     } else {
@@ -469,13 +469,13 @@ void PantallaJuego::on_pilacentral_3_itemChanged(QListWidgetItem *item)
         for(int i = 1; i < this->ui->pilacentral_3->count(); ++i)
         {
             QListWidgetItem* cartaBorrada = this->ui->pilacentral_3->item(i);
-            delete ui->pilacentral_3->takeItem(ui->pilacentral_3->row(cartaBorrada));
+            //delete ui->pilacentral_3->takeItem(ui->pilacentral_3->row(cartaBorrada));
         }
         if (this->ui->pilacentral_3->count() >= 1) {
             insertarCartaEnLaPila( this->ui->pilacentral_3->item(this->ui->pilacentral_3->row(item))->text().toStdString(), TIPO_PILA_CENTRAL, 3);
             if (tablero.obtenerPilaCentral(2).estaCompleta()) {
                 QListWidgetItem* cartaBorrada = this->ui->pilacentral_3->item(0);
-                delete ui->pilacentral_3->takeItem(ui->pilacentral_3->row(cartaBorrada));
+                //delete ui->pilacentral_3->takeItem(ui->pilacentral_3->row(cartaBorrada));
             }
         }
     } else {

@@ -34,7 +34,15 @@ private:
      * @return
      */
     vector<Carta> sacarCartas();
+
+    /**
+     * @brief Puntero a mazo central
+     */
     Mazo *mazoCentral;
+
+    /**
+     * @brief booleano para verificar si la pila esta completa.
+     */
     bool pilaCompleta;
 };
 
