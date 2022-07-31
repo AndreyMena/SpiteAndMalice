@@ -8,53 +8,22 @@ using namespace std;
 #include "jugador.h"
 #include "mazo.h"
 #include "pilacentral.h"
-
-class Tablero
+#include "tableroabstracto.h"
+class Tablero : public TableroAbstracto
 {
 public:
     const int CANTIDAD_PILAS_CENTRALES = 3;
     /**
-     * @brief Tablero Constructor de la clase Tablero
+     * @brief Tablero Constructores de la clase Tablero
      */
     Tablero(int cantidadJugadores);
-    Tablero(Mazo* mazoCentral, vector<PilaCentral>* pilasCentrales,int turnoJugador, vector<Jugador*> jugadores);
+    Tablero(vector<PilaCentral>* pilasCentrales,int turnoJugador, vector<JugadorAbstracto*> jugadores);
+    Tablero(MazoAbstracto* mazoCentral, vector<PilaCentral>* pilasCentrales,int turnoJugador, vector<JugadorAbstracto*> jugadores);
 
     /**
      * @brief Destructor de la clase Tablero
      */
     ~Tablero();
-
-    /**
-     * @brief Asigna el turno a un jugador
-     * @param numeroJugador
-     */
-    void asignarTurno(int numeroJugador);
-
-    /**
-     * @brief Indica si es el turno de un jugador o del otro
-     * @param numeroJugador
-     * @return
-     */
-    bool esTurnoJugador(int numeroJugador);
-
-    /**
-     * @brief Devuelve el jugador actual en turno
-     * @param numeroJugador
-     * @return
-     */
-    Jugador* obtenerJugador(int numeroJugador);
-
-    /**
-     * @brief Devuelve un vector con los jugadores actuales
-     * @return
-     */
-    vector<Jugador*>& obtenerJugadores();
-
-    /**
-     * @brief Devuelve el mazo central del tablero
-     * @return
-     */
-    Mazo* obtenerMazoCentral();
 
     /**
      * @brief Devuelve la pila central del tablero
@@ -63,13 +32,18 @@ public:
      */
     PilaCentral& obtenerPilaCentral(int posicion);
 
+    void jugarCarta(JugadorAbstracto* jugador, int posicionCartaMano) override;
+
+    void cambiarTurno(JugadorAbstracto* jugador) override;
+
+    void verificarGanador(JugadorAbstracto* jugador) override;
+
 private:
-    vector<Jugador*> jugadores;
-    int turnoJugador;
-    Mazo *mazoCentral;
+
+    /**
+     * @brief pilasCentrales Almacena las pilas centrales creadas.
+     */
     vector<PilaCentral>* pilasCentrales;
 };
 
 #endif // TABLERO_H
-
-

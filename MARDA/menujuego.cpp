@@ -546,12 +546,12 @@ void MenuJuego::on_cargarPartida_clicked()
 
     //cout << "holaasdasdasd" <<endl;
     //Jugadores
-    vector<Jugador*> jugadoresAux;
+    vector<JugadorAbstracto*> jugadoresAux;
     Jugador* jugador1 = new Jugador(1, mazoCentralAux, pilasCentralesAux, manoAuxJ1, mazoAuxJ1, PilasdeDescarteAux1);
     Jugador* jugador2 = new Jugador(2, mazoCentralAux, pilasCentralesAux, manoAuxJ2, mazoAuxJ2, PilasdeDescarteAux1);
     jugadoresAux.push_back(jugador1);
     jugadoresAux.push_back(jugador2);
-    Tablero tablero(/*Mazo**/ mazoCentralAux, /*vector<PilaCentral>* */pilasCentralesAux,/*int*/ turnoJugadorAux, /*vector<Jugador*> */jugadoresAux);
+    Tablero tablero(/*Mazo**/(MazoAbstracto*) mazoCentralAux, pilasCentralesAux,turnoJugadorAux, jugadoresAux);
 
     PantallaJuego *pantallaJuego = new PantallaJuego(tablero, 1);
     pantallaJuego->show();

@@ -71,5 +71,5 @@ PilaDescarte* Jugador::obtenerPilaDescarte(int posicion) {
 }
 
 bool Jugador::seDescartoCarta() {
-  return this->seAgregoCartaPilaDescarte;
+    return this->cartaJugadaPilaDescarte;
 }

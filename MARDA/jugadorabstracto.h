@@ -13,6 +13,8 @@ public:
   /**
    * @brief Tablero Constructor de la clase JugadorAbstracto
    */
+  JugadorAbstracto();
+
   JugadorAbstracto(string nombre, vector<Carta> *mano, int puntaje);
   /**
    * @brief Destructor de la clase JugadorAbstracto
@@ -49,11 +51,11 @@ public:
 
 protected:
   string nombre;
+  vector<Carta> *mano;
   int puntaje;
   /**
    * @brief mano Cartas que el jugador tiene en la mano
    */
-  vector<Carta> *mano;
 };
 
 #endif // JUGADORABSTRACTO_H

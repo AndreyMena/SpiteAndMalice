@@ -2,7 +2,10 @@
 
 JugadorAbstracto::JugadorAbstracto(string nombre, vector<Carta> *mano,
                                    int puntaje)
-    : nombre(nombre), mano(mano), puntaje(puntaje) {}
+    : nombre(nombre), puntaje(puntaje), mano(mano) {}
+
+JugadorAbstracto::JugadorAbstracto() {}
+
 
 JugadorAbstracto::~JugadorAbstracto() {}
 

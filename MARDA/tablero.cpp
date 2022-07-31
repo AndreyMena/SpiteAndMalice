@@ -13,54 +13,50 @@ Tablero::Tablero(int cantidadJugadores)
     this->turnoJugador = -1;
 
     for (int i = 0; i < CANTIDAD_PILAS_CENTRALES; i++) {
-        PilaCentral pilaCentral(mazoCentral);
+
+        PilaCentral pilaCentral((Mazo*) mazoCentral);
         this->pilasCentrales->push_back(pilaCentral);
         //this->pilasCentrales.emplace_back(PilaCentral(&mazoCentral));
     }
 
     // Se crean los jugadores y se añaden al vector de jugadores del tablero
     for (int i = 0; i < cantidadJugadores; i++) {
-        Jugador* jugador = new Jugador(i+1,mazoCentral, this->pilasCentrales);
+        Jugador* jugador = new Jugador(i+1,(Mazo*) mazoCentral, this->pilasCentrales);
         this->jugadores.push_back(jugador);
     }
 }
 
-Tablero::Tablero(Mazo* mazoCentralAux, vector<PilaCentral>* pilasCentralesAux,int turnoJugadorAux, vector<Jugador*> jugadoresAux)
+Tablero::Tablero(vector<PilaCentral>* pilasCentrales,int turnoJugador, vector<JugadorAbstracto*> jugadores)
+: TableroAbstracto(turnoJugador,jugadores), pilasCentrales(pilasCentrales)
+
 {
-    this->mazoCentral = mazoCentralAux;
-    this->pilasCentrales = pilasCentralesAux;
-    this->turnoJugador = turnoJugadorAux;
-    this->jugadores = jugadoresAux;
+}
+
+Tablero::Tablero(MazoAbstracto* mazoCentral, vector<PilaCentral>* pilasCentrales,int turnoJugador, vector<JugadorAbstracto*> jugadores)
+: TableroAbstracto(turnoJugador, jugadores, mazoCentral), pilasCentrales(pilasCentrales)
+{
 }
 
 Tablero::~Tablero()
 {
 }
 
-void Tablero::asignarTurno(int numeroJugador) {
-    this->turnoJugador = numeroJugador;
-}
-
-bool Tablero::esTurnoJugador(int numeroJugador) {
-    bool resultado = false;
-    if (this->turnoJugador == numeroJugador) {
-        resultado = true;
-    }
-    return resultado;
-}
-
-Jugador* Tablero::obtenerJugador(int numeroJugador) {
-    return this->jugadores.at(numeroJugador-1);
-}
-
-vector<Jugador*>& Tablero::obtenerJugadores() {
-    return this->jugadores;
-}
-
-Mazo* Tablero::obtenerMazoCentral() {
-    return this->mazoCentral;
-}
-
 PilaCentral& Tablero::obtenerPilaCentral(int posicion) {
     return this->pilasCentrales->at(posicion);
+}
+
+void Tablero::jugarCarta(JugadorAbstracto* jugador, int posicionCartaMano) {
+  /*
+  if (posicionCartaMano)
+  Carta cartaVacia("Vacia", 0);
+  jugador->sacarCartaMano(posicionCartaMano);
+  jugador->agregarCartaMano(cartaVacia, posicionCartaMano);
+    */
+}
+void Tablero::cambiarTurno(JugadorAbstracto* jugador) {
+
+}
+
+void Tablero::verificarGanador(JugadorAbstracto* jugador) {
+  //if ()
 }

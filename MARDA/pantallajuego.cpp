@@ -32,7 +32,9 @@ PantallaJuego::PantallaJuego(Tablero tablero, bool cargarPartida) :
         int contador = 0;
         for (int indexJugador = 1; indexJugador <= 2; indexJugador++) {
             for (int indexPila = 0; indexPila < 4; indexPila++) {
-                stack<Carta> pila = tablero.obtenerJugador(indexJugador)->obtenerPilaDescarte(indexPila)->obtenerCartas();
+                Jugador* jugador =(Jugador*) tablero.obtenerJugador(indexJugador);
+
+                stack<Carta> pila =  jugador->obtenerPilaDescarte(indexPila)->obtenerCartas();
                 QListWidget* espacio = pilasDesc[contador];
                 int size = pila.size();
                 for (int index = 0; index < size; index++) {
@@ -140,7 +142,7 @@ void PantallaJuego::generarCartaOculta(QListWidget* espacio) {
 }
 
 void PantallaJuego::generarCartasJugador(int numeroJugador) {
-    Jugador *jugador = tablero.obtenerJugador(numeroJugador);
+    Jugador *jugador = (Jugador*)tablero.obtenerJugador(numeroJugador);
     vector<Carta>* cartas = jugador->obtenerMano();
     int espacioContador = 0;
     for (auto &&carta : *cartas) {
@@ -156,7 +158,9 @@ void PantallaJuego::generarCartasOcultasJugador(int numeroJugador) {
 }
 
 void PantallaJuego::generarCartaMazoJugador(int numeroJugador) {
-    Mazo mazoJugador = tablero.obtenerJugador(numeroJugador)->obtenerMazoPersonal();
+    Jugador* jugador = (Jugador*) tablero.obtenerJugador(numeroJugador);
+
+    Mazo mazoJugador = jugador->obtenerMazoPersonal();
     Carta cartaMazoPersonal = mazoJugador.sacarCartaMazo(mazoJugador.obtenerCartasMazo()->size()-1);
     generarCarta(cartaMazoPersonal, espacios[numeroJugador-1][5], numeroJugador, -1);
 }
@@ -217,7 +221,7 @@ void PantallaJuego::insertarCartaEnLaPila(std::string informacionCarta, int tipo
     this->informacionCartaActual["posicionCarta"] = auxiliar;
     int posicionCarta = stoi(auxiliar);
 
-    Jugador *jugador = tablero.obtenerJugador(numeroJugador);
+    Jugador *jugador = (Jugador*) tablero.obtenerJugador(numeroJugador);
     if (posicionCarta == -1) {
         int posicion = jugador->obtenerMazoPersonal().obtenerCartasMazo()->size()-1;
         if (posicion != -1) {
@@ -537,7 +541,9 @@ void PantallaJuego::on_pushButton_clicked()
     archivo<< "$"<<endl;
 
     //MazoJ1
-    Mazo mazoJ1 = this->tablero.obtenerJugador(1)->obtenerMazoPersonal();
+    Jugador* jugador = (Jugador*) tablero.obtenerJugador(1);
+
+    Mazo mazoJ1 = jugador->obtenerMazoPersonal();
     vector<Carta>* mazoCartasJ1 = mazoJ1.obtenerCartasMazo();
     for (int index =0; index < mazoCartasJ1->size(); index++) {
         archivo << mazoCartasJ1->at(index).obtenerNombre() <<endl;
@@ -545,7 +551,8 @@ void PantallaJuego::on_pushButton_clicked()
     archivo<< "$"<<endl;
 
     //MazoJ2
-    Mazo mazoJ2 = this->tablero.obtenerJugador(2)->obtenerMazoPersonal();
+    Jugador* jugador2 = (Jugador*) tablero.obtenerJugador(2);
+    Mazo mazoJ2 = jugador2->obtenerMazoPersonal();
     vector<Carta>* mazoCartasJ2 = mazoJ2.obtenerCartasMazo();
     for (int index =0; index < mazoCartasJ2->size(); index++) {
         archivo << mazoCartasJ2->at(index).obtenerNombre() <<endl;
@@ -555,7 +562,9 @@ void PantallaJuego::on_pushButton_clicked()
     //Pilas descarteJ1
     vector<vector<string>> pilaDescartesGuardadosJ1;
     for (int indexI = 0; indexI < 4; indexI++) {
-        stack<Carta> pilaDescarteI = this->tablero.obtenerJugador(1)->obtenerPilaDescarte(indexI)->obtenerCartas();
+        Jugador* jugador1Aux = (Jugador*) tablero.obtenerJugador(1);
+
+        stack<Carta> pilaDescarteI = jugador1Aux->obtenerPilaDescarte(indexI)->obtenerCartas();
         vector<string> pilaGuardado;
         int size =  pilaDescarteI.size();
         for (int indexJ = 0; indexJ < size; indexJ++) {
@@ -570,7 +579,8 @@ void PantallaJuego::on_pushButton_clicked()
     //Pilas descarteJ2
     vector<vector<string>> pilaDescartesGuardadosJ2;
     for (int indexI = 0; indexI < 4; indexI++) {
-        stack<Carta> pilaDescarteI = this->tablero.obtenerJugador(2)->obtenerPilaDescarte(indexI)->obtenerCartas();
+        Jugador* jugador2Aux = (Jugador*) tablero.obtenerJugador(2);
+        stack<Carta> pilaDescarteI = jugador2Aux->obtenerPilaDescarte(indexI)->obtenerCartas();
         vector<string> pilaGuardado;
         int size =  pilaDescarteI.size();
         for (int indexJ = 0; indexJ < size; indexJ++) {
